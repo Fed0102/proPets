@@ -9,7 +9,7 @@ import Lost from "../btns/icons/HeadLost";
 import Found from "../btns/icons/HeadFound";
 
 const MyHeader = () => {
-    const mainState = 'posts';
+    const mainState = '';
     const stId = mainState ? stMain : '';
 
     return (
