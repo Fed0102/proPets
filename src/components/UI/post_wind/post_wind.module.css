@@ -1,0 +1,35 @@
+.base {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.post_avatar {
+    width: 8%;
+}
+
+.post_text {
+    width: 84%;
+    font-size: 15px;
+}
+
+.post_name {
+    color: #669885;
+    margin-bottom: 0;
+}
+
+.post_date {
+    color: rgb(164, 164, 164);
+    font-size: 15px;
+}
+
+.post_btns {
+    width: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}

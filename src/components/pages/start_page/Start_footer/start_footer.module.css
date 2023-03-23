@@ -1,0 +1,65 @@
+footer {
+    background-color: #669885;
+}
+
+.heightLinks a {
+    text-decoration: none;
+}
+
+.heightFooter {
+    min-height: 190px;
+}
+
+.justifyContent {
+    justify-content: space-between;
+}
+
+.footerLogo {
+    width: 200px;
+}
+
+.widthSocial {
+    width: 222px;
+}
+
+.colorWhite {
+    color: #ffffff;
+}
+
+.smallerText{
+    font-size: 12px;
+}
+
+.widthLinks {
+    min-width: 210px;
+}
+.heightLinks {
+    height: 80px;
+}
+
+.imgSize {
+    width: 16px;
+    height: 16px;
+}
+
+
+.imgFb{
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(130deg) brightness(102%) contrast(102%);
+}
+
+.imgInst{
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(130deg) brightness(102%) contrast(102%);
+    width: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

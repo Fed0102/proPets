@@ -1,0 +1,71 @@
+.searchInput {
+    border: #669885 1px solid;
+    border-radius: 15px;
+    height: 30px;
+    font-size: 12px;
+}
+
+.smallInput {
+    width: 150px;
+}
+
+.bigInput {
+    width: 350px;
+}
+
+.postCard {
+    box-shadow: 0 5px 5px grey;
+    margin: 20px;
+    padding: 10px;
+}
+
+.titleBigBold {
+    font-size: 22px;
+    color: #669885;
+}
+
+.smallTextGreen {
+    font-size: 12px;
+    color: #669885;
+}
+
+.smallTextBlack {
+    font-size: 12px;
+    color: black;
+}
+
+.mapMarker {
+    width: 13px;
+    height: 13px;
+    filter: invert(69%) sepia(26%) saturate(324%) hue-rotate(106deg) brightness(94%) contrast(91%);
+    margin-right: 3px;
+}
+
+.avatarImg {
+    height: 43px;
+    width: 43px;
+    padding: 0;
+}
+
+.avatarImg {
+    overflow: hidden;
+    border: 1px white solid;
+    border-radius: 50%;
+}
+
+.avatarImg img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.titleSemiBoldGreen {
+    font-size: 16px;
+    color: #669885;
+}
+
+.contactsBtn {
+    width: 18px;
+    height: 18px;
+    filter: invert(82%) sepia(0%) saturate(1114%) hue-rotate(162deg) brightness(92%) contrast(91%);
+}

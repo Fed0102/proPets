@@ -1,0 +1,10 @@
+.tagline {
+    height: 260px;
+    background-color: #669885;
+}
+
+.tagline p {
+    font-size: 32px;
+    width: 55%;
+    color: #ffffff;
+}

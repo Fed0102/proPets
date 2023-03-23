@@ -1,0 +1,23 @@
+.heightSection {
+    height: 450px;
+}
+
+.sizeH2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #669885;
+}
+
+.sizeUl {
+    width: 540px;
+}
+
+.sizeLi {
+    font-size: 18px;
+    line-height: 35px;
+}
+
+li::marker{
+    color: #669885;
+    font-size: 40px;
+}

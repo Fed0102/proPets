@@ -1,0 +1,10 @@
+.base {
+    height: 60%;
+    width: 110px;
+    border: white solid 1px;
+    border-radius: 30px;
+    background-color: #669885;
+    color: white;
+}
+
+

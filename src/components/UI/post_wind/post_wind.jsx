@@ -1,0 +1,24 @@
+import React from 'react';
+import st from './post_wind.module.css'
+import Avatar from "../avatar/avatar";
+import PostStar from "./icons/post_star";
+
+const PostWind = ({post}) => {
+    return (
+        <div className={st.base}>
+            <div className={st.post_avatar}>
+                <Avatar/>
+            </div>
+            <div className={st.post_text}>
+                <h5 className={st.post_name}>{post.user}</h5>
+                <div className={st.post_date}>{post.date}</div>
+                {post.body}
+            </div>
+            <div className={st.post_btns}>
+                <PostStar/>
+            </div>
+        </div>
+    );
+};
+
+export default PostWind;

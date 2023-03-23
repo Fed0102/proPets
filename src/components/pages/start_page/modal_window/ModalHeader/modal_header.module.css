@@ -1,0 +1,69 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.modalActive {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modalContent {
+    padding: 20px;
+    background-color: white;
+    width: 680px;
+    height: 390px;
+    transform: scale(0.5);
+    transition: 0.4s all;
+}
+
+.modalContentActive {
+    transform: scale(1);
+}
+
+.logoHeader {
+    filter: invert(59%) sepia(15%) saturate(652%) hue-rotate(106deg) brightness(90%) contrast(91%);
+}
+
+.title {
+    font-size: 16px;
+    color: #669885;
+}
+
+.btnFacebook {
+    background-color: darkblue;
+    color: #ffffff;
+    border: darkblue 1px solid;
+    border-radius: 20px;
+    width: 250px;
+    height: 35px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    opacity: 1;
+}
+
+.fb {
+    width: 30px;
+    height: 30px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(95deg) brightness(105%) contrast(101%);
+}
+
+.close {
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    filter: invert(82%) sepia(0%) saturate(0%) hue-rotate(273deg) brightness(93%) contrast(86%);
+}
+
+

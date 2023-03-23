@@ -1,0 +1,94 @@
+.section{
+    width: 100%;
+}
+
+.mainDiv{
+    height: 540px;
+}
+
+.colorSpanText {
+    color: #669885;
+    font-size: 56px;
+}
+
+.justifyContent {
+    height: 450px;
+    justify-content: space-between;
+}
+
+.welcomeTextSize {
+    width: 400px;
+    padding-top: 60px;
+    height: 400px;
+}
+
+.pText {
+    font-size: 50px;
+}
+
+.btnLostPet, .btnFoundPet {
+    height: 83px;
+    border-radius: 0 50px 50px 0;
+    position: absolute;
+    border: transparent;
+    left: 0;
+    opacity: 1;
+}
+
+.btnLostPet {
+    background-color: #FFE18B;
+    top: 350px;
+    width: 38%;
+}
+
+.btnFoundPet {
+    background-color: #84B6A3;
+    top: 433px;
+    width: 30%;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 72%;
+    margin-left: auto;
+}
+
+.btnSpan {
+    color: #393939;
+    font-size: 32px;
+    padding-left: 27px;
+}
+
+.btnFoundPet span {
+    margin-left: 20%;
+}
+
+.btnSpanWhite {
+    color: #ffffff;
+    font-size: 32px;
+    padding-left: 50px;
+}
+
+.textJoin {
+    font-size: 17px;
+}
+
+.join {
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: #669885;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.search img {
+    position: relative;
+    top: 8px;
+    right: -7px;
+}
+
+
+
+

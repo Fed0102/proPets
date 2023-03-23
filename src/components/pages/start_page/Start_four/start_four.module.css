@@ -1,0 +1,42 @@
+.colorSection {
+    background-color: #FF6F61;
+}
+
+.width{
+    width: 1300px;
+}
+
+.aboutStyle {
+    color: #ffffff;
+    font-size: 56px;
+    font-weight: 500;
+}
+
+.widthInfo {
+    width: 66%;
+}
+
+.textStyle {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.logoLove {
+    height: 110px;
+}
+
+.pLove {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    width: 50px;
+    left: 40px;
+    bottom: 72px;
+}
+
+
+
+
+

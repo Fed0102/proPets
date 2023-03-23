@@ -1,0 +1,11 @@
+#header {
+    background-color: white;
+}
+
+#body {
+    //background-color: beige;
+}
+
+#logo {
+    filter: invert(57%) sepia(13%) saturate(795%) hue-rotate(105deg) brightness(95%) contrast(85%);
+}
