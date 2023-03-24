@@ -1,6 +1,6 @@
 import React from 'react';
-import Avatar from "../../UI/avatar/avatar";
-import Post from "../../UI/post_wind/post_wind";
+import Avatar from "../UI/avatar/avatar";
+import MyPostsPage from "../main_body/page/posts_page/MyPostsPage";
 
 const MyHome = () => {
 
@@ -43,11 +43,9 @@ const MyHome = () => {
     ]
 
     return (
-        <>
-            {homePosts.map(post =>
-                <Post key={post.id} post={post}/>
-            )}
-        </>
+        <MyPostsPage
+            posts={homePosts}
+        />
     );
 };
 

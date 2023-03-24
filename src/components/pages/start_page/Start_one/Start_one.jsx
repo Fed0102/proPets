@@ -56,9 +56,9 @@ const StartOne = () => {
                 </div>
                 <div className={'col-10'}>
                     <h4 className={`${style.textJoin} m-0 px-5`}>
-                        I'm okay,just want to
-                        <span className={style.join} onClick={() => setModalActive(true)}> join </span>
-                        the pawsome community!
+                        Im okay,just want to
+                        <span className={style.join} onClick={() => setModalActive(true)}>join</span>
+                        the pawsome community!'
                     </h4>
                 </div>
             </div>
