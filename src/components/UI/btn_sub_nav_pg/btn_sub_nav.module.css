@@ -1,19 +1,13 @@
-.base {
-    z-index: 2000;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    border-radius: 0 25px 25px 0;
-}
 .normal {
-    height: 60%;
     width: 150px;
+    height: 30px;
     margin-right: 30px;
+    margin-bottom: 5px;
     font-size: 20px;
     display: flex;
     align-items: center;
     border: none;
     background-color: unset;
+    font-size: 17px;
     color: white;
 }
