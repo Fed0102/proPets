@@ -1,4 +1,5 @@
 .header {
+    z-index: 3000;
     width: 100%;
     height: 70px;
     max-height: 25vh;
