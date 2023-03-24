@@ -9,8 +9,12 @@ import NavFavorites from "../btns/icons/NavFavorites";
 import NavLogout from "../btns/icons/NavLogout";
 import BtnNavPrfl from "../../../UI/btn_nav_profile/btn_nav_profile";
 import Avatar from "../../../UI/avatar/avatar";
-import MySubNav from "./sub_nav_body/MySubNav";
+import MySubNav from "../sub_nav_body/MySubNav";
 import BtnSubNavPg from "../../../UI/btn_sub_nav_pg/btn_sub_nav_pg";
+import SubNavHotels from "../btns/icons/SubNavHotels";
+import SubNavWalking from "../btns/icons/SubNavWalking";
+import SubNavVetHelp from "../btns/icons/SubNavVetHelp";
+import SubNavFostering from "../btns/icons/SubNavFostering";
 
 const MyNavigation = () => {
     const pgBtnsAr = [
@@ -19,10 +23,10 @@ const MyNavigation = () => {
         {id: 2, name: 'Found', icon: <NavFound/>, sub_points: null},
         {id: 3, name: 'Services', icon: <NavServices/>, sub_points:
                 [
-                    {sub_id: 0, sub_name: 'Hotels', sub_icon: <NavHome/>},
-                    {sub_id: 1, sub_name: 'Walking', sub_icon: <NavHome/>},
-                    {sub_id: 2, sub_name: 'Fostering', sub_icon: <NavHome/>},
-                    {sub_id: 3, sub_name: 'VetHelp', sub_icon: <NavHome/>},
+                    {sub_id: 0, sub_name: 'Hotels', sub_icon: <SubNavHotels/>},
+                    {sub_id: 1, sub_name: 'Walking', sub_icon: <SubNavWalking/>},
+                    {sub_id: 2, sub_name: 'Fostering', sub_icon: <SubNavFostering/>},
+                    {sub_id: 3, sub_name: 'VetHelp', sub_icon: <SubNavVetHelp/>},
                 ]
         },
         {id: 4, name: 'Favorites', icon: <NavFavorites/>, sub_points: null}
