@@ -8,20 +8,18 @@ import Start_footer from "./Start_footer/Start_footer";
 
 const StartPage = ({setPage}) => {
     return (
-<<<<<<< HEAD
+
         <div>
             <Start_one setPage={setPage}/>
-=======
-        <div style={{width: "100%"}}>
-            <Start_one/>
->>>>>>> main
-            <Start_two/>
-            <Start_three/>
-            <Start_four/>
-            <Start_footer/>
-            {/*<Modal/>*/}
+            <div style={{width: "100%"}}>
+                <Start_one/>
+                <Start_two/>
+                <Start_three/>
+                <Start_four/>
+                <Start_footer/>
+                {/*<Modal/>*/}
+            </div>
         </div>
-    );
-};
-
+    )
+}
 export default StartPage;
