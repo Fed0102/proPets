@@ -1,9 +1,17 @@
-.colorSection {
+.section {
     background-color: #FF6F61;
+    width: 100%;
 }
 
-.width{
-    width: 1300px;
+.colorSection {
+    width: 1200px;
+    max-width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /*padding-right: 50px;*/
 }
 
 .aboutStyle {
@@ -12,18 +20,17 @@
     font-weight: 500;
 }
 
-.widthInfo {
-    width: 66%;
-}
 
 .textStyle {
     color: #ffffff;
     font-size: 16px;
     font-weight: 600;
+
 }
 
 .logoLove {
     height: 110px;
+    padding-left: 150px;
 }
 
 .pLove {
@@ -34,6 +41,11 @@
     width: 50px;
     left: 40px;
     bottom: 72px;
+}
+
+.openService{
+    width: 500px;
+    padding-left: 150px;
 }
 
 
