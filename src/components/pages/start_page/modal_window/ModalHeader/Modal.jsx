@@ -5,7 +5,7 @@ import logo from '../../../../../assets/svg/logo.svg';
 import facebook from '../../../../../assets/png/facebook.png';
 import ModalMain from "../ModalMain/ModalMain";
 
-const Modal = ({active, setActive}) => {
+const Modal = ({active, setActive,setPage}) => {
 
     return (
         <div className={active ? `${style.modal} ${style.modalActive}` : `${style.modal}`}>
@@ -24,7 +24,7 @@ const Modal = ({active, setActive}) => {
                         </button>
                     </div>
                 </div>
-                <ModalMain/>
+                <ModalMain setActive={setActive} setPage={setPage}/>
             </div>
         </div>
     );
