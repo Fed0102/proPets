@@ -61,14 +61,6 @@ const StartOne = ({setPage}) => {
                 <div className={style.imgDiv}>
                     <img src={dog} alt="dog"/>
                 </div>
-                <div className={'col-10'}>
-                    <h4 className={`${style.textJoin} m-0 px-5`}>
-                        Im okay,just want to
-                        <span className={style.join} onClick={() => setModalActive(true)}>join</span>
-                        the pawsome community!'
-                    </h4>
-
-                </div>
             </div>
             <Modal active={modalActive} setActive={setModalActive} setPage={setPage}/>
         </section>

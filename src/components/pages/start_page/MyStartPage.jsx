@@ -10,9 +10,8 @@ const StartPage = ({setPage}) => {
     return (
 
         <div>
-            <Start_one setPage={setPage}/>
             <div style={{width: "100%"}}>
-                <Start_one/>
+                <Start_one setPage={setPage}/>
                 <Start_two/>
                 <Start_three/>
                 <Start_four/>
