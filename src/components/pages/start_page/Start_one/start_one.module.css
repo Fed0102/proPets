@@ -1,9 +1,15 @@
-.section{
-    width: 100%;
-}
+/*.section{*/
+/*    width: 100%;*/
+/*}*/
 
 .mainDiv{
-    height: 540px;
+    width: 1400px;
+    margin: auto;
+    /*height: 540px;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
 }
 
 .colorSpanText {
@@ -12,14 +18,21 @@
 }
 
 .justifyContent {
+    width: 100%;
+    max-width: 100%;
     height: 450px;
-    justify-content: space-between;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .welcomeTextSize {
+    margin-left: 100px;
+    margin-top: 50px;
     width: 400px;
-    padding-top: 60px;
-    height: 400px;
+    /*padding-top: 60px;*/
+    /*height: 400px;*/
+    /*font-size: 24px;*/
 }
 
 .pText {
@@ -31,44 +44,44 @@
     border-radius: 0 50px 50px 0;
     position: absolute;
     border: transparent;
-    left: 0;
+    /*left: 0;*/
     opacity: 1;
 }
 
 .btnLostPet {
     background-color: #FFE18B;
     top: 350px;
-    width: 38%;
+    width: 400px;
 }
 
 .btnFoundPet {
     background-color: #84B6A3;
     top: 433px;
-    width: 30%;
+    width: 350px;
 }
 
 .search {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 72%;
+    width: 90%;
     margin-left: auto;
 }
 
 .btnSpan {
     color: #393939;
     font-size: 32px;
-    padding-left: 27px;
+    padding-left: 55px;
 }
 
 .btnFoundPet span {
-    margin-left: 20%;
+    /*margin-left: 20%;*/
 }
 
 .btnSpanWhite {
     color: #ffffff;
     font-size: 32px;
-    padding-left: 50px;
+    padding-left: 41px;
 }
 
 .textJoin {
@@ -76,17 +89,25 @@
 }
 
 .join {
-    text-transform: uppercase;
     text-decoration: underline;
     color: #669885;
     font-weight: 700;
     cursor: pointer;
 }
 
+.divJoin{
+    margin-top: 250px;
+    margin-left: 100px;
+}
+
 .search img {
     position: relative;
     top: 8px;
     right: -7px;
+}
+
+.imgDiv{
+    margin-right: 100px;
 }
 
 

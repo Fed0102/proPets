@@ -1,10 +1,19 @@
-.tagline {
+.start_two {
     height: 260px;
     background-color: #669885;
+
 }
 
-.tagline p {
-    font-size: 32px;
-    width: 55%;
+.start_two p {
+    padding-top: 75px;
+    font-size: 36px;
+    /*width: 55%;*/
     color: #ffffff;
+
+}
+
+.pDiv{
+    margin: auto;
+    width: 800px;
+
 }

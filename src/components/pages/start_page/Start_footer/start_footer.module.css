@@ -12,6 +12,9 @@ footer {
 
 .justifyContent {
     justify-content: space-between;
+    margin: auto;
+    width: 1200px;
+    padding-top: 50px;
 }
 
 .footerLogo {

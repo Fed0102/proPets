@@ -2,7 +2,7 @@ import React from 'react';
 import style from './modal_main.module.css';
 import ModalFooter from "../ModalFooter/ModalFooter";
 
-const SignUpForm = () => {
+const SignUpForm = ({setActive, setPage}) => {
     return (
         <div>
             <div className={`${style.heightFormRegister} ${style.marginUpForm} row align-items-center`}>
@@ -33,7 +33,7 @@ const SignUpForm = () => {
             </div>
             <hr className={`m-0`}/>
             <div className={`${style.heightFooter} row align-items-center`}>
-                <ModalFooter/>
+                <ModalFooter setActive={setActive} setPage={setPage}/>
             </div>
         </div>
     );

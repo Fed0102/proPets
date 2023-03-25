@@ -12,9 +12,9 @@ import style from './start_footer.module.css';
 
 const StartFooter = () => {
     return (
-        <footer className={`container-fluid`}>
-            <div className={`${style.heightFooter} row justify-content-center align-items-center`}>
-                <div className={`${style.justifyContent} col-9 d-flex align-items-center flex-wrap`}>
+        <footer>
+            <div className={`${style.heightFooter}`}>
+                <div className={`${style.justifyContent} d-flex align-items-center flex-wrap`}>
                     <div>
                         <img className={`${style.footerLogo}`} src={logo} alt="logo"/>
                     </div>

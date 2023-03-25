@@ -1,27 +1,11 @@
-.mainGreenBack {
-    background-color: #669885;
-    box-shadow: 0 5px 5px dimgrey inset;
-    width: 325px;
-    height: 547px;
-}
-
-.nothing{
-    background-color: #669885;
-    box-shadow: 0 5px 5px dimgrey inset;
-    height: 617px;
-    width: 325px;
-}
-
 .parDiv{
     background: white;
+<<<<<<< HEAD
+    width: 325px;
+=======
     height: 600px;
     width: 100%;
-}
-
-.blockMap {
-    background-color: #669885;
-    border-radius: 15px 0 0 0;
-    height: 93%;
+>>>>>>> main
 }
 
 .searchInput {
@@ -32,15 +16,8 @@
     width: 200px;
 }
 
-.dental_care{
-    width: 160px;
+.blockMap {
+    background-color: #669885;
+    border-radius: 15px 0 0 0;
+    height: 93%;
 }
-
-.pet_hotel{
-    width: 160px;
-}
-
-.pet_hotel_2{
-    width: 160px;
-}
-
