@@ -1,11 +1,14 @@
 import React from 'react';
 import st from "./btn_sub_nav.module.css";
+import {Link} from "react-router-dom";
 
-const BtnSubNavPg = ({children}) => {
+const BtnSubNavPg = ({children, btnPath}) => {
     return (
-        <button className={st.normal}>
-            {children}
-        </button>
+        <Link to={btnPath} className={st.link}>
+            <div className={st.normal}>
+                {children}
+            </div>
+        </Link>
     );
 };
 
