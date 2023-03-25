@@ -5,9 +5,10 @@ import st from "./posts_page.module.css"
 const MyPostsPage = ({title, posts}) => {
     return (
         <>
-            <div className={st.title}>
+            {title &&
+                <div className={st.title}>
                 {title}
-            </div>
+            </div>}
             {posts.map(post =>
                 <Post key={post.id} post={post}/>
             )}
