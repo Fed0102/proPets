@@ -1,6 +1,7 @@
 import "./App.css";
 import MyHeader from "./components/header/head_body/MyHeader";
 import MyBody from "./components/main_body/MyBody";
+<<<<<<< HEAD
 import {useState} from "react";
 import MyStartPage from "./components/pages/start_page/MyStartPage";
 
@@ -32,6 +33,19 @@ function App() {
         </div>
     )
     ;
+=======
+import React from "react";
+// import MyStartPage from "./components/pages/start_page/MyStartPage";
+
+function App() {
+    return (
+        <div className={"App"}>
+            <MyHeader/>
+            {/*<MyStartPage/>*/}
+            <MyBody/>
+        </div>
+    );
+>>>>>>> main
 }
 
 export default App;

@@ -1,6 +1,11 @@
 .parDiv{
     background: white;
+<<<<<<< HEAD
     width: 325px;
+=======
+    height: 600px;
+    width: 100%;
+>>>>>>> main
 }
 
 .searchInput {
