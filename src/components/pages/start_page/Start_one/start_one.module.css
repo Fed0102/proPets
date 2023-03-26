@@ -3,13 +3,14 @@
 /*}*/
 
 .mainDiv{
-    width: 1400px;
+    width: 100%;
+    /*max-width: 1400px;*/
     margin: auto;
     /*height: 540px;*/
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 100%;
+    /*max-width: 100%;*/
 }
 
 .colorSpanText {

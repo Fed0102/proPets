@@ -1,31 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import search from '../../../../assets/png/search.png';
 import dog from '../../../../assets/png/dog.png';
 import style from './start_one.module.css';
-import Modal from "../modal_window/ModalHeader/Modal";
+import {useDispatch, useSelector} from "react-redux";
+import {SET_CHANGE_FOUND_BTN, SET_CHANGE_LOST_BTN, SET_VISIBLE_MODAL} from "../../../../store/modalReducer";
 
-const StartOne = ({setPage}) => {
+const StartOne = () => {
 
-    const [lostBtn, setLostBtn] = useState('I lost my pet!');
-    const [foundBtn, setFoundBtn] = useState('I found a pet!');
-    const [modalActive, setModalActive] = useState(false);
+    // const [modalActive, setModalActive] = useState(true);
 
-    const changeLostButton = () => {
-        setLostBtn('Click to find!');
-    }
-
-    const initialLostButton = () => {
-        setLostBtn('I lost my pet!');
-    }
-
-    const changeFoundButton = () => {
-        setFoundBtn('What to do?');
-    }
-
-    const initialFoundButton = () => {
-        setFoundBtn('I found a pet!');
-    }
-
+    // const modal = useSelector(state => state.modal)
+    const lostBtn = useSelector(state => state.lostBtn);
+    const foundBtn = useSelector(state=> state.foundBtn);
+    const dispatch = useDispatch();
 
     return (
         <section>
@@ -35,16 +22,17 @@ const StartOne = ({setPage}) => {
                         <h1 className={style.pText}>Welcome to your <span
                             className={style.colorSpanText}>pawfessional</span> community</h1>
                     </div>
-                    <div onClick={() => setModalActive(true)}>
-                        <button className={style.btnLostPet} onMouseOver={changeLostButton}
-                                onMouseOut={initialLostButton}>
+                    <div onClick={() => dispatch({type: SET_VISIBLE_MODAL, modal: true})}>
+                        <button className={style.btnLostPet} onMouseOver={()=>dispatch({type:SET_CHANGE_LOST_BTN, payload: 'Click to find!'})}
+                                onMouseOut={()=>dispatch({type:SET_CHANGE_LOST_BTN, payload: 'I lost my pet!'})}>
                             <div className={style.search}>
                                 <span className={style.btnSpan}>{lostBtn}</span>
                                 <img src={search} alt="search"/>
                             </div>
                         </button>
-                        <button className={style.btnFoundPet} onMouseOver={changeFoundButton}
-                                onMouseOut={initialFoundButton}>
+                        <button className={style.btnFoundPet} onMouseOver={() => dispatch({type:SET_CHANGE_FOUND_BTN, payload: 'What to do?'})}
+                                onMouseOut={()=>dispatch({type:SET_CHANGE_FOUND_BTN, payload: 'I found a pet!'})}
+                                onClick={() => dispatch({type: SET_VISIBLE_MODAL, modal: true})}>
                             <span className={style.btnSpanWhite}>{foundBtn}</span>
                         </button>
                     </div>
@@ -52,7 +40,8 @@ const StartOne = ({setPage}) => {
                     <div className={style.divJoin}>
                         <h4>
                             I'm okay,just want to
-                            <span className={style.join} onClick={() => setModalActive(true)}> JOIN </span>
+                            <span className={style.join}
+                                  onClick={() => dispatch({type: SET_VISIBLE_MODAL, modal: true})}> JOIN </span>
                             the pawsome community!
                         </h4>
                     </div>
@@ -62,7 +51,6 @@ const StartOne = ({setPage}) => {
                     <img src={dog} alt="dog"/>
                 </div>
             </div>
-            <Modal active={modalActive} setActive={setModalActive} setPage={setPage}/>
         </section>
     );
 };

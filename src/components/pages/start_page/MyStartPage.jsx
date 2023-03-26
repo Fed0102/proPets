@@ -6,12 +6,12 @@ import Start_four from "./Start_four/Start_four";
 import Start_footer from "./Start_footer/Start_footer";
 // import Modal from "./modal_window/ModalHeader/Modal";
 
-const StartPage = ({setPage}) => {
+const StartPage = () => {
     return (
 
         <div>
-            <div style={{width: "100%"}}>
-                <Start_one setPage={setPage}/>
+            <div style={{width: "100vw"}}>
+                <Start_one/>
                 <Start_two/>
                 <Start_three/>
                 <Start_four/>
