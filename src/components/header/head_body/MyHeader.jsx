@@ -8,6 +8,7 @@ import HeadPlus from "../btns/icons/HeadPlus";
 import Lost from "../btns/icons/HeadLost";
 import Found from "../btns/icons/HeadFound";
 import {foundForm, lostForm, newPost} from "../../../constants";
+import {Link} from "react-router-dom";
 
 const MyHeader = () => {
 
@@ -17,7 +18,9 @@ const MyHeader = () => {
     return (
         <div className={stBase.header} id={stId.header}>
             <div className={stBase.body} id={stId.body}>
-                <img src={logo} className={stBase.logo} id={stId.logo}/>
+                <Link to={''}>
+                    <img src={logo} className={stBase.logo} id={stId.logo}/>
+                </Link>
 
                 {mainState === 'posts' &&
                     <Btn_header_main green={true} btnPath={newPost}>
