@@ -3,15 +3,15 @@ import style from './modal_main.module.css';
 import SignUpForm from "./SignUpForm";
 import SignInForm from "./SignInForm";
 
-const ModalMain = ({setActive, setPage}) => {
+const ModalMain = () => {
 
     const [state, setState] = useState(true)
 
     const signInOrUp = (state) => {
         if (state) {
-            return <SignUpForm setActive={setActive} setPage={setPage}/>
+            return <SignUpForm/>
         } else {
-            return <SignInForm setActive={setActive} setPage={setPage}/>
+            return <SignInForm/>
         }
     }
     return (
