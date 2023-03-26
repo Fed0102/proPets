@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Routes} from "react-router-dom";
-import {privateRoutes} from "../system/routes";
-import MyError from "./pages/MyError";
+import {privateRoutes} from "./routes";
+import MyError from "../../components/pages/MyError";
 
 const MyRouter = () => {
     return (
