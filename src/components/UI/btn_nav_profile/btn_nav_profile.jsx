@@ -4,9 +4,9 @@ import st from './btn_nav_profile.module.css'
 const BtnNavPrfl = ({children}) => {
     return (
         <div className={st.base}>
-            <button className={st.normal}>
+            <div className={st.normal}>
                 {children}
-            </button>
+            </div>
         </div>
     );
 };

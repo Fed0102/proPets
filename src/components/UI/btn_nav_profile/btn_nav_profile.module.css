@@ -10,10 +10,8 @@
     height: 80%;
     width: 165px;
     margin-right: 15px;
-    font-size: 15px;
+    font-size: 17px;
     display: flex;
     align-items: center;
-    border: none;
-    background-color: unset;
     color: white;
 }
