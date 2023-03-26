@@ -1,22 +1,14 @@
 import React from "react";
 import st from "./btn_header_main.module.css";
-import {useDispatch} from "react-redux";
-import {SET_CHANGE_MAIN_BODY} from "../../../store/modalReducer";
+import {Link} from "react-router-dom";
 
-const Btn_header_main = ({children, green}) => {
-
-    const dispatch = useDispatch();
-
+const Btn_header_main = ({children, green, btnPath}) => {
     return (
-        green
-            ?
-            <button className={st.base}>
+        <Link to={btnPath} className={st.link}>
+            <div className={green ? st.base : `${st.base} ${st.yellow}`}>
                 {children}
-            </button>
-            :
-            <button className={st.yellow + ' ' + st.base}>
-                {children}
-            </button>
+            </div>
+        </Link>
     );
 };
 

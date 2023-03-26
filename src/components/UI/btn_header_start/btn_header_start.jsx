@@ -8,9 +8,9 @@ const Btn_header_start = ({children}) => {
     const dispatch = useDispatch();
 
     return (
-        <button className={st.base} onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: true})}>
-            {children}
-        </button>
+            <div className={st.base} onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: true})}>
+                {children}
+            </div>
     );
 };
 

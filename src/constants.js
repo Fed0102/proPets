@@ -1,7 +1,7 @@
 export const homePage = 'home';
-export const newPost = 'new_post';
+export const newPost = 'post_form';
 export const lost = 'lost';
-export const lostForm = 'lostForm';
+export const lostForm = 'lost_form';
 export const found = 'found';
 export const foundForm = 'found_form';
 export const services = 'hotels';

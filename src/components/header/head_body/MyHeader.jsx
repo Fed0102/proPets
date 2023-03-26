@@ -7,15 +7,12 @@ import Btn_header_start from "../../UI/btn_header_start/btn_header_start";
 import HeadPlus from "../btns/icons/HeadPlus";
 import Lost from "../btns/icons/HeadLost";
 import Found from "../btns/icons/HeadFound";
-import {useSelector} from "react-redux";
+import {foundForm, lostForm, newPost} from "../../../constants";
 
 const MyHeader = () => {
 
-    // const mainState = 'posts';
-    const mainState = useSelector(state => state.headerState);
+    const mainState = 'lostFound';
     const stId = mainState ? stMain : '';
-
-
 
     return (
         <div className={stBase.header} id={stId.header}>
@@ -23,18 +20,18 @@ const MyHeader = () => {
                 <img src={logo} className={stBase.logo} id={stId.logo}/>
 
                 {mainState === 'posts' &&
-                    <Btn_header_main green={true}>
+                    <Btn_header_main green={true} btnPath={newPost}>
                         <HeadPlus/>
                         Add new
                     </Btn_header_main>
                 }
                 {mainState === 'lostFound' &&
                     <div className={stBase.btns}>
-                        <Btn_header_main green={false}>
+                        <Btn_header_main green={false} btnPath={lostForm}>
                             <Lost/>
                             I lost my pet
                         </Btn_header_main>
-                        <Btn_header_main green={true}>
+                        <Btn_header_main green={true} btnPath={foundForm}>
                             <Found/>
                             I found a pet
                         </Btn_header_main>

@@ -7,6 +7,7 @@ import MyHotels from "../../components/pages/services/MyHotels";
 import MyWalking from "../../components/pages/services/MyWalking";
 import MyFostering from "../../components/pages/services/MyFostering";
 import MyVethelp from "../../components/pages/services/MyVethelp";
+import MyPostForm from "../../components/pages/post_form/MyPostForm";
 import {
     favorites,
     fostering,
@@ -24,7 +25,7 @@ import {
 
 export const privateRoutes = [
     {id: 0, paths: ['', '/', homePage], element: <MyHome/>},
-    // {id: 1, paths: [newPost], element: <MyPostForm/>},
+    {id: 1, paths: [newPost], element: <MyPostForm/>},
     {id: 2, paths: [lost, found], element: <MyLostFoundPosts/>},
     {id: 3, paths: [lostForm, foundForm], element: <MyLostFoundForm/>},
     {id: 4, paths: [hotels], element: <MyHotels/>},

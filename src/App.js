@@ -9,7 +9,6 @@ function App() {
 
     const auth = useSelector(state => state.auth)
 
-
     if (auth) {
         return (
             <BrowserRouter>
