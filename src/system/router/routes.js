@@ -18,7 +18,7 @@ import {
     lost,
     lostForm,
     newPost,
-    profile,
+    profile, start,
     vetHelp,
     walking
 } from "../../constants";
@@ -37,5 +37,5 @@ export const privateRoutes = [
 ];
 
 export const publicRoutes = [
-    {id: 0, paths: ['start'], element: <MyStartPage/>}
+    {id: 0, paths: [start], element: <MyStartPage/>}
 ]

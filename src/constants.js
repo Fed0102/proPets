@@ -10,4 +10,5 @@ export const walking = 'walking';
 export const fostering = 'fostering';
 export const vetHelp = 'vethelp';
 export const favorites = 'favorites';
-export const profile = 'profile'
+export const profile = 'profile';
+export const start = ''
