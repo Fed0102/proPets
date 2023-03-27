@@ -7,7 +7,7 @@ import Btn_header_start from "../../UI/btn_header_start/btn_header_start";
 import HeadPlus from "../btns/icons/HeadPlus";
 import Lost from "../btns/icons/HeadLost";
 import Found from "../btns/icons/HeadFound";
-import {foundForm, lostForm, newPost} from "../../../constants";
+import {foundForm, lostForm, newPost} from "../../../constants/paths";
 
 const MyHeader = () => {
 

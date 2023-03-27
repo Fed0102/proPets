@@ -21,7 +21,7 @@ import {
     profile, start,
     vetHelp,
     walking
-} from "../../constants";
+} from "../../constants/paths";
 
 export const privateRoutes = [
     {id: 0, paths: ['', '/', homePage], element: <MyHome/>},
