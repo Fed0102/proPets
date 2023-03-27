@@ -14,7 +14,7 @@ const StartPage = () => {
     return (
 
         <div>
-            <div style={{width: "100vw"}}>
+            <div style={{width: "100%"}}>
                 <Start_one/>
                 <Start_two/>
                 <Start_three/>
