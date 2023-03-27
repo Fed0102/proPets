@@ -1,7 +1,8 @@
 import React from 'react';
-import st from './block.module.css'
+import st from './block.module.css';
 // import MyMap from "./map/MyMap";
 import MyAdvertising from "./advertising/MyAdvertising";
+
 
 const MyBlock = () => {
     return (

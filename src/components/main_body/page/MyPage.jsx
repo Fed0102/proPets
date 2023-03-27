@@ -1,5 +1,7 @@
 import React from 'react';
 import st from './page.module.css'
+// import {useSelector} from "react-redux";
+// import MyLostFoundForm from "../../pages/lost_found_form/MyLostFoundForm";
 
 const MyPage = ({children}) => {
     return (
@@ -10,3 +12,24 @@ const MyPage = ({children}) => {
 };
 
 export default MyPage;
+
+
+
+
+
+// const mainBody = useSelector(state => state.mainBody)
+//
+// switch (mainBody) {
+//     case 'LostFoundForm':
+//         return (
+//             <div>
+//                 <MyLostFoundForm/>
+//             </div>
+//         )
+//     default:
+//         return (
+//             <div>
+//                 {children}
+//             </div>
+//         )
+// }

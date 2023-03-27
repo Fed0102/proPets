@@ -2,7 +2,7 @@ import React from 'react';
 import style from "./modal_footer.module.css";
 import paw from "../../../../../assets/png/paw.png";
 import {useDispatch} from "react-redux";
-import {SET_CHANGE_PAGE, SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
+import {SET_CHANGE_AUTH, SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
 // import {setVisibleModalAction} from "../../../../../store/actions";
 
 const ModalFooterUp = () => {
@@ -19,7 +19,7 @@ const ModalFooterUp = () => {
                 <button onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: false})} className={style.btnCancel}>
                     Cancel
                 </button>
-                <button className={style.btnSubmit} onClick={() => dispatch({type:SET_CHANGE_PAGE, payload: true})}>
+                <button className={style.btnSubmit} onClick={() => dispatch({type:SET_CHANGE_AUTH, payload: true})}>
                     <img className={style.paw} src={paw} alt={paw}/>
                     <span className='m-auto'>Submit</span>
                 </button>
