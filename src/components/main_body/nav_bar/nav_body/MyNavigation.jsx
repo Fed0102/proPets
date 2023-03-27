@@ -19,8 +19,6 @@ import {favorites, fostering, found, homePage, hotels, lost, services, vetHelp, 
 import {useLocation} from "react-router-dom";
 
 const MyNavigation = () => {
-
-
     const location = useLocation().pathname.substring(1);
     const showServ = [hotels, walking, fostering, vetHelp].some((path) => path === location);
 
