@@ -40,7 +40,7 @@ const StartOne = () => {
 
                     <div className={style.divJoin}>
                         <h4>
-                            I'm okay,just want to
+                            I'm okay, just want to
                             <span className={style.join}
                                   onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: true})}> JOIN </span>
                             the pawsome community!
