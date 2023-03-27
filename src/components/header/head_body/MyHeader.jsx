@@ -7,10 +7,15 @@ import Btn_header_start from "../../UI/btn_header_start/btn_header_start";
 import HeadPlus from "../btns/icons/HeadPlus";
 import Lost from "../btns/icons/HeadLost";
 import Found from "../btns/icons/HeadFound";
+import {useSelector} from "react-redux";
 
 const MyHeader = () => {
-    const mainState = '';
+
+    // const mainState = 'posts';
+    const mainState = useSelector(state => state.headerState);
     const stId = mainState ? stMain : '';
+
+
 
     return (
         <div className={stBase.header} id={stId.header}>

@@ -3,7 +3,7 @@ import style from "./lost_found_inputs.module.css";
 
 const LostInputs = () => {
     return (
-        <div className={`d-flex`}>
+        <div className={`d-flex justify-content-center`}>
             <input type="text" placeholder={' Type'} className={`${style.searchInput} ${style.smallInput}`}/>
             <input type="text" placeholder={' Breed'} className={`${style.searchInput} ${style.smallInput}`}/>
             <input type="text" placeholder={' Features'} className={`${style.searchInput} ${style.bigInput}`}/>

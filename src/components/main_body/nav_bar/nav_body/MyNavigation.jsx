@@ -17,8 +17,12 @@ import SubNavVetHelp from "../btns/icons/SubNavVetHelp";
 import SubNavFostering from "../btns/icons/SubNavFostering";
 import {favorites, fostering, found, homePage, hotels, lost, services, vetHelp, walking} from "../../../../constants";
 import {useLocation} from "react-router-dom";
+// import {useDispatch} from "react-redux";
+// import {SET_CHANGE_MAIN_BODY} from "../../../../store/modalReducer";
 
 const MyNavigation = () => {
+
+    // const dispatch = useDispatch();
 
     const location = useLocation().pathname.substring(1);
     const showServ = [hotels, walking, fostering, vetHelp].some((path) => path === location);

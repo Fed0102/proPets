@@ -22,9 +22,10 @@ const StartOne = () => {
                         <h1 className={style.pText}>Welcome to your <span
                             className={style.colorSpanText}>pawfessional</span> community</h1>
                     </div>
-                    <div onClick={() => dispatch({type: SET_VISIBLE_MODAL, modal: true})}>
+                    <div>
                         <button className={style.btnLostPet} onMouseOver={()=>dispatch({type:SET_CHANGE_LOST_BTN, payload: 'Click to find!'})}
-                                onMouseOut={()=>dispatch({type:SET_CHANGE_LOST_BTN, payload: 'I lost my pet!'})}>
+                                onMouseOut={()=>dispatch({type:SET_CHANGE_LOST_BTN, payload: 'I lost my pet!'})}
+                                onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: true})}>
                             <div className={style.search}>
                                 <span className={style.btnSpan}>{lostBtn}</span>
                                 <img src={search} alt="search"/>
@@ -32,7 +33,7 @@ const StartOne = () => {
                         </button>
                         <button className={style.btnFoundPet} onMouseOver={() => dispatch({type:SET_CHANGE_FOUND_BTN, payload: 'What to do?'})}
                                 onMouseOut={()=>dispatch({type:SET_CHANGE_FOUND_BTN, payload: 'I found a pet!'})}
-                                onClick={() => dispatch({type: SET_VISIBLE_MODAL, modal: true})}>
+                                onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: true})}>
                             <span className={style.btnSpanWhite}>{foundBtn}</span>
                         </button>
                     </div>
@@ -41,7 +42,7 @@ const StartOne = () => {
                         <h4>
                             I'm okay,just want to
                             <span className={style.join}
-                                  onClick={() => dispatch({type: SET_VISIBLE_MODAL, modal: true})}> JOIN </span>
+                                  onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: true})}> JOIN </span>
                             the pawsome community!
                         </h4>
                     </div>

@@ -2,6 +2,7 @@
     background: white;
     height: 600px;
     width: 100%;
+    padding-top: 20px;
 }
 
 .searchInput {
@@ -9,7 +10,7 @@
     border-radius: 15px;
     height: 30px;
     font-size: 12px;
-    width: 200px;
+    width: 250px;
 }
 
 .blockMap {

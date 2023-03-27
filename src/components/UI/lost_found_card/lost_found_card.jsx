@@ -7,7 +7,7 @@ import email from "../../../assets/png/email.png";
 
 const LostCard = () => {
     return (
-        <div>
+        <div className={style.mainDiv}>
             <div className={`${style.postCard} d-flex`}>
                 <div className={`col-5`}>
                     <img src={'user'} alt={'user'}/>
