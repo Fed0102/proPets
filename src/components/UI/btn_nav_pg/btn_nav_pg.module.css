@@ -6,6 +6,11 @@
     justify-content: right;
     border-radius: 0 25px 25px 0;
 }
+
+.base_act {
+    background-color: white;
+}
+
 .normal {
     height: 30px;
     width: 150px;
@@ -14,6 +19,10 @@
     display: flex;
     align-items: center;
     color: white;
+}
+
+.normal_act {
+    color: unset;
 }
 
 .link {
