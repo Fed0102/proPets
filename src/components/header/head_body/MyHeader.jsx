@@ -6,27 +6,40 @@ import Btn_header_start from "../../UI/btn_header_start/btn_header_start";
 import HeadPlus from "../btns/icons/HeadPlus";
 import Lost from "../btns/icons/HeadLost";
 import Found from "../btns/icons/HeadFound";
-import {found, foundForm, lost, lostForm, newPost, start} from "../../../constants/paths";
+import {
+    favorites,
+    fostering,
+    found,
+    foundForm,
+    homePage,
+    hotels,
+    lost,
+    lostForm,
+    newPost,
+    start, vetHelp,
+    walking
+} from "../../../constants/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
+import {auth2} from "../../../firebase/firebase-config";
 
 const MyHeader = () => {
     const location = useWindowPath();
     const isStart = [start, '', '/'].some(path => path === location);
     const isLostFound = [lost, found].some(path => path === location);
-    const isPosts = [lost, found, '', '/'].some(path => path === location);
+    const isPosts = [homePage, hotels, walking, fostering, vetHelp, '', '/'].some(path => path === location);
 
     return (
-        <div className={isStart ? st.header : `${st.header} ${st.header_main}`}>
+        <div className={auth2 ? `${st.header} ${st.header_main}` : st.header}>
             <div className={st.body}>
-                <img src={logo} className={isStart ? st.logo : `${st.logo} ${st.logo_main}`}/>
+                <img src={logo} className={auth2 ? `${st.logo} ${st.logo_main}` : st.logo}/>
 
-                {isPosts &&
+                {isPosts && auth2 &&
                     <Btn_header_main green={true} btnPath={newPost}>
                         <HeadPlus/>
                         Add new
                     </Btn_header_main>
                 }
-                {isLostFound &&
+                {isLostFound && auth2 &&
                     <div className={st.btns}>
                         <Btn_header_main green={false} btnPath={lostForm}>
                             <Lost/>
@@ -38,7 +51,7 @@ const MyHeader = () => {
                         </Btn_header_main>
                     </div>
                 }
-                {isStart &&
+                {!auth2 &&
                     <Btn_header_start>
                         Sign in
                     </Btn_header_start>
