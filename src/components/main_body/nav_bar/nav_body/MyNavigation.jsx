@@ -16,7 +16,10 @@ import subIconWalking from "../../../../assets/png/walking.png";
 import subIconVethelp from "../../../../assets/png/vetHelp.png";
 import subIconFostering from "../../../../assets/png/fostering.png";
 import {favorites, fostering, found, homePage, hotels, lost, services, vetHelp, walking} from "../../../../constants/paths";
+import {useLocation} from "react-router-dom";
+import {logout} from "../../../../firebase/auth-service";
 import {useWindowPath} from "../../../../hooks/useWindowPath";
+
 
 const MyNavigation = () => {
     const location = useWindowPath();
@@ -59,7 +62,9 @@ const MyNavigation = () => {
                     <Avatar/>
                     Elly
                 </BtnNavPrfl>
-                <BtnNavPg icon={iconLogout} title={'Logout'} btnPath={[]}/>
+
+                <BtnNavPg icon={iconLogout} title={'Logout'} btnPath={[]} onClick={()=>logout()}/>
+
             </div>
         </div>
     );
