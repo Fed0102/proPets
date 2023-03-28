@@ -15,7 +15,18 @@ import subIconHotels from "../../../../assets/png/hotels.png";
 import subIconWalking from "../../../../assets/png/walking.png";
 import subIconVethelp from "../../../../assets/png/vetHelp.png";
 import subIconFostering from "../../../../assets/png/fostering.png";
-import {favorites, fostering, found, homePage, hotels, lost, services, vetHelp, walking} from "../../../../constants/paths";
+import {
+    favorites,
+    fostering,
+    found,
+    homePage,
+    hotels,
+    lost,
+    profile,
+    services,
+    vetHelp,
+    walking
+} from "../../../../constants/paths";
 import {useLocation} from "react-router-dom";
 import {logout} from "../../../../firebase/auth-service";
 import {useWindowPath} from "../../../../hooks/useWindowPath";
@@ -29,7 +40,7 @@ const MyNavigation = () => {
         {id: 0, name: 'Home', paths: [homePage, '/', ''], icon: iconHome, sub_points: null},
         {id: 1, name: 'Lost', paths: [lost], icon: iconLost, sub_points: null},
         {id: 2, name: 'Found', paths: [found], icon: iconFound, sub_points: null},
-        {id: 3, name: 'Services', paths: [services, hotels, walking, fostering, vetHelp], icon: iconServices, sub_points:
+        {id: 3, name: 'Services', paths: [hotels, walking, fostering, vetHelp], icon: iconServices, sub_points:
                 [
                     {sub_id: 0, sub_name: 'Hotels', sub_paths: hotels, sub_icon: subIconHotels},
                     {sub_id: 1, sub_name: 'Walking', sub_paths: walking, sub_icon: subIconWalking},
@@ -58,13 +69,11 @@ const MyNavigation = () => {
                 )}
             </div>
             <div className={st.log_btns}>
-                <BtnNavPrfl>
+                <BtnNavPrfl btnPath={profile}>
                     <Avatar/>
                     Elly
                 </BtnNavPrfl>
-
                 <BtnNavPg icon={iconLogout} title={'Logout'} btnPath={[]} onClick={()=>logout()}/>
-
             </div>
         </div>
     );

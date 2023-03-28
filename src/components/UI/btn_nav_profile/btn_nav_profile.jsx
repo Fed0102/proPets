@@ -1,12 +1,15 @@
 import React from 'react';
 import st from './btn_nav_profile.module.css'
+import {Link} from "react-router-dom";
 
-const BtnNavPrfl = ({children}) => {
+const BtnNavPrfl = ({children, btnPath}) => {
     return (
         <div className={st.base}>
-            <div className={st.normal}>
-                {children}
-            </div>
+            <Link to={btnPath} className={st.link}>
+                <div className={st.normal}>
+                    {children}
+                </div>
+            </Link>
         </div>
     );
 };

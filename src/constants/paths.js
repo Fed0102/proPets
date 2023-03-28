@@ -4,7 +4,6 @@ export const lost = 'lost';
 export const lostForm = 'lost_form';
 export const found = 'found';
 export const foundForm = 'found_form';
-export const services = 'hotels';
 export const hotels = 'hotels';
 export const walking = 'walking';
 export const fostering = 'fostering';
