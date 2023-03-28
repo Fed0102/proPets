@@ -1,12 +1,14 @@
 import React from 'react';
+import {useDispatch, useSelector} from "react-redux";
 import style from "./modal_footer.module.css";
-import paw from "../../../../../assets/png/paw.png";
-import {useDispatch} from "react-redux";
 import {SET_CHANGE_AUTH, SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
-// import {setVisibleModalAction} from "../../../../../store/actions";
+import paw from "../../../../../assets/png/paw.png";
+import {registration} from "../../../../../firebase/auth-service";
 
 const ModalFooterUp = () => {
 
+    const email = useSelector(state => state.email)
+    const password = useSelector(state => state.password)
     const dispatch = useDispatch();
 
     return (
@@ -19,7 +21,12 @@ const ModalFooterUp = () => {
                 <button onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: false})} className={style.btnCancel}>
                     Cancel
                 </button>
-                <button className={style.btnSubmit} onClick={() => dispatch({type:SET_CHANGE_AUTH, payload: true})}>
+                <button className={style.btnSubmit}
+                        onClick={() => {
+                            dispatch({type: SET_CHANGE_AUTH, payload: true});
+                            registration(email, password)
+                        }
+                        }>
                     <img className={style.paw} src={paw} alt={paw}/>
                     <span className='m-auto'>Submit</span>
                 </button>

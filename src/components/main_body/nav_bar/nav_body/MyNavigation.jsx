@@ -17,6 +17,7 @@ import subIconVethelp from "../../../../assets/png/vetHelp.png";
 import subIconFostering from "../../../../assets/png/fostering.png";
 import {favorites, fostering, found, homePage, hotels, lost, services, vetHelp, walking} from "../../../../constants/paths";
 import {useLocation} from "react-router-dom";
+import {logout} from "../../../../firebase/auth-service";
 
 const MyNavigation = () => {
     const location = useLocation().pathname.substring(1);
@@ -59,7 +60,7 @@ const MyNavigation = () => {
                     <Avatar/>
                     Elly
                 </BtnNavPrfl>
-                <BtnNavPg icon={iconLogout} title={'Logout'}/>
+                <BtnNavPg icon={iconLogout} title={'Logout'} onClick={()=>logout()}/>
             </div>
         </div>
     );

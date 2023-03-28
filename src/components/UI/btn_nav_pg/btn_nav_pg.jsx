@@ -5,8 +5,6 @@ import {useWindowPath} from "../../../hooks/useWindowPath";
 import NavIcon from "../../main_body/nav_bar/btns/icons/NavIcon";
 
 const BtnNavPg = ({children, btnPath, icon, title}) => {
-    //ewrefwefwrf
-    //pjugivuvh
     const actBtn = useWindowPath() === btnPath;
     return (
         <div className={actBtn ? `${st.base} ${st.base_act}` : st.base}>
