@@ -9,6 +9,10 @@
     box-shadow: 2px 2px 4px gray;
 }
 
+.header_main {
+    background-color: white;
+}
+
 .body {
     width: 1300px;
     max-width: 100%;
@@ -30,4 +34,8 @@
     width: 180px;
     margin-top: 5px;
     margin-right: 7px;
+}
+
+.logo_main {
+    filter: invert(57%) sepia(13%) saturate(795%) hue-rotate(105deg) brightness(95%) contrast(85%);
 }

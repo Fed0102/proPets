@@ -8,6 +8,7 @@ import MyWalking from "../components/pages/services/MyWalking";
 import MyFostering from "../components/pages/services/MyFostering";
 import MyVethelp from "../components/pages/services/MyVethelp";
 import MyPostForm from "../components/pages/post_form/MyPostForm";
+import MyProfile from "../components/pages/profile/MyProfile";
 import {
     favorites,
     fostering,
@@ -33,7 +34,7 @@ export const privateRoutes = [
     {id: 6, paths: [fostering], element: <MyFostering/>},
     {id: 7, paths: [vetHelp], element: <MyVethelp/>},
     {id: 8, paths: [favorites], element: <MyFavorites/>},
-    // {id: 9, paths: [profile], element: <MyProfile/>}
+    {id: 9, paths: [profile], element: <MyProfile/>}
 ];
 
 export const publicRoutes = [
