@@ -4,6 +4,10 @@ export const SET_CHANGE_LOST_BTN = 'SET_CHANGE_LOST_BTN';
 export const SET_CHANGE_FOUND_BTN = 'SET_CHANGE_FOUND_BTN';
 export const SET_CHANGE_MAIN_BODY = 'SET_CHANGE_MAIN_BODY';
 export const CHANGE_HEADER = 'CHANGE_HEADER';
+export const EMAIL = 'EMAIL';
+export const PASSWORD = 'PASSWORD';
+export const USER_NAME = 'USER_NAME';
+
 
 const initialState = {
     auth: false,
@@ -11,7 +15,10 @@ const initialState = {
     lostBtn: 'I lost my pet!',
     foundBtn: 'I found a pet!',
     mainBody: 'LostFoundPosts',
-    headerState: 'posts'
+    headerState: 'posts',
+    email: '',
+    password: '',
+    user_name: ''
 }
 
 export const modalReducer = (state = initialState, {type, payload}) => {
@@ -28,6 +35,12 @@ export const modalReducer = (state = initialState, {type, payload}) => {
             return {...state, mainBody: payload}
         case CHANGE_HEADER:
             return {...state, headerState: payload}
+        case EMAIL:
+            return {...state, email: payload}
+        case PASSWORD:
+            return {...state, password: payload}
+        case USER_NAME:
+            return {...state, user_name: payload}
         default:
             return state
     }
