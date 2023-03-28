@@ -1,9 +1,10 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import style from "./modal_footer.module.css";
-import {SET_CHANGE_AUTH, SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
+import {SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
 import paw from "../../../../../assets/png/paw.png";
 import {registration} from "../../../../../firebase/auth-service";
+// import {auth} from "../../../../../firebase/firebase-config";
 
 const ModalFooterUp = () => {
 
@@ -23,7 +24,7 @@ const ModalFooterUp = () => {
                 </button>
                 <button className={style.btnSubmit}
                         onClick={() => {
-                            dispatch({type: SET_CHANGE_AUTH, payload: true});
+                            // dispatch({type: SET_CHANGE_AUTH, payload: auth});
                             registration(email, password)
                         }
                         }>

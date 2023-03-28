@@ -16,14 +16,19 @@ import subIconWalking from "../../../../assets/png/walking.png";
 import subIconVethelp from "../../../../assets/png/vetHelp.png";
 import subIconFostering from "../../../../assets/png/fostering.png";
 import {favorites, fostering, found, homePage, hotels, lost, services, vetHelp, walking} from "../../../../constants/paths";
-import {useLocation} from "react-router-dom";
+// import {useLocation} from "react-router-dom";
 import {logout} from "../../../../firebase/auth-service";
 import {useWindowPath} from "../../../../hooks/useWindowPath";
+import {useDispatch, useSelector} from "react-redux";
+// import {SET_CHANGE_AUTH} from "../../../../store/modalReducer";
+// import {auth} from "../../../../firebase/firebase-config";
 
 
 const MyNavigation = () => {
     const location = useWindowPath();
     const showServices = [hotels, walking, fostering, vetHelp].some((path) => path === location);
+    const user_name = useSelector(state => state.user_name);
+    const dispatch = useDispatch();
 
     const pgBtnsAr = [
         {id: 0, name: 'Home', paths: [homePage], icon: iconHome, sub_points: null},
@@ -39,6 +44,11 @@ const MyNavigation = () => {
         },
         {id: 4, name: 'Favorites', paths: [favorites], icon: iconFavorites, sub_points: null},
     ];
+
+    // const functionLogOut = () => {
+    //     logout();
+    //     // dispatch({type:SET_CHANGE_AUTH, payload: auth})
+    // }
 
     return (
         <div className={st.base}>
@@ -60,11 +70,11 @@ const MyNavigation = () => {
             <div className={st.log_btns}>
                 <BtnNavPrfl>
                     <Avatar/>
-                    Elly
+                    {user_name}
                 </BtnNavPrfl>
 
-                <BtnNavPg icon={iconLogout} title={'Logout'} btnPath={[]} onClick={()=>logout()}/>
-
+                <BtnNavPg icon={iconLogout} title={'Logout'} btnPath={[]}
+                          onClick={logout}/>
             </div>
         </div>
     );

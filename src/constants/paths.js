@@ -1,3 +1,4 @@
+export const startPage = 'start';
 export const homePage = 'home';
 export const newPost = 'post_form';
 export const lost = 'lost';
@@ -11,4 +12,3 @@ export const fostering = 'fostering';
 export const vetHelp = 'vethelp';
 export const favorites = 'favorites';
 export const profile = 'profile';
-export const start = ''

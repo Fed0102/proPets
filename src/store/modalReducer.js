@@ -1,4 +1,6 @@
-export const SET_CHANGE_AUTH = 'SET_CHANGE_AUTH';
+// import {auth} from "../firebase/firebase-config";
+//
+// export const SET_CHANGE_AUTH = 'SET_CHANGE_AUTH';
 export const SET_VISIBLE_MODAL = 'SET_VISIBLE_MODAL';
 export const SET_CHANGE_LOST_BTN = 'SET_CHANGE_LOST_BTN';
 export const SET_CHANGE_FOUND_BTN = 'SET_CHANGE_FOUND_BTN';
@@ -10,7 +12,6 @@ export const USER_NAME = 'USER_NAME';
 
 
 const initialState = {
-    auth: false,
     modal: false,
     lostBtn: 'I lost my pet!',
     foundBtn: 'I found a pet!',
@@ -23,8 +24,8 @@ const initialState = {
 
 export const modalReducer = (state = initialState, {type, payload}) => {
     switch (type) {
-        case SET_CHANGE_AUTH:
-            return {...state, auth: payload}
+        // case SET_CHANGE_AUTH:
+        //     return {...state, auth: payload}
         case SET_VISIBLE_MODAL:
             return {...state, modal: payload};
         case SET_CHANGE_LOST_BTN:
