@@ -16,17 +16,17 @@ import subIconWalking from "../../../../assets/png/walking.png";
 import subIconVethelp from "../../../../assets/png/vetHelp.png";
 import subIconFostering from "../../../../assets/png/fostering.png";
 import {favorites, fostering, found, homePage, hotels, lost, services, vetHelp, walking} from "../../../../constants/paths";
-import {useLocation} from "react-router-dom";
+import {useWindowPath} from "../../../../hooks/useWindowPath";
 
 const MyNavigation = () => {
-    const location = useLocation().pathname.substring(1);
+    const location = useWindowPath();
     const showServices = [hotels, walking, fostering, vetHelp].some((path) => path === location);
 
     const pgBtnsAr = [
-        {id: 0, name: 'Home', paths: homePage, icon: iconHome, sub_points: null},
-        {id: 1, name: 'Lost', paths: lost, icon: iconLost, sub_points: null},
-        {id: 2, name: 'Found', paths: found, icon: iconFound, sub_points: null},
-        {id: 3, name: 'Services', paths: hotels, icon: iconServices, sub_points:
+        {id: 0, name: 'Home', paths: [homePage], icon: iconHome, sub_points: null},
+        {id: 1, name: 'Lost', paths: [lost], icon: iconLost, sub_points: null},
+        {id: 2, name: 'Found', paths: [found], icon: iconFound, sub_points: null},
+        {id: 3, name: 'Services', paths: [services, hotels, walking, fostering, vetHelp], icon: iconServices, sub_points:
                 [
                     {sub_id: 0, sub_name: 'Hotels', sub_paths: hotels, sub_icon: subIconHotels},
                     {sub_id: 1, sub_name: 'Walking', sub_paths: walking, sub_icon: subIconWalking},
@@ -34,7 +34,7 @@ const MyNavigation = () => {
                     {sub_id: 3, sub_name: 'VetHelp', sub_paths: vetHelp, sub_icon: subIconVethelp},
                 ]
         },
-        {id: 4, name: 'Favorites', paths: favorites, icon: iconFavorites, sub_points: null},
+        {id: 4, name: 'Favorites', paths: [favorites], icon: iconFavorites, sub_points: null},
     ];
 
     return (
@@ -47,7 +47,7 @@ const MyNavigation = () => {
                             <MySubNav>
                                 {btn.sub_points.map(subBtn =>
                                     <BtnSubNavPg key={subBtn.sub_id} btnPath={subBtn.sub_paths}
-                                                 icon={subBtn.sub_icon} title={subBtn.name}/>
+                                                 icon={subBtn.sub_icon} title={subBtn.sub_name}/>
                                 )}
                             </MySubNav>
                         }
@@ -59,7 +59,7 @@ const MyNavigation = () => {
                     <Avatar/>
                     Elly
                 </BtnNavPrfl>
-                <BtnNavPg icon={iconLogout} title={'Logout'}/>
+                <BtnNavPg icon={iconLogout} title={'Logout'} btnPath={[]}/>
             </div>
         </div>
     );
