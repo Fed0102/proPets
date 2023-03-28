@@ -23,7 +23,7 @@ const MyNavigation = () => {
     const showServices = [hotels, walking, fostering, vetHelp].some((path) => path === location);
 
     const pgBtnsAr = [
-        {id: 0, name: 'Home', paths: [homePage], icon: iconHome, sub_points: null},
+        {id: 0, name: 'Home', paths: [homePage, '/', ''], icon: iconHome, sub_points: null},
         {id: 1, name: 'Lost', paths: [lost], icon: iconLost, sub_points: null},
         {id: 2, name: 'Found', paths: [found], icon: iconFound, sub_points: null},
         {id: 3, name: 'Services', paths: [services, hotels, walking, fostering, vetHelp], icon: iconServices, sub_points:
