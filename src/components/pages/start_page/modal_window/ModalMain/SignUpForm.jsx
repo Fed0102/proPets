@@ -18,22 +18,22 @@ const SignUpForm = () => {
                     <div className='text-center'>
                         <label className={'col-3 text-end'} htmlFor="name">Name:</label>
                         <input className={'col-8'} type="text" placeholder="Helen Johnson" name="name"
-                        value={user_name} onChange={e=>dispatch({type:USER_NAME,payload:e.target.value})}/>
+                               value={user_name} onChange={e => dispatch({type: USER_NAME, payload: e.target.value})}/>
                     </div>
                     <div className='text-center'>
                         <label className={'col-3 text-end'} htmlFor="email">Email:</label>
                         <input className={'col-8'} type="email" placeholder="helenjohnson@gmail.com" name="email"
-                    value={email} onChange={e=>dispatch({type:EMAIL,payload:e.target.value})}/>
+                               value={email} onChange={e => dispatch({type: EMAIL, payload: e.target.value})}/>
                     </div>
                     <div className='text-center'>
                         <label className={'col-3 text-end'} htmlFor="password">Password:</label>
                         <input className={'col-8'} type="password" placeholder="*****************" name="password"
-                        value={password} onChange={e=>dispatch({type:PASSWORD, payload:e.target.value})}/>
+                               value={password} onChange={e => dispatch({type: PASSWORD, payload: e.target.value})}/>
                     </div>
                     <div className='text-center'>
                         <label className={'col-3 text-end'} htmlFor="password">Password:</label>
                         <input className={'col-8'} type="password" placeholder="*****************" name="password"
-                               value={password} onChange={e=>dispatch({type:PASSWORD, payload:e.target.value})}/>
+                               value={password} onChange={e => dispatch({type: PASSWORD, payload: e.target.value})}/>
                     </div>
                 </div>
                 <div className={`${style.textPwd} col-6 row align-items flex-end mb-0`}>
