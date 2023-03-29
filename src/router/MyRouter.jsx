@@ -5,9 +5,9 @@ import MyError from "../components/pages/MyError";
 import {auth} from "../firebase/firebase-config";
 import MyStartPage from "../components/pages/start_page/MyStartPage";
 
-const MyRouter = () => {
+const MyRouter = ({user}) => {
 
-    return auth ?
+    return user ?
         (
             <Routes>
             {privateRoutes.map(route =>
@@ -40,16 +40,3 @@ const MyRouter = () => {
 };
 
 export default MyRouter;
-
-// <Routes>
-//     {privateRoutes.map(route =>
-//         route.paths.map(p =>
-//             <Route
-//                 key={p}
-//                 element={route.element}
-//                 path={p}
-//             />
-//         )
-//     )}
-//     <Route element={<MyError/>} path='*'/>
-// </Routes>

@@ -1,41 +1,39 @@
 import "./App.css";
 import MyHeader from "./components/header/head_body/MyHeader";
 import MyBody from "./components/main_body/MyBody";
-// import MyStartPage from "./components/pages/start_page/MyStartPage";
 import {BrowserRouter} from "react-router-dom";
-// import {auth} from './firebase/firebase-config';
 import MyRouter from "./router/MyRouter";
-// import {useSelector} from "react-redux";
-// import {getAuth} from "firebase/auth";
-import {auth} from "./firebase/firebase-config";
+import {getAuth, onAuthStateChanged} from "firebase/auth";
+import {useEffect, useState} from "react";
 
 function App() {
 
-    if (auth) {
-        return (
-            <BrowserRouter>
-                <MyHeader/>
-                <MyBody/>
-            </BrowserRouter>
-        )
-    } else {
-        return (
-            <BrowserRouter>
-                <MyHeader/>
-                <MyRouter/>
-            </BrowserRouter>
-        )
-    }
+    let [localUser, setLocalUser] = useState(false);
+    let test = false;
+    const auth = getAuth();
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            localStorage.setItem('user', JSON.stringify(user));
+            setLocalUser(true);
+        }
+    })
+
+        if (localUser) {
+            return (
+                <BrowserRouter>
+                    <MyHeader/>
+                    <MyBody/>
+                </BrowserRouter>
+            )
+        } else {
+            return (
+                <BrowserRouter>
+                    <MyHeader/>
+                    <MyRouter user={localUser}/>
+                </BrowserRouter>
+            )
+        }
 }
+
 export default App;
-
-// console.log(auth2);
-
-// return (
-//     <BrowserRouter>
-//         <MyHeader/>
-//         <MyRouter/>
-//     </BrowserRouter>
-// )
-
-// const auth = useSelector(state => state.auth);

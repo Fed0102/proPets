@@ -10,7 +10,7 @@ const MyBody = () => {
         <div className={st.base}>
             <MyNavigation/>
             <MyPage>
-                <MyRouter/>
+                <MyRouter user={true}/>
             </MyPage>
             <MyBlock/>
         </div>
