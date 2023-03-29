@@ -14,7 +14,6 @@ function App() {
     const dispatch = useDispatch();
 
     onAuthStateChanged(auth, (user) => {
-        console.log(user)
         if (user) {
             localStorage.setItem('user', JSON.stringify(user));
             dispatch({type: SET_LOCAL_USER, payload: true})
