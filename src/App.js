@@ -7,12 +7,9 @@ import { onAuthStateChanged} from "firebase/auth";
 import {useDispatch, useSelector} from "react-redux";
 import {SET_LOCAL_USER} from "./store/userRegistrationReducer";
 import {auth} from "./firebase/firebase-config";
-// import {useState} from "react";
 
 function App() {
 
-    // let [localUser, setLocalUser] = useState(false);
-    // const auth = getAuth();
     const localUser = useSelector(state => state.userRegistration.localUser)
     const dispatch = useDispatch();
 
@@ -20,7 +17,6 @@ function App() {
         console.log(user)
         if (user) {
             localStorage.setItem('user', JSON.stringify(user));
-            // setLocalUser(true);
             dispatch({type: SET_LOCAL_USER, payload: true})
         }
     })
@@ -36,7 +32,6 @@ function App() {
             return (
                 <BrowserRouter>
                     <MyHeader/>
-                    {/*<MyRouter user={localUser}/>*/}
                     <MyRouter user={localUser}/>
                 </BrowserRouter>
             )

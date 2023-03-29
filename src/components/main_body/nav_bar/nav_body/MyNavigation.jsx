@@ -27,20 +27,25 @@ import {
     walking
 } from "../../../../constants/paths";
 import {useWindowPath} from "../../../../hooks/useWindowPath";
-import {useSelector} from "react-redux";
-import {logout} from "../../../../firebase/auth-service";
+import {useDispatch, useSelector} from "react-redux";
+import {signOut} from "firebase/auth";
+import {auth} from "../../../../firebase/firebase-config";
+import {SET_LOCAL_USER} from "../../../../store/userRegistrationReducer";
+import BtnNavLogout from "../../../UI/btn_nav_pg/btn_nav_logout";
 
 
 const MyNavigation = () => {
     const location = useWindowPath();
     const showServices = [hotels, walking, fostering, vetHelp].some((path) => path === location);
     const user_name = useSelector(state => state.user_name);
+    const dispatch = useDispatch();
 
     const pgBtnsAr = [
         {id: 0, name: 'Home', paths: [homePage, '/', ''], icon: iconHome, sub_points: null},
         {id: 1, name: 'Lost', paths: [lost], icon: iconLost, sub_points: null},
         {id: 2, name: 'Found', paths: [found], icon: iconFound, sub_points: null},
-        {id: 3, name: 'Services', paths: [hotels, walking, fostering, vetHelp], icon: iconServices, sub_points:
+        {
+            id: 3, name: 'Services', paths: [hotels, walking, fostering, vetHelp], icon: iconServices, sub_points:
                 [
                     {sub_id: 0, sub_name: 'Hotels', sub_paths: hotels, sub_icon: subIconHotels},
                     {sub_id: 1, sub_name: 'Walking', sub_paths: walking, sub_icon: subIconWalking},
@@ -50,6 +55,14 @@ const MyNavigation = () => {
         },
         {id: 4, name: 'Favorites', paths: [favorites], icon: iconFavorites, sub_points: null},
     ];
+
+    const logout = () => {
+        console.log('pzdc');
+        signOut(auth)
+            .then(() => {
+                dispatch({type: SET_LOCAL_USER, payload: false});
+            }).catch(e => console.log(e.message));
+    }
 
     return (
         <div className={st.base}>
@@ -73,7 +86,13 @@ const MyNavigation = () => {
                     <Avatar/>
                     {user_name}
                 </BtnNavPrfl>
-                <BtnNavPg icon={iconLogout} title={'Logout'} btnPath={[]} onClick={()=>logout()}/>
+                {/*<Link to={[]} style={{width: 20, height: 20, backgroundColor: "green"}} onClick={() => logout()}>*/}
+                {/*    <NavIcon iconPath={iconFavorites} act_green={true}/>*/}
+                {/*    Gdhdhdhd*/}
+                {/*</Link>*/}
+                <div onClick={() => logout()}>
+                    <BtnNavLogout icon={iconLogout} title={'Logout'}/>
+                </div>
             </div>
         </div>
     );

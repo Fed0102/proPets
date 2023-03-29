@@ -7,6 +7,13 @@
     border-radius: 0 25px 25px 0;
 }
 
+.base_logout {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
 .base_act {
     background-color: white;
 }
@@ -19,6 +26,10 @@
     display: flex;
     align-items: center;
     color: white;
+}
+
+.normal_logout {
+    cursor: pointer;
 }
 
 .normal_act {

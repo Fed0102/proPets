@@ -26,8 +26,8 @@ const ModalFooterUp = () => {
                 </button>
                 <button className={style.btnSubmit}
                         onClick={() => {
-                            // dispatch({type: SET_CHANGE_AUTH, payload: auth});
-                            // registration(email, password)
+                            //меняется ли состояние модального? при разлогине модальное висит
+                            dispatch({type: SET_VISIBLE_MODAL, payload: false});
                             registration(userRegistration.email, userRegistration.password)
                         }
                         }>
