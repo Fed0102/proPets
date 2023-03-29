@@ -3,19 +3,25 @@ import MyHeader from "./components/header/head_body/MyHeader";
 import MyBody from "./components/main_body/MyBody";
 import {BrowserRouter} from "react-router-dom";
 import MyRouter from "./router/MyRouter";
-import {getAuth, onAuthStateChanged} from "firebase/auth";
-import {useEffect, useState} from "react";
+import { onAuthStateChanged} from "firebase/auth";
+import {useDispatch, useSelector} from "react-redux";
+import {SET_LOCAL_USER} from "./store/userRegistrationReducer";
+import {auth} from "./firebase/firebase-config";
+// import {useState} from "react";
 
 function App() {
 
-    let [localUser, setLocalUser] = useState(false);
-    let test = false;
-    const auth = getAuth();
+    // let [localUser, setLocalUser] = useState(false);
+    // const auth = getAuth();
+    const localUser = useSelector(state => state.userRegistration.localUser)
+    const dispatch = useDispatch();
 
     onAuthStateChanged(auth, (user) => {
+        console.log(user)
         if (user) {
             localStorage.setItem('user', JSON.stringify(user));
-            setLocalUser(true);
+            // setLocalUser(true);
+            dispatch({type: SET_LOCAL_USER, payload: true})
         }
     })
 
@@ -30,6 +36,7 @@ function App() {
             return (
                 <BrowserRouter>
                     <MyHeader/>
+                    {/*<MyRouter user={localUser}/>*/}
                     <MyRouter user={localUser}/>
                 </BrowserRouter>
             )

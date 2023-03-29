@@ -58,3 +58,8 @@ input {
 .textPwd{
     margin-top: 30px;
 }
+
+.errorText {
+    font-size: 12px;
+    color: var(--bs-red);
+}

@@ -42,3 +42,8 @@
     width: 16px;
     height: 16px;
 }
+
+.btnSubmitUnavailable {
+    cursor: not-allowed;
+    opacity: 0.4;
+}

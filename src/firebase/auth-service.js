@@ -5,6 +5,7 @@ export function registration(email, password) {
     createUserWithEmailAndPassword(auth, email, password)
         .then(response => console.log(response))
         .catch(e => console.log(e))
+
 }
 
 export function login(email, password) {
