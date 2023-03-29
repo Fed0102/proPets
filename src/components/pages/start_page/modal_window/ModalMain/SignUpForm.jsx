@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import style from './modal_main.module.css';
 import ModalFooterUp from "../ModalFooter/ModalFooterUp";
-// import {useDispatch} from "react-redux";
-// import {SET_USER_EMAIL, SET_USER_NAME, SET_USER_PASSWORD} from "../../../../../store/userRegistrationReducer";
+import {useDispatch} from "react-redux";
+import {SET_USER_EMAIL, SET_USER_NAME, SET_USER_PASSWORD} from "../../../../../store/userRegistrationReducer";
 
 const SignUpForm = () => {
 
@@ -10,18 +10,18 @@ const SignUpForm = () => {
     // const password = useSelector(state => state.password);
     // const user_name = useSelector(state => state.user_name);
 
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [passwordFirst, setPasswordFirst] = useState()
     const [passwordSecond, setPasswordSecond] = useState()
 
-    // const compare = (passwordFirst, passwordSecond) => {
-    //     if (passwordFirst !== passwordSecond) {
-    //         alert("Passwords doesn't match")
-    //     }
-    //     dispatch({type: SET_USER_PASSWORD, payload: passwordSecond})
-    // }
+    const compare = (passwordFirst, passwordSecond) => {
+        if (passwordFirst !== passwordSecond) {
+            alert("Passwords doesn't match")
+        }
+        dispatch({type: SET_USER_PASSWORD, payload: passwordSecond})
+    }
 
 
     return (
@@ -34,10 +34,10 @@ const SignUpForm = () => {
                                onChange={(e) => {
                                    setName(e.target.value)
                                }}
-                               // required
-                               // onBlur={(e) => {
-                               //     dispatch({type: SET_USER_NAME, payload: name})
-                               // }}
+                               required
+                               onBlur={(e) => {
+                                   dispatch({type: SET_USER_NAME, payload: name})
+                               }}
                         />
                     </div>
                     <div className='text-center'>
@@ -46,10 +46,10 @@ const SignUpForm = () => {
                                onChange={(e) => {
                                    setEmail(e.target.value)
                                }}
-                               // required
-                               // onBlur={(e) => {
-                               //     dispatch({type: SET_USER_EMAIL, payload: email})
-                               // }}
+                               required
+                               onBlur={(e) => {
+                                   dispatch({type: SET_USER_EMAIL, payload: email})
+                               }}
                         />
                     </div>
                     <div className={'text-center'}>
@@ -65,10 +65,10 @@ const SignUpForm = () => {
                                onChange={(e) => {
                                    setPasswordSecond(e.target.value)
                                }}
-                               // required
-                               // onBlur={(e) => {
-                               //     compare(passwordFirst, passwordSecond)
-                               // }}
+                               required
+                               onBlur={(e) => {
+                                   compare(passwordFirst, passwordSecond)
+                               }}
                         />
                     </div>
                 </div>
