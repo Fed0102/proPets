@@ -20,16 +20,12 @@ const SignInForm = () => {
                     <div className='text-center'>
                         <label className={'col-3 text-end'} htmlFor="email">Email:</label>
                         <input className={'col-8'} type="email" placeholder="helenjohnson@gmail.com" name="email" autoComplete="on"
-                               onChange={(e => {
-                                   setEmail(e.target.value)
-                               })}/>
+                               onChange={(e => {setEmail(e.target.value)})}/>
                     </div>
                     <div className='text-center'>
                         <label className={'col-3 text-end'} htmlFor="password">Password:</label>
                         <input className={'col-8'} type="password" placeholder="*****************" name="psw" autoComplete="on"
-                               onChange={(e => {
-                                   setPassword(e.target.value)
-                               })}/>
+                               onChange={(e => {setPassword(e.target.value)})}/>
                     </div>
                 </div>
             </div>

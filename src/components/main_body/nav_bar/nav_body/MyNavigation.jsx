@@ -37,7 +37,8 @@ import BtnNavLogout from "../../../UI/btn_nav_pg/btn_nav_logout";
 const MyNavigation = () => {
     const location = useWindowPath();
     const showServices = [hotels, walking, fostering, vetHelp].some((path) => path === location);
-    const user_name = useSelector(state => state.user_name);
+    // const user_name = useSelector(state => state.user_name);
+    const user_name = useSelector(state => state.userRegistration.name)
     const dispatch = useDispatch();
 
     const pgBtnsAr = [
