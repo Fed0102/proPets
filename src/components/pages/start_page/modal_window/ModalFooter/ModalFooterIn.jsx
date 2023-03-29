@@ -20,7 +20,10 @@ const ModalFooterIn = (props) => {
                     Cancel
                 </button>
                 <button className={style.btnSubmit}
-                        onClick={() => {login(props.email, props.password)}}>
+                        onClick={() => {
+                            login(props.email, props.password);
+                            dispatch({type: SET_VISIBLE_MODAL, payload: false})
+                        }}>
                     <img className={style.paw} src={paw} alt={paw}/>
                     <span className='m-auto'>Submit</span>
                 </button>
