@@ -1,11 +1,12 @@
 import React from "react";
 import st from "./header.module.css";
 import logo from "../../../assets/svg/logo.svg";
-import Btn_header_main from "../../UI/btn_header_main/btn_header_main";
-import Btn_header_start from "../../UI/btn_header_start/btn_header_start";
-import HeadPlus from "../btns/icons/HeadPlus";
-import Lost from "../btns/icons/HeadLost";
-import Found from "../btns/icons/HeadFound";
+import BtnHeaderGreen from "../../UI/btn_header_green/btn_header_green";
+import BtnHeaderWhite from "../../UI/btn_header_white/btn_header_white";
+import plusImg from '../../../assets/png/plus.png';
+import lostImg from '../../../assets/png/lost.png';
+import foundImg from '../../../assets/png/found.png';
+
 import {
     favorites,
     fostering,
@@ -20,7 +21,10 @@ import {
     walking
 } from "../../../constants/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
-import {auth2} from "../../../firebase/firebase-config";
+import GreenBtnImg from "../../UI/btn_header_green/icons/GreenBtnImg";
+
+// import {auth2} from "../../../firebase/firebase-config";
+const auth2 = true;
 
 const MyHeader = () => {
     const location = useWindowPath();
@@ -34,27 +38,27 @@ const MyHeader = () => {
                 <img src={logo} className={auth2 ? `${st.logo} ${st.logo_main}` : st.logo}/>
 
                 {isPosts && auth2 &&
-                    <Btn_header_main green={true} btnPath={newPost}>
-                        <HeadPlus/>
+                    <BtnHeaderGreen green={true} btnPath={newPost}>
+                        <GreenBtnImg imgPath={plusImg}/>
                         Add new
-                    </Btn_header_main>
+                    </BtnHeaderGreen>
                 }
                 {isLostFound && auth2 &&
                     <div className={st.btns}>
-                        <Btn_header_main green={false} btnPath={lostForm}>
-                            <Lost/>
+                        <BtnHeaderGreen green={false} btnPath={lostForm}>
+                            <GreenBtnImg imgPath={lostImg}/>
                             I lost my pet
-                        </Btn_header_main>
-                        <Btn_header_main green={true} btnPath={foundForm}>
-                            <Found/>
+                        </BtnHeaderGreen>
+                        <BtnHeaderGreen green={true} btnPath={foundForm}>
+                            <GreenBtnImg imgPath={foundImg} yellow={true}/>
                             I found a pet
-                        </Btn_header_main>
+                        </BtnHeaderGreen>
                     </div>
                 }
                 {!auth2 &&
-                    <Btn_header_start>
+                    <BtnHeaderWhite>
                         Sign in
-                    </Btn_header_start>
+                    </BtnHeaderWhite>
                 }
             </div>
         </div>

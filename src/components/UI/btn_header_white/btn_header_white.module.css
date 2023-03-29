@@ -1,0 +1,19 @@
+.base {
+    height: 40px;
+    width: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: white solid 1px;
+    border-radius: 30px;
+    background-color: #669885;
+    color: white;
+}
+
+.white {
+    border-color: #669885;
+    background-color: white;
+    color: #669885;
+}
+
+
