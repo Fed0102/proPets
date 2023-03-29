@@ -9,13 +9,14 @@ import {SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
 
 const Modal = () => {
 
-    const modal = useSelector(state => state.modal);
+    // const modal = useSelector(state => state.modal);
+    const {modal} = useSelector(state => state)
     const dispatch = useDispatch();
 
 
     return (
-        <div className={modal ? `${style.modal} ${style.modalActive}` : `${style.modal}`}>
-            <div className={modal ? `${style.modalContent} ${style.modalContentActive}` : `${style.modalContent}`}>
+        <div className={modal.modal ? `${style.modal} ${style.modalActive}` : `${style.modal}`}>
+            <div className={modal.modal ? `${style.modalContent} ${style.modalContentActive}` : `${style.modalContent}`}>
                 <div className={'d-flex justify-content-between'}>
                     <img className={style.logoHeader} src={logo} alt="logo"/>
                     <img onClick={() => dispatch({type:SET_VISIBLE_MODAL, payload: false})} className={style.close} src={close} alt="close"/>

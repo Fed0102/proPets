@@ -4,12 +4,14 @@ import style from "./modal_footer.module.css";
 import {SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
 import paw from "../../../../../assets/png/paw.png";
 import {registration} from "../../../../../firebase/auth-service";
-// import {auth} from "../../../../../firebase/firebase-config";
 
 const ModalFooterUp = () => {
 
-    const email = useSelector(state => state.email)
-    const password = useSelector(state => state.password)
+    // const email = useSelector(state => state.email)
+    // const password = useSelector(state => state.password)
+    // const dispatch = useDispatch();
+
+    const {userRegistration} = useSelector(state => state)
     const dispatch = useDispatch();
 
     return (
@@ -19,13 +21,14 @@ const ModalFooterUp = () => {
                     accordance with <a href={'#'}>these terms</a>.</p>
             </div>
             <div className={'col-6 d-flex justify-content-evenly'}>
-                <button onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: false})} className={style.btnCancel}>
+                <button onClick={() => dispatch({type:SET_VISIBLE_MODAL, payload: false})} className={style.btnCancel}>
                     Cancel
                 </button>
                 <button className={style.btnSubmit}
                         onClick={() => {
                             // dispatch({type: SET_CHANGE_AUTH, payload: auth});
-                            registration(email, password)
+                            // registration(email, password)
+                            registration(userRegistration.email, userRegistration.password)
                         }
                         }>
                     <img className={style.paw} src={paw} alt={paw}/>

@@ -2,7 +2,6 @@ import React from 'react';
 import {Route, Routes} from "react-router-dom";
 import {privateRoutes, publicRoutes} from "./routes";
 import MyError from "../components/pages/MyError";
-import {auth} from "../firebase/firebase-config";
 import MyStartPage from "../components/pages/start_page/MyStartPage";
 
 const MyRouter = ({user}) => {

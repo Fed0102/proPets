@@ -1,6 +1,4 @@
 import {createStore} from "redux";
-import {modalReducer} from "./modalReducer";
+import {rootReducer} from "./rootReducer";
 
-
-
-export const store = createStore(modalReducer)
+export const store = createStore(rootReducer)

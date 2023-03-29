@@ -9,7 +9,7 @@ import {useSelector} from "react-redux";
 
 const StartPage = () => {
 
-    const modal = useSelector(state => state.modal)
+    const {modal} = useSelector(state => state)
 
     return (
 
@@ -20,7 +20,7 @@ const StartPage = () => {
                 <Start_three/>
                 <Start_four/>
                 <Start_footer/>
-                <Modal modal={modal}/>
+                <Modal modal={modal.modal}/>
             </div>
         </div>
     )

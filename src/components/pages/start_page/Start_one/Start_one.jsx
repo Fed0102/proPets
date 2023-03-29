@@ -10,8 +10,8 @@ const StartOne = () => {
     // const [modalActive, setModalActive] = useState(true);
 
     // const modal = useSelector(state => state.modal)
-    const lostBtn = useSelector(state => state.lostBtn);
-    const foundBtn = useSelector(state=> state.foundBtn);
+    const {modal} = useSelector(state => state);
+    // const foundBtn = useSelector(state=> state.foundBtn);
     const dispatch = useDispatch();
 
     return (
@@ -27,14 +27,14 @@ const StartOne = () => {
                                 onMouseOut={()=>dispatch({type:SET_CHANGE_LOST_BTN, payload: 'I lost my pet!'})}
                                 onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: true})}>
                             <div className={style.search}>
-                                <span className={style.btnSpan}>{lostBtn}</span>
+                                <span className={style.btnSpan}>{modal.lostBtn}</span>
                                 <img src={search} alt="search"/>
                             </div>
                         </button>
                         <button className={style.btnFoundPet} onMouseOver={() => dispatch({type:SET_CHANGE_FOUND_BTN, payload: 'What to do?'})}
                                 onMouseOut={()=>dispatch({type:SET_CHANGE_FOUND_BTN, payload: 'I found a pet!'})}
                                 onClick={() => dispatch({type: SET_VISIBLE_MODAL, payload: true})}>
-                            <span className={style.btnSpanWhite}>{foundBtn}</span>
+                            <span className={style.btnSpanWhite}>{modal.foundBtn}</span>
                         </button>
                     </div>
 
