@@ -6,7 +6,6 @@ import BtnHeaderWhite from "../../UI/btn_header_white/btn_header_white";
 import plusImg from '../../../assets/png/plus.png';
 import lostImg from '../../../assets/png/lost.png';
 import foundImg from '../../../assets/png/found.png';
-
 import {
     favorites,
     fostering,
@@ -17,33 +16,33 @@ import {
     lost,
     lostForm,
     newPost,
-    startPage, vetHelp,
+    startPage,
+    vetHelp,
     walking
 } from "../../../constants/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
 import GreenBtnImg from "../../UI/btn_header_green/icons/GreenBtnImg";
-
-// import {auth2} from "../../../firebase/firebase-config";
-const auth2 = true;
+import {useSelector} from "react-redux";
 
 const MyHeader = () => {
     const location = useWindowPath();
     const isStart = [startPage, '', '/'].some(path => path === location);
     const isLostFound = [lost, found].some(path => path === location);
     const isPosts = [homePage, hotels, walking, fostering, vetHelp, '', '/'].some(path => path === location);
+    const localUser = useSelector(state => state.userRegistration.localUser);
 
     return (
-        <div className={auth2 ? `${st.header} ${st.header_main}` : st.header}>
+        <div className={localUser ? `${st.header} ${st.header_main}` : st.header}>
             <div className={st.body}>
-                <img src={logo} className={auth2 ? `${st.logo} ${st.logo_main}` : st.logo}/>
+                <img src={logo} className={localUser ? `${st.logo} ${st.logo_main}` : st.logo} alt={logo}/>
 
-                {isPosts && auth2 &&
+                {isPosts && localUser &&
                     <BtnHeaderGreen green={true} btnPath={newPost}>
                         <GreenBtnImg imgPath={plusImg}/>
                         Add new
                     </BtnHeaderGreen>
                 }
-                {isLostFound && auth2 &&
+                {isLostFound && localUser &&
                     <div className={st.btns}>
                         <BtnHeaderGreen green={false} btnPath={lostForm}>
                             <GreenBtnImg imgPath={lostImg}/>
@@ -55,7 +54,7 @@ const MyHeader = () => {
                         </BtnHeaderGreen>
                     </div>
                 }
-                {!auth2 &&
+                {!localUser &&
                     <BtnHeaderWhite>
                         Sign in
                     </BtnHeaderWhite>
