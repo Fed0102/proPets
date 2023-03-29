@@ -1,13 +1,15 @@
 import "./App.css";
 import MyHeader from "./components/header/head_body/MyHeader";
 import MyBody from "./components/main_body/MyBody";
-import MyStartPage from "./components/pages/start_page/MyStartPage";
+// import MyStartPage from "./components/pages/start_page/MyStartPage";
 import {BrowserRouter} from "react-router-dom";
-import {useSelector} from "react-redux";
+// import {auth} from './firebase/firebase-config';
+import MyRouter from "./router/MyRouter";
+// import {useSelector} from "react-redux";
+// import {getAuth} from "firebase/auth";
+import {auth} from "./firebase/firebase-config";
 
 function App() {
-
-    const auth = useSelector(state => state.auth)
 
     if (auth) {
         return (
@@ -20,10 +22,20 @@ function App() {
         return (
             <BrowserRouter>
                 <MyHeader/>
-                <MyStartPage/>
+                <MyRouter/>
             </BrowserRouter>
         )
     }
 }
-
 export default App;
+
+// console.log(auth2);
+
+// return (
+//     <BrowserRouter>
+//         <MyHeader/>
+//         <MyRouter/>
+//     </BrowserRouter>
+// )
+
+// const auth = useSelector(state => state.auth);
