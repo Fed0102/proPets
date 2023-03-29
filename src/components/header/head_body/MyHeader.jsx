@@ -17,7 +17,7 @@ import {
     lost,
     lostForm,
     newPost,
-    start, vetHelp,
+    startPage, vetHelp,
     walking
 } from "../../../constants/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
@@ -28,7 +28,7 @@ const auth2 = true;
 
 const MyHeader = () => {
     const location = useWindowPath();
-    const isStart = [start, '', '/'].some(path => path === location);
+    const isStart = [startPage, '', '/'].some(path => path === location);
     const isLostFound = [lost, found].some(path => path === location);
     const isPosts = [homePage, hotels, walking, fostering, vetHelp, '', '/'].some(path => path === location);
 
