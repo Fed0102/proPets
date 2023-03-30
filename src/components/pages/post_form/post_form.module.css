@@ -1,0 +1,154 @@
+.mainWhiteBack {
+    padding: 0 20px 0 20px;
+}
+
+.titleSemiBold {
+    font-size: 16px;
+    color: #669885;
+    margin-bottom: 20px;
+}
+
+.titleBold {
+    font-size: 16px;
+    font-weight: 700;
+    color: #669885;
+}
+
+.postCard {
+    box-shadow: 0 5px 5px grey;
+    padding: 20px 10px 20px 10px;
+}
+
+.smallerTextBlack {
+    width: 15%;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+}
+
+.divTwo{
+    width: 85%;
+}
+
+.smallerText{
+    font-size: 15px;
+}
+
+.smallerTextBlack::placeholder{
+    color: lightgray;
+}
+
+.littleGreenText {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #84B6A3;
+}
+
+.biggestTextarea {
+    width: 700px;
+    height: 478px;
+    border: 2px #84B6A3 solid;
+    padding: 5px;
+}
+
+.afterBigTextArea{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 730px;
+    height: 175px;
+}
+
+.divImg{
+    width: 300px;
+}
+
+.imgPreviewPost {
+    width: 120%;
+}
+
+.addFileIcon {
+    height: 30px;
+    width: 30px;
+    filter: invert(71%) sepia(10%) saturate(860%) hue-rotate(106deg) brightness(96%) contrast(86%);
+}
+
+.addFileLabel {
+    width: 77px;
+    height: 30px;
+    border: 2px #84B6A3 solid;
+    border-radius: 15px;
+    opacity: 1;
+    background-color: transparent;
+    color: #84B6A3;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.divInput {
+    margin: 0;
+    padding: 0;
+}
+
+.addFileInput {
+    width: 175px;
+    height: 125px;
+    border: 2px #84B6A3 solid;
+    margin: 0;
+}
+
+.addFileInput::-webkit-file-upload-button {
+    visibility: hidden;
+    width: 0.01%;
+    margin: 0;
+    padding: 0;
+}
+
+.avatarImg {
+    height: 43px;
+    width: 43px;
+    padding: 0;
+}
+
+.imgUser,
+.avatarImg {
+    overflow: hidden;
+    border: 1px white solid;
+    border-radius: 50%;
+}
+
+.imgUser img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.avatarImg img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.titleSemiBoldGreen {
+    font-size: 16px;
+    font-weight: 600;
+    color: #84B6A3;
+}
+
+.iconBtnBlack {
+    width: 16px;
+    height: 16px;
+}
+
+.btnHeader {
+    width: 175px;
+    height: 34px;
+    background-color: #84B6A3;
+    border: #84B6A3 1px solid;
+    border-radius: 20px;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
