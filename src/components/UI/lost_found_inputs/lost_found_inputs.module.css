@@ -1,11 +1,12 @@
 .searchInput {
-    border: #669885 1px solid;
+    border: 2px #84B6A3 solid;
     border-radius: 15px;
     height: 30px;
     font-size: 12px;
 }
 
 .myLostFoundPostsDiv{
+    width: 800px;
     padding-top: 20px;
 }
 

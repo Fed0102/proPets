@@ -1,15 +1,15 @@
 .mainWhiteBack {
-    padding: 0 20px 0 20px;
+    padding: 10px 20px 0 20px;
 }
 
 .titleSemiBold {
-    font-size: 16px;
+    font-size: 20px;
     color: #669885;
     margin-bottom: 20px;
 }
 
 .titleBold {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     color: #669885;
 }

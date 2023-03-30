@@ -1,12 +1,29 @@
 .mainDiv{
-    width: 735px;
-    padding: 20px;
+    width: 800px;
+    padding: 10px 20px 0 20px;
 }
 
 .titleSemiBold {
-    font-size: 16px;
+    margin-bottom: 20px;
+    font-size: 20px;
     font-weight: 600;
     color: #669885;
+}
+
+.titleBold {
+    font-size: 20px;
+    font-weight: 700;
+    color: #669885;
+}
+
+.input {
+    width: 160px;
+    height: 20px;
+    background: transparent;
+    border: transparent;
+    border-bottom: 1px solid #669885;
+    margin-left: 10px;
+    font-size: 12px;
 }
 
 .lostFoundForm {

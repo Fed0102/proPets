@@ -5,7 +5,7 @@ import style from '../../UI/lost_found_inputs/lost_found_inputs.module.css';
 
 const Lost = () => {
     return (
-        <div className={`${style.myLostFoundPostsDiv} justify-content-center align-content-center d-flex`}>
+        <div className={`${style.myLostFoundPostsDiv}`}>
             <div>
                 <LostInputs/>
                 {/*<LostCard/>*/}
