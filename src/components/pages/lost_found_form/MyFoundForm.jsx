@@ -4,12 +4,12 @@ import form from '../../../assets/png/anketa.png';
 import paw from '../../../assets/png/paw.png';
 import arrowUp from '../../../assets/png/arrow-up.png';
 
-const LostForm = () => {
+const FoundForm = () => {
     return (
         <div className={'d-flex'}>
-            <div className={`${style.mainDiv} d-flex flex-column mt-3`}>
-                <h1 className={`${style.titleSemiBold} ms-3`}>Lost your buddy? Keep
-                    calm and complete the form.</h1>
+            <div className={`${style.mainDiv} d-flex flex-column`}>
+                <h1 className={`${style.titleSemiBold}`}><span className={`${style.titleBold}`}>Found a pet?</span> Please
+                    complete the form to help.</h1>
                 <div className={`${style.lostFoundForm} row d-flex`}>
                     <div className={'col-6 d-flex flex-column'}>
                         <div className={`mb-1`}>
@@ -116,4 +116,4 @@ const LostForm = () => {
     );
 };
 
-export default LostForm;
+export default FoundForm;
