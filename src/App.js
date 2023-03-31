@@ -11,13 +11,6 @@ import {useState} from "react";
 
 function App() {
 
-
-
-
-
-
-
-
     const localUser = useSelector(state => state.userRegistration.localUser)
     const dispatch = useDispatch();
 

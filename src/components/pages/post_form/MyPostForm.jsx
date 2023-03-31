@@ -4,36 +4,28 @@ import arrowUp from '../../../assets/png/arrow-up.png';
 import paw from '../../../assets/png/paw.png';
 import avatar from '../../../assets/png/avatar.jpg';
 import dog from '../../../assets/png/dog.png';
-import {useSelector} from "react-redux";
-import {addPost} from "../../../firebase/service";
-// import {db} from "../../../firebase/firebase-config";
-// import {addDoc, collection} from "firebase/firestore";
-// import images from '../../../assets/png/avatar.jpg';
+import {db} from "../../../firebase/firebase-config";
+import {addDoc, collection} from "firebase/firestore";
 
 const MyPostForm = () => {
 
-    const [post, setPost] = useState({});
-    const uid = useSelector(state => state.posts.uid);
+    const [body, setBody] = useState();
 
-    const [text, setText] = useState();
-    // const dispatch = useDispatch();
-    // let userInfo = localStorage.getItem('user');
-    // let initial = JSON.parse(userInfo);
-
-    // const addBase = () => {
-    //     try {
-    //         const docRef = addDoc(collection(db, "post"), {
-    //             Name: initial.displayName,
-    //             Text: text,
-    //             Date: Date.now(),
-    //             Images: images,
-    //             PhotoURL: initial.photoURL,
-    //             uid: initial.uid,
-    //         });
-    //     } catch (e) {
-    //         console.error("Error adding document: ", e);
-    //     }
-    // }
+    const addBase = () => {
+        try {
+            const docRef = addDoc(collection(db, "post"), {
+                // Name: initial.displayName,
+                // type: '',
+                body: body,
+                date: Date.now(),
+                // Images: images,
+                // PhotoURL: initial.photoURL,
+                // uid: initial.uid,
+            });
+        } catch (e) {
+            console.error("Error adding document: ", e);
+        }
+    }
 
 
     return (
@@ -47,7 +39,7 @@ const MyPostForm = () => {
                         <p className={`${style.littleGreenText}`}>up to 1500 char</p>
                     </div>
                     <textarea className={`ms-2 ${style.smallerTextBlack} ${style.biggestTextarea}`} name={'text'}
-                              onChange={e => setText(e.target.value)}
+                              onChange={e => setBody(e.target.value)}
                               placeholder={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cupiditate, fuga ipsum natus repellat repellendus totam? Alias amet consectetur doloribus dolorum, fugit, in ipsum laboriosam modi possimus qui temporibus veritatis, vero. Esse eveniet harum in laborum modi obcaecati pariatur perspiciatis quibusdam. Accusantium autem commodi distinctio error fuga reprehenderit tenetur vitae voluptatibus? A alias assumenda culpa deleniti deserunt dicta dolor doloribus eos fugiat incidunt iusto laboriosam laborum maxime necessitatibus perferendis provident quasi quibusdam quisquam quod recusandae sint, temporibus vel vero! A, accusamus deserunt, dolor dolore ducimus ea eos et eveniet facilis fugit id illo illum impedit incidunt ipsa libero magni neque obcaecati odio porro provident quasi quibusdam quis quo quod repellendus sapiente sit suscipit tempora temporibus totam unde velit voluptatibus. Asperiores assumenda at debitis dignissimos dolore doloremque ducimus ea earum enim, excepturi facilis fugit magnam minus mollitia optio quam veritatis? Error expedita facere impedit inventore libero magni mollitia natus neque nobis quidem soluta tempora, voluptatibus voluptatum. Laudantium nobis obcaecati unde? Amet esse in iure officia pariatur quas. Architecto dicta eaque fugit inventore neque repellat sit voluptate. Excepturi facere fuga necessitatibus sed sequi, voluptate? Animi beatae cupiditate deleniti explicabo minus tempore. Consectetur dolor dolores eius est et, harum in ipsum magni officia quia repellat sed! Autem cupiditate deserunt, distinctio dolores, eveniet ex, iure minima mollitia nobis numquam quaerat rerum tempora tenetur. Ab distinctio doloremque minima sequi. Alias aliquam beatae blanditiis commodi doloremque dolorum earum et eveniet excepturi hic in itaque libero minus nihil placeat quisquam quos, reiciendis sunt ut vero voluptas voluptate!`}
                     />
                 </div>
@@ -81,7 +73,7 @@ const MyPostForm = () => {
                         <h3 className={`${style.titleSemiBoldGreen}`}>displayName</h3>
                     </div>
                     <div className={`col-3`}>
-                        <button className={`${style.btnHeader}`} onClick={() => addPost(post, uid)}>
+                        <button className={`${style.btnHeader}`} onClick={() => addBase()}>
                             <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
                             <span className={'m-auto'}>Publish</span>
                         </button>
