@@ -9,26 +9,18 @@ import edit from '../../../assets/png/edit.png';
 import facebook from '../../../assets/png/facebook.png';
 import phone from '../../../assets/png/phone.png';
 import email from '../../../assets/png/email.png';
+import {Link} from "react-router-dom";
+import {lostForm} from "../../../constants/paths";
 
 
 const PreviewLostFoundForm = () => {
 
     const form = useSelector(state => state.form);
 
-    const timePost = () => {
-        const date = new Date();
-        const options = {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        };
-        return date.toLocaleString("en-US", options)
-    }
-
     const addBase = () => {
         try {
             addDoc(collection(db, "post"), {
-                type: form.type,
+                typeAnimal: form.typeAnimal,
                 sex: form.sex,
                 breed: form.breed,
                 color: form.color,
@@ -47,7 +39,7 @@ const PreviewLostFoundForm = () => {
     }
 
     return (
-        <div className={`${style.mainWhiteBack} d-flex flex-column align-items-center col-6 overflow-auto mt-3`}>
+        <div className={`${style.mainWhiteBack} d-flex flex-column align-items-center overflow-auto mt-3`}>
             <h1 className={`${style.titleSemiBold} ${style.postCardTitle}`}><span className={`${style.titleBold}`}>Preview and Publish. </span>Please
                 share the post to your FB to be more effective</h1>
             <div className={`${style.postCard} d-flex`}>
@@ -55,7 +47,7 @@ const PreviewLostFoundForm = () => {
                     <img className={`${style.imgPreview}`} src={'image'} alt={'image'}/>
                 </div>
                 <div className={`col-7 ps-3 pe-3`}>
-                    <span className={`${style.titleBigBold}`}>{form.type}, {form.breed}</span>
+                    <span className={`${style.titleBigBold}`}>{form.typeAnimal}, {form.breed}</span>
                     <div className={`d-flex`}>
                         <div className={`col-6`}>
                             <h2 className={`${style.smallerTextGreen}`}>Color: <span
@@ -87,7 +79,7 @@ const PreviewLostFoundForm = () => {
                                 <span className={`${style.titleSemiBoldGreen}`}>{form.name}</span>
                             </div>
                             <div>
-                                <span className={`${style.smallerTextBlack}`}>{form.date}</span>
+                                <span className={`${style.smallerTextBlack}`}>{new Date(form.date).toDateString()}</span>
                             </div>
                         </div>
                         <div className={`col-4 d-flex justify-content-evenly align-items-center`}>
@@ -104,10 +96,10 @@ const PreviewLostFoundForm = () => {
             <div className={`${style.postCardTitle} d-flex justify-content-between`}>
                 <span className={`${style.smallerTextBlack} ps-1`}>Share to Facebook</span>
                 <div className={'d-flex'}>
-                    <button className={`${style.btnEdit} me-2`}>
+                    <Link to={lostForm} className={`${style.btnEdit} me-2`}>
                         <img className={`${style.editIcon}`} src={edit} alt={'edit'}/>
                         <span className={'m-auto'}>Edit</span>
-                    </button>
+                    </Link>
                     <button className={`${style.btnHeader}`} onClick={() => addBase()}>
                         <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
                         <span className={'m-auto'}>Publish</span>

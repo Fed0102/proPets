@@ -8,11 +8,6 @@ import avatar from "../../../assets/png/avatar.jpg";
 import Avatar from "../avatar/avatar";
 const LostCard = ({lostFoundPost}) => {
 
-    //     phone: form.phone,
-    //     email: form.email,
-    //     facebook: form.facebook,
-    //     data: Date.now(),
-
     return (
         <div className={style.mainDiv}>
             <div className={`${style.postCard} d-flex`}>
