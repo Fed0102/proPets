@@ -4,7 +4,7 @@ import avatar from '../../../assets/png/exmpl.png';
 
 const Avatar = () => {
     return (
-        <img className={st.body} src={avatar}/>
+        <img className={st.body} src={avatar} alt={'avatar'}/>
     );
 };
 
