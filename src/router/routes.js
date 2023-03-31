@@ -2,7 +2,7 @@ import MyHome from "../components/pages/MyHome";
 import MyFavorites from "../components/pages/MyFavorites";
 import MyStartPage from "../components/pages/start_page/MyStartPage";
 import MyLostFoundPosts from "../components/pages/lost_found_posts/MyLostFoundPosts";
-import MyLostForm from "../components/pages/lost_found_form/MyLostForm";
+import MyLostFoundForm from "../components/pages/lost_found_form/MyLostFoundForm";
 import MyHotels from "../components/pages/services/MyHotels";
 import MyWalking from "../components/pages/services/MyWalking";
 import MyFostering from "../components/pages/services/MyFostering";
@@ -18,7 +18,7 @@ import {
     hotels,
     lost,
     lostForm,
-    newPost,
+    newPostHome,
     profile, startPage,
     vetHelp,
     walking
@@ -26,9 +26,9 @@ import {
 
 export const privateRoutes = [
     {id: 0, paths: ['', '/', homePage], element: <MyHome/>},
-    {id: 1, paths: [newPost], element: <MyPostForm/>},
+    {id: 1, paths: [newPostHome], element: <MyPostForm/>},
     {id: 2, paths: [lost, found], element: <MyLostFoundPosts/>},
-    {id: 3, paths: [lostForm, foundForm], element: <MyLostForm/>},
+    {id: 3, paths: [lostForm, foundForm], element: <MyLostFoundForm/>},
     {id: 4, paths: [hotels], element: <MyHotels/>},
     {id: 5, paths: [walking], element: <MyWalking/>},
     {id: 6, paths: [fostering], element: <MyFostering/>},

@@ -1,6 +1,11 @@
 export const startPage = 'start';
 export const homePage = 'home';
-export const newPost = 'post_form';
+export const newPostHome = 'post_form_home';
+export const newPostHotels = 'post_form_hotels';
+export const newPostWalking = 'post_form_walking';
+export const newPostFostering = 'post_form_fostering';
+export const newPostVetHelp = 'post_form_vet_help';
+export const newPostFavorites = 'post_form_favorites';
 export const lost = 'lost';
 export const lostForm = 'lost_form';
 export const found = 'found';

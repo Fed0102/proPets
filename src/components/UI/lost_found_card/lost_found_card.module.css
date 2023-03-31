@@ -2,6 +2,10 @@
     width: 775px;
 }
 
+.widthImgDiv{
+    width: 250px;
+}
+
 .searchInput {
     border: #669885 1px solid;
     border-radius: 15px;

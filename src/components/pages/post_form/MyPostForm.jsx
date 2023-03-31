@@ -6,22 +6,25 @@ import avatar from '../../../assets/png/avatar.jpg';
 import dog from '../../../assets/png/dog.png';
 import {db} from "../../../firebase/firebase-config";
 import {addDoc, collection} from "firebase/firestore";
+import {Link} from "react-router-dom";
 
 const MyPostForm = () => {
 
     const [body, setBody] = useState();
 
+
+
     const addBase = () => {
         try {
-            const docRef = addDoc(collection(db, "post"), {
+            addDoc(collection(db, "post"), {
                 // Name: initial.displayName,
-                // type: '',
+                postType: 'home',
                 body: body,
                 date: Date.now(),
                 // Images: images,
                 // PhotoURL: initial.photoURL,
                 // uid: initial.uid,
-            });
+            }).then(r => console.log(r));
         } catch (e) {
             console.error("Error adding document: ", e);
         }

@@ -15,7 +15,7 @@ import {
     hotels,
     lost,
     lostForm,
-    newPost,
+    newPostHome,
     startPage,
     vetHelp,
     walking
@@ -31,13 +31,15 @@ const MyHeader = () => {
     const isPosts = [homePage, hotels, walking, fostering, vetHelp, '', '/'].some(path => path === location);
     const localUser = useSelector(state => state.userRegistration.localUser);
 
+    const test = useWindowPath();
+
     return (
         <div className={localUser ? `${st.header} ${st.header_main}` : st.header}>
             <div className={st.body}>
                 <img src={logo} className={localUser ? `${st.logo} ${st.logo_main}` : st.logo} alt={logo}/>
 
                 {isPosts && localUser &&
-                    <BtnHeaderGreen green={true} btnPath={newPost}>
+                    <BtnHeaderGreen test={test} green={true} btnPath={newPostHome}>
                         <GreenBtnImg imgPath={plusImg}/>
                         Add new
                     </BtnHeaderGreen>
