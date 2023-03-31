@@ -11,7 +11,7 @@ const PostWind = ({post}) => {
             </div>
             <div className={st.post_text}>
                 <h5 className={st.post_name}>{post.user}</h5>
-                <div className={st.post_date}>{post.date}</div>
+                <div className={st.post_date}>{new Date(post.date).toTimeString()}}</div>
                 {post.body}
             </div>
             <div className={st.post_btns}>
