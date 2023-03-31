@@ -1,24 +1,22 @@
-// export const SET_USER = 'SET_USER';
-// export const SET_INFO_USER = 'SET_INFO_USER';
-// export const REMOVE_USER = 'REMOVE_USER';
-// export const CHANGE_NAME = 'CHANGE_NAME';
+export const SET_USER = 'SET_USER';
+export const REMOVE_USER = 'REMOVE_USER';
+export const SET_USER_NAME = 'SET_USER_NAME';
 
 const initialState = {
     email: null,
-    token: null,
-    id: null,
-    name: null
+    name: null,
+    phone: null,
+    fbLink: null,
+    photoURL: null
 }
 export const userReducer = (user = initialState, {type, payload}) => {
     switch (type) {
-        // case SET_USER:
-        //     return {...user, email: payload.email, token: payload.token, id: payload.id}
-        // case SET_INFO_USER:
-        //     return {...user, name: payload.name, id: payload.id}
-        // case REMOVE_USER:
-        //     return {...user, email: null, token: null, id: null, name: null}
-        // case CHANGE_NAME:
-        //     return {...user, name: payload.name}
+        case SET_USER:
+            return {...user, email: payload.email, name: payload.name, phone: payload.phone, fbLink: payload.fbLink, photoURL: payload.photoURL};
+        case SET_USER_NAME:
+            return {...user, name: payload.email};
+        case REMOVE_USER:
+            return {...user, email: null, name: null, phone: null, fbLink: null, photoURL: null};
         default:
             return user
     }

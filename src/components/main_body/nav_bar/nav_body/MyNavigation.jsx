@@ -11,21 +11,20 @@ import {useWindowPath} from "../../../../hooks/useWindowPath";
 import {useDispatch, useSelector} from "react-redux";
 import {signOut} from "firebase/auth";
 import {auth} from "../../../../firebase/firebase-config";
-import {SET_LOCAL_USER} from "../../../../store/userRegistrationReducer";
+import {REMOVE_USER} from "../../../../store/userReducer";
 import BtnNavLogout from "../../../UI/btn_nav_pg/btn_nav_logout";
 import {pgBtnsAr} from "./pg_btns_array";
 
 const MyNavigation = () => {
     const location = useWindowPath();
     const showServices = [hotels, walking, fostering, vetHelp].some((path) => path === location);
-    // const user_name = useSelector(state => state.user_name);
-    const user_name = useSelector(state => state.userRegistration.name)
+    const user_name = useSelector(state => state.user.name);
     const dispatch = useDispatch();
 
     const logout = () => {
         signOut(auth)
             .then(() => {
-                dispatch({type: SET_LOCAL_USER, payload: false});
+                dispatch({type: REMOVE_USER});
             }).catch(e => console.log(e.message));
     }
 

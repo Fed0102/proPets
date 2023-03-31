@@ -4,14 +4,16 @@ import style from "./modal_footer.module.css";
 import {SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
 import paw from "../../../../../assets/png/paw.png";
 import {registration} from "../../../../../firebase/auth-service";
+import {SET_USER_NAME} from "../../../../../store/userReducer";
+import {updateProfile} from "firebase/auth";
+import {auth} from "../../../../../firebase/firebase-config";
 
-const ModalFooterUp = () => {
+const ModalFooterUp = ({userName, userEmail, password}) => {
 
     // const email = useSelector(state => state.email)
     // const password = useSelector(state => state.password)
     // const dispatch = useDispatch();
 
-    const {userRegistration} = useSelector(state => state)
     const dispatch = useDispatch();
 
     return (
@@ -25,10 +27,17 @@ const ModalFooterUp = () => {
                     Cancel
                 </button>
                 <button className={style.btnSubmit}
-                        onClick={() => {
-                            //меняется ли состояние модального? при разлогине модальное висит
+                        onClick={async () => {
                             dispatch({type: SET_VISIBLE_MODAL, payload: false});
-                            registration(userRegistration.email, userRegistration.password)
+                            await registration(userEmail, password);
+                            await updateProfile(auth.currentUser, {
+                                displayName: userName
+                            })
+                                .then(() => {dispatch({type: SET_USER_NAME, payload: userName})
+                                })
+                                .catch(error => {
+                                    console.log(error)
+                                })
                         }
                         }>
                     <img className={style.paw} src={paw} alt={paw}/>

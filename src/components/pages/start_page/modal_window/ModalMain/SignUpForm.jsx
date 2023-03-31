@@ -1,31 +1,37 @@
 import React, {useState} from 'react';
 import style from './modal_main.module.css';
 import ModalFooterUp from "../ModalFooter/ModalFooterUp";
-import {useDispatch} from "react-redux";
-import {SET_USER_EMAIL, SET_USER_NAME, SET_USER_PASSWORD} from "../../../../../store/userRegistrationReducer";
 
 const SignUpForm = () => {
 
-    // const email = useSelector(state => state.email);
-    // const password = useSelector(state => state.password);
-    // const user_name = useSelector(state => state.user_name);
-
-    const dispatch = useDispatch();
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [passwordFirst, setPasswordFirst] = useState()
-    const [passwordSecond, setPasswordSecond] = useState()
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [passwordFirst, setPasswordFirst] = useState("");
+    let pasF = passwordFirst;
+    const [passwordSecond, setPasswordSecond] = useState("");
+    let pasS = passwordSecond;
+    const [passwordFinal, setPasswordFinal] = useState("");
+    const [passwordMessage, setPasswordMessage] = useState("");
 
     const compare = (passwordFirst, passwordSecond) => {
-        if (passwordFirst !== passwordSecond) {
-            alert("Passwords doesn't match")
+        if (pasF.length === 0 && pasS.length ===0){
+            setPasswordMessage("");
+        } else
+        if (pasF !== pasS) {
+            setPasswordMessage("Password mismatch");
+            setPasswordFinal("");
+        } else if (pasS.length < 8) {
+            setPasswordMessage("Password is too short");
+            setPasswordFinal("");
+        } else {
+            setPasswordMessage("");
+            setPasswordFinal(pasS);
         }
-        dispatch({type: SET_USER_PASSWORD, payload: passwordSecond})
     }
 
 
     return (
-        <div>
+        <>
             <div className={`${style.heightFormRegister} ${style.marginUpForm} row align-items-center`}>
                 <div className={'col-6'}>
                     <div className='text-center'>
@@ -35,41 +41,42 @@ const SignUpForm = () => {
                                    setName(e.target.value)
                                }}
                                required
-                               onBlur={(e) => {
-                                   dispatch({type: SET_USER_NAME, payload: name})
-                               }}
                         />
                     </div>
                     <div className='text-center'>
                         <label className={'col-3 text-end'} htmlFor="email">Email:</label>
-                        <input className={'col-8'} type="email" placeholder="helenjohnson@gmail.com" name="email" autoComplete="on"
+                        <input className={'col-8'} type="email" placeholder="helenjohnson@gmail.com" name="email"
+                               autoComplete="on"
                                onChange={(e) => {
                                    setEmail(e.target.value)
                                }}
                                required
-                               onBlur={(e) => {
-                                   dispatch({type: SET_USER_EMAIL, payload: email})
+                        />
+                    </div>
+                    <div className={'text-center'}>
+                        <label className={'col-3 text-end'} htmlFor="psw">Password:</label>
+                        <input className={'col-8'} type="password" placeholder="*****************" name="psw"
+                               autoComplete="on"
+                               onChange={(e) => {
+                                   setPasswordFirst(e.target.value);
+                                   pasF = e.target.value;
+                                   compare(passwordFirst, passwordSecond);
                                }}
                         />
                     </div>
                     <div className={'text-center'}>
                         <label className={'col-3 text-end'} htmlFor="psw">Password:</label>
-                        <input className={'col-8'} type="password" placeholder="*****************" name="psw" autoComplete="on"
+                        <input className={'col-8'} type="password" placeholder="*****************" name="psw"
+                               autoComplete="on"
                                onChange={(e) => {
-                                   setPasswordFirst(e.target.value)
-                               }}/>
-                    </div>
-                    <div className={'text-center'}>
-                        <label className={'col-3 text-end'} htmlFor="psw">Password:</label>
-                        <input className={'col-8'} type="password" placeholder="*****************" name="psw" autoComplete="on"
-                               onChange={(e) => {
-                                   setPasswordSecond(e.target.value)
-                               }}
-                               required
-                               onBlur={(e) => {
-                                   compare(passwordFirst, passwordSecond)
+                                   setPasswordSecond(e.target.value);
+                                   pasS = e.target.value;
+                                   compare(passwordFirst, passwordSecond);
                                }}
                         />
+                    </div>
+                    <div className={'text-center text-danger'}>
+                        {passwordMessage}
                     </div>
                 </div>
                 <div className={`${style.textPwd} col-6 row align-items flex-end mb-0`}>
@@ -81,9 +88,9 @@ const SignUpForm = () => {
             </div>
             <hr className={`m-0`}/>
             <div className={`${style.heightFooter} row align-items-center`}>
-                <ModalFooterUp/>
+                <ModalFooterUp userName={name} userEmail={email} password={passwordFinal}/>
             </div>
-        </div>
+        </>
     );
 };
 

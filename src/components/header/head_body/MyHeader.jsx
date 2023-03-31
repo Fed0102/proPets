@@ -7,7 +7,6 @@ import plusImg from '../../../assets/png/plus.png';
 import lostImg from '../../../assets/png/lost.png';
 import foundImg from '../../../assets/png/found.png';
 import {
-    favorites,
     fostering,
     found,
     foundForm,
@@ -26,10 +25,9 @@ import {useSelector} from "react-redux";
 
 const MyHeader = () => {
     const location = useWindowPath();
-    const isStart = [startPage, '', '/'].some(path => path === location);
     const isLostFound = [lost, found].some(path => path === location);
     const isPosts = [homePage, hotels, walking, fostering, vetHelp, '', '/'].some(path => path === location);
-    const localUser = useSelector(state => state.userRegistration.localUser);
+    const localUser = useSelector(state => state.user.email);
 
     return (
         <div className={localUser ? `${st.header} ${st.header_main}` : st.header}>
