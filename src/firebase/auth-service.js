@@ -14,3 +14,10 @@ export function login(email, password) {
         .then(response => console.log(response))
         .catch(e => console.log(e))
 }
+
+export async function getUid() {
+    const user = auth.currentUser;
+    if (user != null) {
+        return user.uid;
+    }
+}
