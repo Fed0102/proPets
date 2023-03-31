@@ -9,3 +9,4 @@ export const rootReducer = combineReducers({
     user: userReducer,
     posts : postsReducer,
     form: lostFoundFormReducer
+})
