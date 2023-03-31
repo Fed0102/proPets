@@ -21,14 +21,13 @@
     height: 20px;
     background: transparent;
     border: transparent;
-    border-bottom: 1px solid #669885;
+    border-bottom: 2px #84B6A3 solid;
     margin-left: 10px;
     font-size: 12px;
 }
 
 .lostFoundForm {
     box-shadow: 0 5px 5px dimgrey;
-    margin: 15px;
     padding: 10px;
 }
 
@@ -54,13 +53,13 @@
 .smallTextarea {
     height: 50px;
     width: 200px;
-    border: 2px solid #669885;
+    border: 2px #84B6A3 solid;
 }
 
 .bigTextarea {
     height: 120px;
     width: 200px;
-    border: 2px solid #669885;
+    border: 2px #84B6A3 solid;
 }
 
 .formImg {
@@ -101,8 +100,8 @@
 .btnHeader {
     width: 148px;
     height: 34px;
-    background-color: #669885;
-    border: #669885 2px solid;
+    background-color: #84B6A3;
+    border: 2px #84B6A3 solid;
     border-radius: 17px;
     color: white;
     font-size: 12px;
@@ -131,7 +130,7 @@
 .middleTextarea {
     height: 50px;
     width: 200px;
-    border: 2px solid #669885;
+    border: 2px #84B6A3 solid;
 }
 
 .addFileIcon {
@@ -143,9 +142,9 @@
 .addFileLabel {
     width: 80px;
     height: 30px;
-    border: 2px solid #669885;
+    border: 2px #84B6A3 solid;
     border-radius: 15px;
-    color: #669885;
+    color: #84B6A3;
     font-size: 12px;
     cursor: pointer;
 }
