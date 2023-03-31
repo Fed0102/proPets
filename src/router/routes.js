@@ -18,11 +18,12 @@ import {
     hotels,
     lost,
     lostForm,
-    newPostHome,
+    newPostHome, preview,
     profile, startPage,
     vetHelp,
     walking
 } from "../constants/paths";
+import PreviewLostFoundForm from "../components/pages/preview_lost_found_form/PreviewLostFoundForm";
 
 export const privateRoutes = [
     {id: 0, paths: ['', '/', homePage], element: <MyHome/>},
@@ -34,7 +35,8 @@ export const privateRoutes = [
     {id: 6, paths: [fostering], element: <MyFostering/>},
     {id: 7, paths: [vetHelp], element: <MyVethelp/>},
     {id: 8, paths: [favorites], element: <MyFavorites/>},
-    {id: 9, paths: [profile], element: <MyProfile/>}
+    {id: 9, paths: [profile], element: <MyProfile/>},
+    {id: 10, paths: [preview], element: <PreviewLostFoundForm/>}
 ];
 
 export const publicRoutes = [

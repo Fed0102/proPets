@@ -6,10 +6,12 @@ import arrowUp from '../../../assets/png/arrow-up.png';
 import {useDispatch} from "react-redux";
 import {SET_FORM_INFO} from "../../../store/lostFoundFormReducer";
 import PreviewLostFoundForm from "../preview_lost_found_form/PreviewLostFoundForm";
+import {Link} from "react-router-dom";
+import {preview} from "../../../constants/paths";
 
 const LostFoundForm = () => {
 
-    const [type, setType] = useState('')
+    const [typeAnimal, setTypeAnimal] = useState('')
     const [sex, setSex] = useState('');
     const [breed, setBreed] = useState('');
     const [color, setColor] = useState('');
@@ -23,7 +25,6 @@ const LostFoundForm = () => {
     const dispatch = useDispatch();
 
     return (
-        <div>
         <div className={'d-flex'}>
             <div className={`${style.mainDiv} d-flex flex-column`}>
                 <h1 className={`${style.titleSemiBold}`}><span
@@ -34,7 +35,7 @@ const LostFoundForm = () => {
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="type">Type:</label>
                             <select defaultValue={'Choose'} className={`${style.select} ms-2`} name={"type"}
-                                    onChange={e => setType(e.target.value)}>
+                                    onChange={e => setTypeAnimal(e.target.value)}>
                                 <option value={'Dog'}>Dog</option>
                                 <option value={'Cat'}>Cat</option>
                                 <option value={'Rabbit'}>Rabbit</option>
@@ -134,21 +135,29 @@ const LostFoundForm = () => {
                             <h3 className={`${style.titleSemiBoldGreen}`}>Name</h3>
                         </div>
                         <div className={`col-3`}>
-                            <button className={`${style.btnHeader}`}  onClick={() => {
+                            <Link to={preview} className={`${style.btnHeader}`}  onClick={() => {
                                 dispatch({ type: SET_FORM_INFO, payload: {
-                                        type: type, sex: sex, breed: breed, color: color, height: height,
-                                        features: features, description: description, location: location,
-                                        phone: phone, email: email, facebook: facebook, date: Date.now()
-                                }})}}>
+                                        typeAnimal: typeAnimal,
+                                        sex: sex,
+                                        breed: breed,
+                                        color: color,
+                                        height: height,
+                                        features: features,
+                                        description: description,
+                                        location: location,
+                                        phone: phone,
+                                        email: email,
+                                        facebook: facebook,
+                                        date: Date.now()
+                                }})}
+                            }>
                                 <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
                                 <span className={'m-auto'}>Publish</span>
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-            <PreviewLostFoundForm/>
         </div>
     );
 };

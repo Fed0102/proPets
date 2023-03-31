@@ -11,9 +11,6 @@ import {Link} from "react-router-dom";
 const MyPostForm = () => {
 
     const [body, setBody] = useState();
-
-
-
     const addBase = () => {
         try {
             addDoc(collection(db, "post"), {
@@ -29,7 +26,6 @@ const MyPostForm = () => {
             console.error("Error adding document: ", e);
         }
     }
-
 
     return (
         <div className={`${style.mainWhiteBack} d-flex flex-column`}>
