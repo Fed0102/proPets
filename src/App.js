@@ -7,7 +7,6 @@ import { onAuthStateChanged} from "firebase/auth";
 import {useDispatch, useSelector} from "react-redux";
 import {SET_LOCAL_USER} from "./store/userRegistrationReducer";
 import {auth} from "./firebase/firebase-config";
-import {useState} from "react";
 
 function App() {
 
