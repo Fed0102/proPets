@@ -27,17 +27,10 @@ const ModalFooterUp = ({userName, userEmail, password}) => {
                     Cancel
                 </button>
                 <button className={style.btnSubmit}
-                        onClick={async () => {
+                        onClick={() => {
                             dispatch({type: SET_VISIBLE_MODAL, payload: false});
-                            await registration(userEmail, password);
-                            await updateProfile(auth.currentUser, {
-                                displayName: userName
-                            })
-                                .then(() => {dispatch({type: SET_USER_NAME, payload: userName})
-                                })
-                                .catch(error => {
-                                    console.log(error)
-                                })
+                            dispatch({type: SET_USER_NAME, payload: userName});
+                            registration(userEmail, password);
                         }
                         }>
                     <img className={style.paw} src={paw} alt={paw}/>

@@ -7,11 +7,11 @@ import {onAuthStateChanged} from "firebase/auth";
 import {useDispatch, useSelector} from "react-redux";
 import {auth} from "./firebase/firebase-config";
 import {SET_USER} from "./store/userReducer";
-import {useEffect} from "react";
 
 function App() {
 
     const localUser = useSelector(state => state.user.email);
+    // const userIn = localUser.email;
     const dispatch = useDispatch();
 
     onAuthStateChanged(auth, (user) => {
@@ -27,8 +27,6 @@ function App() {
             });
         }
     });
-
-    
 
     if (localUser) {
         return (

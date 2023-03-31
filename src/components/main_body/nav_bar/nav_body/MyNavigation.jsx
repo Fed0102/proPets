@@ -18,7 +18,7 @@ import {pgBtnsAr} from "./pg_btns_array";
 const MyNavigation = () => {
     const location = useWindowPath();
     const showServices = [hotels, walking, fostering, vetHelp].some((path) => path === location);
-    const user_name = useSelector(state => state.user.name);
+    const userName = useSelector(state => state.user.name);
     const dispatch = useDispatch();
 
     const logout = () => {
@@ -48,7 +48,7 @@ const MyNavigation = () => {
             <div className={st.log_btns}>
                 <BtnNavPrfl btnPath={profile}>
                     <Avatar/>
-                    {user_name}
+                    {userName}
                 </BtnNavPrfl>
                 <div onClick={() => logout()}>
                     <BtnNavLogout icon={iconLogout} title={'Logout'}/>
