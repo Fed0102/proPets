@@ -42,10 +42,7 @@ const MyPostsPage = ({title}) => {
                 </div>}
 
             {isPostsLoading
-                ? <div className={st.loadingDiv}>
-                    <h1 className={st.loadingH1}>Loading.......</h1>
-                    <Loader/>
-            </div>
+                ? <Loader/>
                 : lostOrFound &&
                 <>
                     <LostInputs/>
