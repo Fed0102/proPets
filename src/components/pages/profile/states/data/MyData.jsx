@@ -6,28 +6,13 @@ import BtnHeaderWhite from "../../../../UI/btn_header_white/btn_header_white";
 import BtnHeaderGreen from "../../../../UI/btn_header_green/btn_header_green";
 import GreenBtnImg from "../../../../UI/btn_header_green/icons/GreenBtnImg";
 import save from '../../../../../assets/png/save.png'
-import {homePage} from "../../../../../router/paths";
-import {getAuth, updateProfile} from "firebase/auth";
-import {SET_USER_NAME} from "../../../../../store/userReducer";
-import {useDispatch, useSelector} from "react-redux";
 
 const MyData = () => {
 
-    const {lockalUser} = useSelector(state => state.user);
-
-    const [name, setName] = useState('localName');
+    const [name, setName] = useState('Ally');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [fb, setFb] = useState('');
-
-    const auth = getAuth();
-    const dispatch = useDispatch();
-    const saveData = () => {
-        updateProfile(auth.currentUser, {
-            displayName: name
-        }).catch(e => console.log(e))
-        dispatch({type: SET_USER_NAME, payload: name})
-    };
 
     return (
         <>
@@ -65,18 +50,14 @@ const MyData = () => {
                 <BtnHeaderWhite white={true}>
                     Cancel
                 </BtnHeaderWhite>
-                <BtnHeaderGreen
-                    onClick={
-                        saveData()
-                    }
-                    green={true}
-                    btnPath={homePage}>
+                <BtnHeaderGreen green={true}>
                     <GreenBtnImg imgPath={save}/>
                     Save changes
                 </BtnHeaderGreen>
             </div>
         </>
-    );
+    )
+        ;
 };
 
 export default MyData;
