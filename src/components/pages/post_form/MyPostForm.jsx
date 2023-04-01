@@ -7,16 +7,42 @@ import dog from '../../../assets/png/dog.png';
 import {db} from "../../../firebase/firebase-config";
 import {addDoc, collection} from "firebase/firestore";
 import {Link} from "react-router-dom";
-import {homePage} from "../../../router/paths";
+import {
+    fostering,
+    homePage,
+    hotels,
+    newPostFostering,
+    newPostHome,
+    newPostHotels, newPostVetHelp,
+    newPostWalking, vetHelp,
+    walking
+} from "../../../router/paths";
+import {useWindowPath} from "../../../hooks/useWindowPath";
 
 const MyPostForm = () => {
 
     const [body, setBody] = useState();
+
+    const path = useWindowPath();
+
+    const choosePath = () => {
+        if (path === newPostHome)
+            return homePage;
+        else if (path === newPostHotels)
+            return hotels;
+        else if (path === newPostWalking)
+            return walking;
+        else if (path === newPostFostering)
+            return fostering;
+        else if (path === newPostVetHelp)
+            return vetHelp;
+    }
+
     const addBase = () => {
         try {
             addDoc(collection(db, "post"), {
                 // Name: initial.displayName,
-                postType: 'home',
+                postType: choosePath().substring(1),
                 body: body,
                 date: Date.now(),
                 // Images: images,
@@ -73,7 +99,7 @@ const MyPostForm = () => {
                         <h3 className={`${style.titleSemiBoldGreen}`}>displayName</h3>
                     </div>
                     <div className={`col-3`}>
-                        <Link to={homePage} className={`${style.btnHeader}`} onClick={() => addBase()}>
+                        <Link to={choosePath()} className={`${style.btnHeader}`} onClick={() => addBase()}>
                             <img className={`${style.iconBtnBlack}`} src={paw} alt={'paw'}/>
                             <span className={''}>Publish</span>
                         </Link>
