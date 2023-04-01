@@ -13,7 +13,7 @@ import {
     found, foundForm,
     homePage, hotels,
     lost, lostForm,
-    newPostHome, previewFound, previewLost,
+    newPostHome, newPostHotels, previewFound, previewLost,
     profile, startPage,
     vetHelp, walking
 } from "./paths";
@@ -23,7 +23,7 @@ import MyFound from "../components/pages/lost_found_posts/MyFound";
 
 export const privateRoutes = [
     {id: 0, paths: ['', '/', homePage], element: <MyHome/>},
-    {id: 1, paths: [newPostHome], element: <MyPostForm/>},
+    {id: 1, paths: [newPostHome, newPostHotels], element: <MyPostForm/>},
     {id: 2, paths: [lost], element: <MyLost/>},
     {id: 11, paths: [found], element: <MyFound/>},
     {id: 3, paths: [lostForm, foundForm], element: <MyLostFoundForm/>},

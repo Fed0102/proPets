@@ -10,7 +10,7 @@ import facebook from '../../../assets/png/facebook.png';
 import phone from '../../../assets/png/phone.png';
 import email from '../../../assets/png/email.png';
 import {Link} from "react-router-dom";
-import {found, lost, lostForm, previewFound, previewLost} from "../../../router/paths";
+import {found, foundForm, lost, lostForm, previewFound, previewLost} from "../../../router/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
 
 
@@ -25,6 +25,14 @@ const PreviewLostFoundForm = () => {
             return lost;
         } else if (path === previewFound) {
             return found;
+        }
+    }
+
+    const editLostOrFound = () => {
+        if (path === previewLost) {
+            return lostForm;
+        } else if (path === previewFound) {
+            return foundForm;
         }
     }
 
@@ -109,7 +117,7 @@ const PreviewLostFoundForm = () => {
             <div className={`${style.postCardTitle} d-flex justify-content-between`}>
                 <span className={`${style.smallerTextBlack} ps-1`}>Share to Facebook</span>
                 <div className={'d-flex'}>
-                    <Link to={lostForm} className={`${style.btnEdit} me-2`}>
+                    <Link to={editLostOrFound()} className={`${style.btnEdit} me-2`}>
                         <img className={`${style.editIcon}`} src={edit} alt={'edit'}/>
                         <span className={'m-auto'}>Edit</span>
                     </Link>
