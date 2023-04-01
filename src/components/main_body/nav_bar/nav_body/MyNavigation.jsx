@@ -6,7 +6,7 @@ import BtnNavPrfl from "../../../UI/btn_nav_profile/btn_nav_profile";
 import Avatar from "../../../UI/avatar/avatar";
 import MySubNav from "./sub_nav_body/MySubNav";
 import BtnSubNavPg from "../../../UI/btn_sub_nav_pg/btn_sub_nav_pg";
-import {fostering, hotels, profile, vetHelp, walking} from "../../../../constants/paths";
+import {fostering, hotels, profile, vetHelp, walking} from "../../../../router/paths";
 import {useWindowPath} from "../../../../hooks/useWindowPath";
 import {useDispatch, useSelector} from "react-redux";
 import {signOut} from "firebase/auth";

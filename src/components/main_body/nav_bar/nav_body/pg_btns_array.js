@@ -1,4 +1,4 @@
-import {favorites, fostering, found, homePage, hotels, lost, vetHelp, walking} from "../../../../constants/paths";
+import {favorites, fostering, found, homePage, hotels, lost, vetHelp, walking} from "../../../../router/paths";
 import iconHome from "../../../../assets/png/home.png";
 import iconLost from "../../../../assets/png/lost_black.png";
 import iconFound from "../../../../assets/png/paw_black.png";

@@ -7,7 +7,7 @@ import {useDispatch} from "react-redux";
 import {SET_FORM_INFO} from "../../../store/lostFoundFormReducer";
 import PreviewLostFoundForm from "../preview_lost_found_form/PreviewLostFoundForm";
 import {Link} from "react-router-dom";
-import {preview} from "../../../constants/paths";
+import {preview} from "../../../router/paths";
 
 const LostFoundForm = () => {
 

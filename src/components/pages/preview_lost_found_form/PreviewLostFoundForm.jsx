@@ -10,7 +10,7 @@ import facebook from '../../../assets/png/facebook.png';
 import phone from '../../../assets/png/phone.png';
 import email from '../../../assets/png/email.png';
 import {Link} from "react-router-dom";
-import {lostForm} from "../../../constants/paths";
+import {lostForm} from "../../../router/paths";
 
 
 const PreviewLostFoundForm = () => {

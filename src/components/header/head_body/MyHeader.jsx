@@ -18,7 +18,7 @@ import {
     startPage,
     vetHelp,
     walking
-} from "../../../constants/paths";
+} from "../../../router/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
 import GreenBtnImg from "../../UI/btn_header_green/icons/GreenBtnImg";
 import {useSelector} from "react-redux";

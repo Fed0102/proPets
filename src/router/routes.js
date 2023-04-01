@@ -10,19 +10,14 @@ import MyVethelp from "../components/pages/services/MyVethelp";
 import MyPostForm from "../components/pages/post_form/MyPostForm";
 import MyProfile from "../components/pages/profile/MyProfile";
 import {
-    favorites,
-    fostering,
-    found,
-    foundForm,
-    homePage,
-    hotels,
-    lost,
-    lostForm,
+    favorites, fostering,
+    found, foundForm,
+    homePage, hotels,
+    lost, lostForm,
     newPostHome, preview,
     profile, startPage,
-    vetHelp,
-    walking
-} from "../constants/paths";
+    vetHelp, walking
+} from "./paths";
 import PreviewLostFoundForm from "../components/pages/preview_lost_found_form/PreviewLostFoundForm";
 
 export const privateRoutes = [
