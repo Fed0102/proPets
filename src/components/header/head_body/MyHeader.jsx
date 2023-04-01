@@ -13,9 +13,8 @@ import {
     homePage,
     hotels,
     lost,
-    lostForm,
-    newPostHome,
-    startPage,
+    lostForm, newPostFostering,
+    newPostHome, newPostHotels, newPostVetHelp, newPostWalking,
     vetHelp,
     walking
 } from "../../../router/paths";
@@ -29,6 +28,19 @@ const MyHeader = () => {
     const isPosts = [homePage, hotels, walking, fostering, vetHelp, '', '/'].some(path => path === location);
     const localUser = useSelector(state => state.user.email);
 
+    const choosePath = () => {
+        if (location === homePage)
+            return newPostHome;
+        else if (location === hotels)
+            return newPostHotels;
+        else if (location === walking)
+            return newPostWalking;
+        else if (location === fostering)
+            return newPostFostering;
+        else if (location === vetHelp)
+            return newPostVetHelp;
+    }
+
     const test = useWindowPath();
 
     return (
@@ -37,7 +49,7 @@ const MyHeader = () => {
                 <img src={logo} className={localUser ? `${st.logo} ${st.logo_main}` : st.logo} alt={logo}/>
 
                 {isPosts && localUser &&
-                    <BtnHeaderGreen test={test} green={true} btnPath={newPostHome}>
+                    <BtnHeaderGreen test={test} green={true} btnPath={choosePath()}>
                         <GreenBtnImg imgPath={plusImg}/>
                         Add new
                     </BtnHeaderGreen>

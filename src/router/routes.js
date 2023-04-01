@@ -9,14 +9,9 @@ import MyVethelp from "../components/pages/services/MyVethelp";
 import MyPostForm from "../components/pages/post_form/MyPostForm";
 import MyProfile from "../components/pages/profile/MyProfile";
 import {
-    favorites, fostering,
-    found, foundForm,
-    homePage, hotels,
-    lost, lostForm,
-    newPostHome, newPostHotels,
-    previewFound, previewLost,
-    profile, startPage,
-    vetHelp, walking
+    favorites, fostering, found, foundForm, homePage, hotels, lost, lostForm, newPostFostering,
+    newPostHome, newPostHotels, newPostVetHelp, newPostWalking, previewFound, previewLost,
+    profile, startPage, vetHelp, walking
 } from "./paths";
 import PreviewLostFoundForm from "../components/pages/preview_lost_found_form/PreviewLostFoundForm";
 import MyLost from "../components/pages/lost_found_posts/MyLost";
@@ -24,7 +19,7 @@ import MyFound from "../components/pages/lost_found_posts/MyFound";
 
 export const privateRoutes = [
     {id: 0, paths: ['', '/', homePage], element: <MyHome/>},
-    {id: 1, paths: [newPostHome, newPostHotels], element: <MyPostForm/>},
+    {id: 1, paths: [newPostHome, newPostHotels, newPostWalking, newPostFostering, newPostVetHelp], element: <MyPostForm/>},
     {id: 2, paths: [lost], element: <MyLost/>},
     {id: 11, paths: [found], element: <MyFound/>},
     {id: 3, paths: [lostForm, foundForm], element: <MyLostFoundForm/>},
