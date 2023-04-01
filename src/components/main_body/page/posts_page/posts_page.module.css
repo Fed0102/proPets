@@ -3,3 +3,14 @@
     margin-bottom: 20px;
     color: #689986;
 }
+
+.loadingDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.loadingH1 {
+    margin-right: 100px;
+    color: #669885
+}

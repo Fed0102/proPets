@@ -13,7 +13,8 @@ import {
     found, foundForm,
     homePage, hotels,
     lost, lostForm,
-    newPostHome, newPostHotels, previewFound, previewLost,
+    newPostHome, newPostHotels,
+    previewFound, previewLost,
     profile, startPage,
     vetHelp, walking
 } from "./paths";
