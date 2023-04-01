@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import Post from "../../../UI/post_wind/post_wind";
+import Post from "../../../UI/post_card/post_wind";
 import st from "./posts_page.module.css"
 import {collection, getDocs, query} from "firebase/firestore";
 import {db} from "../../../../firebase/firebase-config";
