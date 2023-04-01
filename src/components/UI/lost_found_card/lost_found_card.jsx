@@ -12,10 +12,10 @@ const LostCard = ({lostFoundPost}) => {
         <div className={style.mainDiv}>
             <div className={`${style.postCard} d-flex`}>
                 <div className={style.widthImgDiv}>
-                    <img src={avatar} alt={'avatar'}/>
+                    <img className={style.imgHeight} src={avatar} alt={'avatar'}/>
                 </div>
                 <div className={`col-7`}>
-                    <span className={`${style.titleBigBold}`}>{lostFoundPost.type},{lostFoundPost.breed}</span>
+                    <span className={`${style.titleBigBold}`}>{lostFoundPost.typeAnimal},{lostFoundPost.breed}</span>
                     <div className={`d-flex`}>
                         <div className={`col-6`}>
                             <h2 className={`${style.smallTextGreen}`}>Color: <span
@@ -48,7 +48,7 @@ const LostCard = ({lostFoundPost}) => {
                                 <span className={`${style.titleSemiBoldGreen}`}>Name</span>
                             </div>
                             <div>
-                                <span className={`${style.smallTextBlack}`}>{new Date(lostFoundPost.date).toTimeString()}}</span>
+                                <span className={`${style.smallTextBlack}`}>{new Date(lostFoundPost.date).toTimeString()}</span>
                             </div>
                         </div>
                         <div className={`col-4 d-flex justify-content-evenly`}>

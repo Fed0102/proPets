@@ -33,6 +33,9 @@ nav a {
     padding: 8px;
     text-decoration: none;
 }
+.btnHeader:hover{
+    color: white;
+}
 
 .iconBtn {
     width: 16px;
@@ -125,7 +128,7 @@ nav a {
 }
 
 .titleBold {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 700;
     color: #669885;
 }
@@ -137,7 +140,7 @@ nav a {
 }
 
 .titleSemiBold {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
     color: #669885;
     margin: 0;
@@ -187,7 +190,7 @@ nav a {
 }
 
 .postCard {
-    min-width: 90%;
+    min-width: 95%;
     box-shadow: 0 3px 6px grey;
     margin: 2%;
     padding: 1%;
@@ -343,8 +346,12 @@ textarea {
     color: #669885;
 }
 
+.widthImgDiv{
+    width: 250px;
+}
+
 .imgPreview {
-    width: 100%;
+    height: 235px;
 }
 
 .imgPreviewPost {

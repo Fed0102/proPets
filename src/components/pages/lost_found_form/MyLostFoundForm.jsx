@@ -5,9 +5,9 @@ import paw from '../../../assets/png/paw.png';
 import arrowUp from '../../../assets/png/arrow-up.png';
 import {useDispatch} from "react-redux";
 import {SET_FORM_INFO} from "../../../store/lostFoundFormReducer";
-import PreviewLostFoundForm from "../preview_lost_found_form/PreviewLostFoundForm";
 import {Link} from "react-router-dom";
-import {preview} from "../../../router/paths";
+import {foundForm, lostForm, previewFound, previewLost} from "../../../router/paths";
+import {useWindowPath} from "../../../hooks/useWindowPath";
 
 const LostFoundForm = () => {
 
@@ -23,6 +23,15 @@ const LostFoundForm = () => {
     const [email, setEmail] = useState('');
     const [facebook, setFacebook] = useState('');
     const dispatch = useDispatch();
+
+    const path = useWindowPath();
+    const lostOrFound = () => {
+        if (path === lostForm) {
+            return previewLost;
+        } else if (path === foundForm) {
+            return previewFound;
+        }
+    }
 
     return (
         <div className={'d-flex'}>
@@ -135,8 +144,9 @@ const LostFoundForm = () => {
                             <h3 className={`${style.titleSemiBoldGreen}`}>Name</h3>
                         </div>
                         <div className={`col-3`}>
-                            <Link to={preview} className={`${style.btnHeader}`}  onClick={() => {
-                                dispatch({ type: SET_FORM_INFO, payload: {
+                            <Link to={lostOrFound()} className={`${style.btnHeader}`} onClick={() => {
+                                dispatch({
+                                    type: SET_FORM_INFO, payload: {
                                         typeAnimal: typeAnimal,
                                         sex: sex,
                                         breed: breed,
@@ -149,7 +159,9 @@ const LostFoundForm = () => {
                                         email: email,
                                         facebook: facebook,
                                         date: Date.now()
-                                }})}
+                                    }
+                                })
+                            }
                             }>
                                 <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
                                 <span className={'m-auto'}>Publish</span>

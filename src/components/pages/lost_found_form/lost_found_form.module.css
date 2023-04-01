@@ -112,6 +112,10 @@
     opacity: 1;
 }
 
+.btnHeader:hover{
+    color: white;
+}
+
 .iconBtnBlack {
     width: 16px;
     height: 16px;

@@ -16,4 +16,5 @@ export const fostering = '/fostering';
 export const vetHelp = '/vethelp';
 export const favorites = '/favorites';
 export const profile = '/profile';
-export const preview = '/preview';
+export const previewLost = '/preview_lost';
+export const previewFound = '/preview_found';

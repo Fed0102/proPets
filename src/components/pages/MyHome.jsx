@@ -4,7 +4,7 @@ import MyPostsPage from "../main_body/page/posts_page/MyPostsPage";
 const MyHome = () => {
 
     return (
-        <MyPostsPage type={'home'}/>
+        <MyPostsPage/>
     );
 };
 

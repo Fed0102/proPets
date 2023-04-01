@@ -10,16 +10,28 @@ import facebook from '../../../assets/png/facebook.png';
 import phone from '../../../assets/png/phone.png';
 import email from '../../../assets/png/email.png';
 import {Link} from "react-router-dom";
-import {lostForm} from "../../../router/paths";
+import {found, lost, lostForm, previewFound, previewLost} from "../../../router/paths";
+import {useWindowPath} from "../../../hooks/useWindowPath";
 
 
 const PreviewLostFoundForm = () => {
 
     const form = useSelector(state => state.form);
 
+    const path = useWindowPath();
+
+    const lostOrFound = () => {
+        if (path === previewLost) {
+            return lost;
+        } else if (path === previewFound) {
+            return found;
+        }
+    }
+
     const addBase = () => {
         try {
             addDoc(collection(db, "post"), {
+                postType: lostOrFound().substring(1),
                 typeAnimal: form.typeAnimal,
                 sex: form.sex,
                 breed: form.breed,
@@ -39,12 +51,12 @@ const PreviewLostFoundForm = () => {
     }
 
     return (
-        <div className={`${style.mainWhiteBack} d-flex flex-column align-items-center overflow-auto mt-3`}>
+        <div className={`${style.mainWhiteBack} d-flex flex-column align-items-center overflow-auto`}>
             <h1 className={`${style.titleSemiBold} ${style.postCardTitle}`}><span className={`${style.titleBold}`}>Preview and Publish. </span>Please
                 share the post to your FB to be more effective</h1>
             <div className={`${style.postCard} d-flex`}>
-                <div className={`col-5`}>
-                    <img className={`${style.imgPreview}`} src={'image'} alt={'image'}/>
+                <div className={style.widthImgDiv}>
+                    <img className={`${style.imgPreview}`} src={avatar} alt={'avatar'}/>
                 </div>
                 <div className={`col-7 ps-3 pe-3`}>
                     <span className={`${style.titleBigBold}`}>{form.typeAnimal}, {form.breed}</span>
@@ -79,16 +91,17 @@ const PreviewLostFoundForm = () => {
                                 <span className={`${style.titleSemiBoldGreen}`}>{form.name}</span>
                             </div>
                             <div>
-                                <span className={`${style.smallerTextBlack}`}>{new Date(form.date).toDateString()}</span>
+                                <span
+                                    className={`${style.smallerTextBlack}`}>{new Date(form.date).toDateString()}</span>
                             </div>
                         </div>
                         <div className={`col-4 d-flex justify-content-evenly align-items-center`}>
                             <a href={`tel: ${form.phone}`}><img className={`${style.contactsBtn}`} src={phone}
-                                                                          alt={''}/></a>
+                                                                alt={''}/></a>
                             <a href={`https://${form.facebook}`} target={'_blank'}><img
                                 className={`${style.contactsBtnFb}`} src={facebook} alt={''}/></a>
                             <a href={`mailto: ${form.email}`}><img className={`${style.contactsBtn} mt-1`}
-                                                                             src={email} alt={''}/></a></div>
+                                                                   src={email} alt={''}/></a></div>
                     </div>
                 </div>
             </div>
@@ -100,10 +113,10 @@ const PreviewLostFoundForm = () => {
                         <img className={`${style.editIcon}`} src={edit} alt={'edit'}/>
                         <span className={'m-auto'}>Edit</span>
                     </Link>
-                    <button className={`${style.btnHeader}`} onClick={() => addBase()}>
+                    <Link to={lostOrFound()} className={`${style.btnHeader}`} onClick={() => addBase()}>
                         <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
                         <span className={'m-auto'}>Publish</span>
-                    </button>
+                    </Link>
                 </div>
             </div>
             <span className={`${style.littleGreyText} ${style.postCardTitle} text-end`}>By clicking “Publish”, you agree to us processing your information in accordance with these terms.</span>

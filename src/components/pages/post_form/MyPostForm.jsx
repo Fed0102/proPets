@@ -7,6 +7,7 @@ import dog from '../../../assets/png/dog.png';
 import {db} from "../../../firebase/firebase-config";
 import {addDoc, collection} from "firebase/firestore";
 import {Link} from "react-router-dom";
+import {homePage} from "../../../router/paths";
 
 const MyPostForm = () => {
 
@@ -39,7 +40,7 @@ const MyPostForm = () => {
                     </div>
                     <textarea className={`ms-2 ${style.smallerTextBlack} ${style.biggestTextarea}`} name={'text'}
                               onChange={e => setBody(e.target.value)}
-                              placeholder={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cupiditate, fuga ipsum natus repellat repellendus totam? Alias amet consectetur doloribus dolorum, fugit, in ipsum laboriosam modi possimus qui temporibus veritatis, vero. Esse eveniet harum in laborum modi obcaecati pariatur perspiciatis quibusdam. Accusantium autem commodi distinctio error fuga reprehenderit tenetur vitae voluptatibus? A alias assumenda culpa deleniti deserunt dicta dolor doloribus eos fugiat incidunt iusto laboriosam laborum maxime necessitatibus perferendis provident quasi quibusdam quisquam quod recusandae sint, temporibus vel vero! A, accusamus deserunt, dolor dolore ducimus ea eos et eveniet facilis fugit id illo illum impedit incidunt ipsa libero magni neque obcaecati odio porro provident quasi quibusdam quis quo quod repellendus sapiente sit suscipit tempora temporibus totam unde velit voluptatibus. Asperiores assumenda at debitis dignissimos dolore doloremque ducimus ea earum enim, excepturi facilis fugit magnam minus mollitia optio quam veritatis? Error expedita facere impedit inventore libero magni mollitia natus neque nobis quidem soluta tempora, voluptatibus voluptatum. Laudantium nobis obcaecati unde? Amet esse in iure officia pariatur quas. Architecto dicta eaque fugit inventore neque repellat sit voluptate. Excepturi facere fuga necessitatibus sed sequi, voluptate? Animi beatae cupiditate deleniti explicabo minus tempore. Consectetur dolor dolores eius est et, harum in ipsum magni officia quia repellat sed! Autem cupiditate deserunt, distinctio dolores, eveniet ex, iure minima mollitia nobis numquam quaerat rerum tempora tenetur. Ab distinctio doloremque minima sequi. Alias aliquam beatae blanditiis commodi doloremque dolorum earum et eveniet excepturi hic in itaque libero minus nihil placeat quisquam quos, reiciendis sunt ut vero voluptas voluptate!`}
+                              placeholder={`Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores cupiditate debitis enim eum eveniet excepturi id mollitia tempore! Alias aliquid architecto aspernatur doloribus enim molestias nihil perspiciatis provident repudiandae vero? At, atque aut dignissimos dolor error ex laudantium modi nemo odit officiis praesentium recusandae repellendus, sapiente totam unde vitae!`}
                     />
                 </div>
                 <div className={`${style.afterBigTextArea} d-flex mb-1 mt-2`}>
@@ -49,13 +50,13 @@ const MyPostForm = () => {
                     </div>
                     <div className={`${style.divTwo} d-flex`}>
                         <div className={`col-5 row d-flex flex-wrap justify-content-center align-items-center`}>
-                            <div className={` overflow-hidden text-center`}>
-                                <img src={''} alt={'avatar'}/>
+                            <div className={`overflow-hidden text-center`}>
+                                <img className={style.imgAvatar} src={avatar} alt={'avatar'}/>
                             </div>
                         </div>
                         <div className={`col-4 text-center`}>
                             <img className={`${style.addFileIcon}`} src={arrowUp} alt={''}/>
-                            <p className={``}>Drag and drop<br/> photos or</p>
+                            <p>Drag and drop<br/> photos or</p>
                             <label className={`${style.addFileLabel}`} htmlFor={'fileInput'}>Browse</label>
                         </div>
                         <div className={`${style.divInput}  mb-3`}>
@@ -72,10 +73,10 @@ const MyPostForm = () => {
                         <h3 className={`${style.titleSemiBoldGreen}`}>displayName</h3>
                     </div>
                     <div className={`col-3`}>
-                        <button className={`${style.btnHeader}`} onClick={() => addBase()}>
-                            <img className={`${style.iconBtnBlack}`} src={paw} alt={''}/>
-                            <span className={'m-auto'}>Publish</span>
-                        </button>
+                        <Link to={homePage} className={`${style.btnHeader}`} onClick={() => addBase()}>
+                            <img className={`${style.iconBtnBlack}`} src={paw} alt={'paw'}/>
+                            <span className={''}>Publish</span>
+                        </Link>
                     </div>
                 </div>
             </div>
