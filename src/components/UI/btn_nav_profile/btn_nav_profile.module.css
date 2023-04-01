@@ -6,6 +6,10 @@
     border-radius: 0 30px 30px 0;
 }
 
+.base_act {
+    background-color: white;
+}
+
 .normal {
     height: 80%;
     width: 165px;
@@ -14,6 +18,10 @@
     display: flex;
     align-items: center;
     color: white;
+}
+
+.normal_act {
+    color: #84b6a3;
 }
 
 .link {
