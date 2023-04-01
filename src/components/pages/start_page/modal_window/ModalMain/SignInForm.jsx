@@ -5,13 +5,8 @@ import ModalFooterIn from "../ModalFooter/ModalFooterIn";
 
 const SignInForm = () => {
 
-    // const email = useSelector(state => state.email);
-    // const password = useSelector(state => state.password);
-    // const dispatch = useDispatch();
-
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-
 
     return (
         <div>
