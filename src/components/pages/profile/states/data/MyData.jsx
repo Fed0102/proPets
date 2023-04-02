@@ -6,13 +6,83 @@ import BtnHeaderWhite from "../../../../UI/btn_header_white/btn_header_white";
 import BtnHeaderGreen from "../../../../UI/btn_header_green/btn_header_green";
 import GreenBtnImg from "../../../../UI/btn_header_green/icons/GreenBtnImg";
 import save from '../../../../../assets/png/save.png'
+import {updateProfile, updateEmail} from "firebase/auth";
+import {auth, db} from "../../../../../firebase/firebase-config";
+import {doc, updateDoc} from "firebase/firestore";
 
 const MyData = () => {
 
-    const [name, setName] = useState('Ally');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [fb, setFb] = useState('');
+    let user = localStorage.getItem('userInfo');
+    let initial = JSON.parse(user);
+    const [nameInp, setNameInp] = useState(initial.name);
+    const [emailInp, setEmailInp] = useState(initial.email);
+    const [phoneInp, setPhoneInp] = useState(initial.phone);
+    const [fbInp, setFbInp] = useState(initial.facebook);
+    const [nameSend, setNameSend] = useState(initial.name);
+    const [emailSend, setEmailSend] = useState(initial.email);
+    const [phoneSend, setPhoneSend] = useState(initial.phone);
+    const [fbSend, setFbSend] = useState(initial.facebook);
+    const dataToSend = {
+        uid: initial.uid,
+        name: nameSend,
+        photo: initial.photo,
+        email: emailSend,
+        phone: phoneSend,
+        facebook: fbSend
+    }
+
+    const updateStorage = (data) => {
+        localStorage.setItem('userInfo', JSON.stringify(data));
+        console.log('Storage updated');
+    }
+
+    const updateUserInfo = () => {
+        const docInfo = doc(db, initial.uid, "userInfo");
+        updateDoc(docInfo, dataToSend)
+            .then(v => {
+                console.log('userInfo updated');
+                setFbSend(phoneInp);
+                setFbSend(fbInp);
+            }).then(v => {
+                updateStorage(dataToSend);
+            }).catch(e => console.log('Error in userInfo updating'));
+    }
+
+    const updateLogin = () => {
+        updateEmail(auth.currentUser, emailInp)
+            .then(v => {
+                console.log('Email updated');
+                setEmailSend(emailInp);
+                updateStorage(dataToSend);
+                updateUserInfo();
+            }).then(v => {
+                updateStorage(dataToSend);
+            }).catch(e => {
+            console.log('Error in email updating');
+        });
+    }
+
+    const updateNameAndPhoto = () => {
+        updateProfile(auth.currentUser, {
+            displayName: nameInp,
+            photoURL: initial.photo
+        })
+            .then(v => {
+                console.log('Name and photo updated');
+                setNameSend(nameInp);
+                updateStorage(dataToSend);
+                updateUserInfo();
+            })
+            .catch(e => {
+                console.log('Error in name or photo updating');
+            });
+    }
+
+    const saveChanges = () => {
+        updateNameAndPhoto();
+        updateLogin();
+    }
+
 
     return (
         <>
@@ -26,7 +96,7 @@ const MyData = () => {
                     </div>
                     <div className={st.name}>
                         <input className={st.name_row} type="text" placeholder="Name" name="name"
-                               value={name} onChange={e => setName(e.target.value)}/>
+                               value={nameInp} onChange={e => setNameInp(e.target.value)}/>
                     </div>
                 </div>
                 <div className={st.contacts}>
@@ -37,12 +107,12 @@ const MyData = () => {
                     </div>
                     <div className={st.form_rows}>
                         <input className={st.form_row} type="email" placeholder="helenjohnson@gmail.com" name="email"
-                               value={email} onChange={e => setEmail(e.target.value)}/>
+                               value={emailInp} onChange={e => setEmailInp(e.target.value)}/>
                         <input className={st.form_row} type="tel" placeholder="000-000-00-00" name="password"
-                               value={phone} onChange={e => setPhone(e.target.value)}/>
+                               value={phoneInp} onChange={e => setPhoneInp(e.target.value)}/>
                         <input className={st.form_row} type="url" placeholder="https://www.facebook.com/helenjohnson"
                                name="password"
-                               value={fb} onChange={e => setFb(e.target.value)}/>
+                               value={fbInp} onChange={e => setFbInp(e.target.value)}/>
                     </div>
                 </div>
             </div>
@@ -50,7 +120,7 @@ const MyData = () => {
                 <BtnHeaderWhite white={true}>
                     Cancel
                 </BtnHeaderWhite>
-                <BtnHeaderGreen green={true}>
+                <BtnHeaderGreen green={true} onClick={saveChanges}>
                     <GreenBtnImg imgPath={save}/>
                     Save changes
                 </BtnHeaderGreen>

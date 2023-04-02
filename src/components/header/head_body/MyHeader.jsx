@@ -7,26 +7,21 @@ import plusImg from '../../../assets/png/plus.png';
 import lostImg from '../../../assets/png/lost.png';
 import foundImg from '../../../assets/png/found.png';
 import {
-    fostering,
-    found,
-    foundForm,
-    homePage,
-    hotels,
-    lost,
+    fostering, found,
+    foundForm, homePage,
+    hotels, lost,
     lostForm, newPostFostering,
-    newPostHome, newPostHotels, newPostVetHelp, newPostWalking,
-    vetHelp,
-    walking
+    newPostHome, newPostHotels,
+    newPostVetHelp, newPostWalking,
+    vetHelp, walking
 } from "../../../router/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
 import GreenBtnImg from "../../UI/btn_header_green/icons/GreenBtnImg";
-import {useSelector} from "react-redux";
 
-const MyHeader = () => {
+const MyHeader = ({user}) => {
     const location = useWindowPath();
     const isLostFound = [lost, found].some(path => path === location);
     const isPosts = [homePage, hotels, walking, fostering, vetHelp, '', '/'].some(path => path === location);
-    const localUser = useSelector(state => state.user.email);
 
     const choosePath = () => {
         if (location === homePage)
@@ -44,17 +39,17 @@ const MyHeader = () => {
     const test = useWindowPath();
 
     return (
-        <div className={localUser ? `${st.header} ${st.header_main}` : st.header}>
+        <div className={user ? `${st.header} ${st.header_main}` : st.header}>
             <div className={st.body}>
-                <img src={logo} className={localUser ? `${st.logo} ${st.logo_main}` : st.logo} alt={logo}/>
+                <img src={logo} className={user ? `${st.logo} ${st.logo_main}` : st.logo} alt={logo}/>
 
-                {isPosts && localUser &&
+                {isPosts && user &&
                     <BtnHeaderGreen test={test} green={true} btnPath={choosePath()}>
                         <GreenBtnImg imgPath={plusImg}/>
                         Add new
                     </BtnHeaderGreen>
                 }
-                {isLostFound && localUser &&
+                {isLostFound && user &&
                     <div className={st.btns}>
                         <BtnHeaderGreen green={false} btnPath={lostForm}>
                             <GreenBtnImg imgPath={lostImg}/>
@@ -66,7 +61,7 @@ const MyHeader = () => {
                         </BtnHeaderGreen>
                     </div>
                 }
-                {!localUser &&
+                {!user &&
                     <BtnHeaderWhite>
                         Sign in
                     </BtnHeaderWhite>

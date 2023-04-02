@@ -5,14 +5,8 @@ import {SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
 import paw from "../../../../../assets/png/paw.png";
 import {registration} from "../../../../../firebase/auth-service";
 import {SET_USER_NAME} from "../../../../../store/userReducer";
-import {updateProfile} from "firebase/auth";
-import {auth} from "../../../../../firebase/firebase-config";
 
 const ModalFooterUp = ({userName, userEmail, password}) => {
-
-    // const email = useSelector(state => state.email)
-    // const password = useSelector(state => state.password)
-    // const dispatch = useDispatch();
 
     const dispatch = useDispatch();
 

@@ -12,7 +12,7 @@ const BtnNavPg = ({button}) => {
     const showSubbtns = button.sub_points ? button.paths.some((path) => path === location) : null;
     return (
         <>
-            <div className={showSubbtns && st.act}>
+            <div className={showSubbtns ? st.act : undefined}>
                 <div className={actBtn ? `${st.base} ${st.base_act}` : st.base}>
                     <Link to={button.paths[0]} className={st.link}>
                         <div className={actBtn ? `${st.normal} ${st.normal_act}` : st.normal}>
