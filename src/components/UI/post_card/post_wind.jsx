@@ -4,6 +4,10 @@ import Avatar from "../avatar/avatar";
 import PostStar from "./icons/post_star";
 
 const PostWind = ({post}) => {
+
+    const post1 = post.id
+
+
     return (
         <div className={st.base}>
             <div className={st.post_avatar}>
