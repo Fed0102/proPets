@@ -4,7 +4,6 @@ import MyMap from "./map/MyMap";
 import {useWindowPath} from "../../../hooks/useWindowPath";
 import {favorites, fostering, found, homePage, hotels, lost, vetHelp, walking} from "../../../router/paths";
 import MyAdvertising from "./advertising/MyAdvertising";
-// import MyAdvertising from "./advertising/MyAdvertising";
 
 
 const MyBlock = () => {
