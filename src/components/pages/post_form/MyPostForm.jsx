@@ -5,7 +5,7 @@ import paw from '../../../assets/png/paw.png';
 import avatar from '../../../assets/png/avatar.jpg';
 import dog from '../../../assets/png/dog.png';
 import {db} from "../../../firebase/firebase-config";
-import {addDoc, arrayUnion, collection, doc, getDoc, query, setDoc, updateDoc} from "firebase/firestore";
+import {addDoc, collection} from "firebase/firestore";
 import {Link} from "react-router-dom";
 import {
     fostering,

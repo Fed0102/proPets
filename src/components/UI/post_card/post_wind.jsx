@@ -5,9 +5,6 @@ import PostStar from "./icons/post_star";
 
 const PostWind = ({post}) => {
 
-    const post1 = post.id
-
-
     return (
         <div className={st.base}>
             <div className={st.post_avatar}>
@@ -15,7 +12,7 @@ const PostWind = ({post}) => {
             </div>
             <div className={st.post_text}>
                 <h5 className={st.post_name}>{post.user}</h5>
-                <div className={st.post_date}>{new Date(post.date).toTimeString()}}</div>
+                <div className={st.post_date}>{new Date(post.date).toISOString().slice(0, 10)} {new Date(post.date).toISOString().slice(11, 16)}</div>
                 {post.body}
             </div>
             <div className={st.post_btns}>
