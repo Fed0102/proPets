@@ -40,10 +40,7 @@ const MyNavigation = () => {
                 )}
             </div>
             <div className={st.log_btns}>
-                <BtnNavPrfl btnPath={[profile]}>
-                    <Avatar/>
-                    {userInfoLoc.name}
-                </BtnNavPrfl>
+                <BtnNavPrfl btnPath={[profile]} text={userInfoLoc.name}/>
                 <div onClick={() => logout()}>
                     <BtnNavLogout icon={iconLogout} title={'Logout'}/>
                 </div>

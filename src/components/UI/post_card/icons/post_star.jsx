@@ -1,5 +1,6 @@
 import React from 'react';
 import star from '../../../../assets/png/star_empty.png';
+// import test from '../../../../assets/svg/star_test.svg'
 import st from './post_star.module.css'
 import {Link} from "react-router-dom";
 import {favorites} from "../../../../router/paths";
