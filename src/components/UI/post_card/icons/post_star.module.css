@@ -3,7 +3,7 @@
 }
 
 
-img:hover {
+.star:hover {
     filter: invert(60%) sepia(9%) saturate(1129%) hue-rotate(105deg) brightness(91%) contrast(87%);
 }
 
