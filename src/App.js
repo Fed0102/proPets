@@ -6,10 +6,11 @@ import MyRouter from "./router/MyRouter";
 import {onAuthStateChanged} from "firebase/auth";
 import {auth} from "./firebase/firebase-config";
 import {useState} from "react";
+import Loader from "./components/UI/loader/Loader";
 
 function App() {
 
-    const [userAuth, setUserAuth] = useState(false);
+    const [userAuth, setUserAuth] = useState(null);
 
     onAuthStateChanged(auth, (user) => {
         if (user) {
@@ -29,7 +30,9 @@ function App() {
         }
     });
 
-    if (userAuth) {
+    if (userAuth === null) {
+        return <Loader/>
+    } else if (userAuth) {
         return (
             <BrowserRouter>
                 <MyHeader user={userAuth}/>
