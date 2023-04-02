@@ -18,3 +18,8 @@
     border-radius: 15px 0 0 0;
     height: 93%;
 }
+
+.mapContainer {
+    width: 100%;
+    height: calc(100vh - 125px);
+}
