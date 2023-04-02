@@ -15,7 +15,8 @@ export async function getAllPosts(uid) {
     const temp = await getDoc(ref);
     return temp.exists() ? temp.data() : {post: []};
 }
-// export async function updatePost(uid, posts){
-//     const ref = doc(db,'posts', uid)
-//     await updateDoc(ref,{post: posts});
-// }
+
+export async function updatePost(uid, posts){
+    const ref = doc(db,'posts', uid)
+    await updateDoc(ref,{post: posts});
+}

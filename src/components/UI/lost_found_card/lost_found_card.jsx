@@ -6,6 +6,7 @@ import facebook from "../../../assets/png/facebook.png";
 import email from "../../../assets/png/email.png";
 import avatar from "../../../assets/png/avatar.jpg";
 import Avatar from "../avatar/avatar";
+
 const LostCard = ({lostFoundPost}) => {
 
     return (
@@ -39,16 +40,19 @@ const LostCard = ({lostFoundPost}) => {
                         <img className={`${style.mapMarker}`} src={map_marker} alt={''}/>
                         <span className={`${style.smallTextBlack}`}>{lostFoundPost.location}</span>
                     </div>
-                    <div className={`d-flex`}>
-                        <div className={`${style.avatarImg} col-1`}>
-                            <Avatar/>
-                        </div>
-                        <div className={`d-flex flex-column col-7 ps-3`}>
-                            <div>
-                                <span className={`${style.titleSemiBoldGreen}`}>Name</span>
+                    <div className={`d-flex justify-content-between`}>
+                        <div className={`d-flex`}>
+                            <div className={`${style.avatarImg}`}>
+                                <Avatar/>
                             </div>
-                            <div>
-                                <span className={`${style.smallTextBlack}`}>{new Date(lostFoundPost.date).toTimeString()}</span>
+                            <div className={`d-flex flex-column ps-2`}>
+                                <div>
+                                    <span className={`${style.titleSemiBoldGreen}`}>Name</span>
+                                </div>
+                                <div>
+                                    <span
+                                        className={`${style.smallTextBlack}`}>{new Date(lostFoundPost.date).toISOString().slice(0, 10)} {new Date(lostFoundPost.date).toISOString().slice(11, 16)}</span>
+                                </div>
                             </div>
                         </div>
                         <div className={`col-4 d-flex justify-content-evenly`}>

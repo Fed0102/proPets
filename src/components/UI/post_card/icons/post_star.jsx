@@ -24,7 +24,7 @@ const PostStar = () => {
 
     return (
         // <Link to={favorites} setPost={setFavoritesPost} onClick={()=>addBase()}>
-        <Link to={favorites}>
+        <Link to={favorites} className={st.star}>
             <img className={st.body} src={star} alt={'star'}/>
         </Link>
     );
