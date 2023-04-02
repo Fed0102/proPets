@@ -12,14 +12,13 @@
 
 .smallInput {
     width: 200px;
-    margin-left: 10px;
-    margin-right: 5px;
+    margin-left: 15px;
+    /*margin-right: 5px;*/
 }
 
 .bigInput {
-    width: 330px;
-    margin-left: 5px;
-    margin-right: 10px;
+    width: 350px;
+    margin-left: 15px;
 }
 
 .postCard {
