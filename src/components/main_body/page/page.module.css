@@ -1,5 +1,6 @@
 .base {
     width: 800px;
+    max-width: 50%;
     height: auto;
     min-height: calc(100vh - 70px);
     padding: 17px 15px;

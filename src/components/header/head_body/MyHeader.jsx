@@ -7,12 +7,9 @@ import plusImg from '../../../assets/png/plus.png';
 import lostImg from '../../../assets/png/lost.png';
 import foundImg from '../../../assets/png/found.png';
 import {
-    fostering, found,
-    foundForm, homePage,
-    hotels, lost,
-    lostForm, newPostFostering,
-    newPostHome, newPostHotels,
-    newPostVetHelp, newPostWalking,
+    fostering, found, foundForm, homePage,
+    hotels, lost, lostForm, newPostFostering,
+    newPostHome, newPostHotels, newPostVetHelp, newPostWalking,
     vetHelp, walking
 } from "../../../router/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
@@ -24,49 +21,55 @@ const MyHeader = ({user}) => {
     const isPosts = [homePage, hotels, walking, fostering, vetHelp, '', '/'].some(path => path === location);
 
     const choosePath = () => {
-        if (location === homePage)
-            return newPostHome;
-        else if (location === hotels)
-            return newPostHotels;
-        else if (location === walking)
-            return newPostWalking;
-        else if (location === fostering)
-            return newPostFostering;
-        else if (location === vetHelp)
-            return newPostVetHelp;
+        switch (location) {
+            case homePage:
+                return newPostHome;
+            case hotels:
+                return newPostHotels;
+            case walking:
+                return newPostWalking;
+            case fostering:
+                return newPostFostering;
+            case vetHelp:
+                return newPostVetHelp;
+        }
     }
-
-    const test = useWindowPath();
 
     return (
         <div className={user ? `${st.header} ${st.header_main}` : st.header}>
-            <div className={st.body}>
-                <img src={logo} className={user ? `${st.logo} ${st.logo_main}` : st.logo} alt={logo}/>
+            {/*<div className={st.body}>*/}
+                <div className={st.left}>
+                    <img src={logo} className={user ? `${st.logo} ${st.logo_main}` : st.logo} alt={logo}/>
+                </div>
 
-                {isPosts && user &&
-                    <BtnHeaderGreen test={test} green={true} btnPath={choosePath()}>
-                        <GreenBtnImg imgPath={plusImg}/>
-                        Add new
-                    </BtnHeaderGreen>
-                }
-                {isLostFound && user &&
-                    <div className={st.btns}>
-                        <BtnHeaderGreen green={false} btnPath={lostForm}>
-                            <GreenBtnImg imgPath={lostImg}/>
-                            I lost my pet
+                <div className={st.center}></div>
+
+                <div className={st.right}>
+                    {isPosts && user &&
+                        <BtnHeaderGreen green={true} btnPath={choosePath()}>
+                            <GreenBtnImg imgPath={plusImg}/>
+                            Add new
                         </BtnHeaderGreen>
-                        <BtnHeaderGreen green={true} btnPath={foundForm}>
-                            <GreenBtnImg imgPath={foundImg} yellow={true}/>
-                            I found a pet
-                        </BtnHeaderGreen>
-                    </div>
-                }
-                {!user &&
-                    <BtnHeaderWhite>
-                        Sign in
-                    </BtnHeaderWhite>
-                }
-            </div>
+                    }
+                    {isLostFound && user &&
+                        <div className={st.btns}>
+                            <BtnHeaderGreen green={false} btnPath={lostForm}>
+                                <GreenBtnImg imgPath={lostImg}/>
+                                I lost my pet
+                            </BtnHeaderGreen>
+                            <BtnHeaderGreen green={true} btnPath={foundForm}>
+                                <GreenBtnImg imgPath={foundImg} yellow={true}/>
+                                I found a pet
+                            </BtnHeaderGreen>
+                        </div>
+                    }
+                    {!user &&
+                        <BtnHeaderWhite>
+                            Sign in
+                        </BtnHeaderWhite>
+                    }
+                </div>
+            {/*</div>*/}
         </div>
     );
 };
