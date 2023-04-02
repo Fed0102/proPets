@@ -36,8 +36,6 @@ const MyPostsPage = ({title}) => {
         }, 1000);
     }, []);
 
-    console.log(posts);
-
     return (
         <>
             {title &&
