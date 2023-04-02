@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import SignUpForm from "../start_page/modal_window/ModalMain/SignUpForm";
-import SignInForm from "../start_page/modal_window/ModalMain/SignInForm";
 import st from "./profile.module.css";
 import MyData from "./states/data/MyData";
 import MyActivities from "./states/activities/MyActivities";

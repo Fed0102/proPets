@@ -91,7 +91,7 @@ const MyData = () => {
                     <div className={st.avatar_block}>
                         <Avatar/>
                         <div className={st.camera}>
-                            <img className={st.camera_img} src={camera}/>
+                            <img className={st.camera_img} src={camera} alt={'camera'}/>
                         </div>
                     </div>
                     <div className={st.name}>
