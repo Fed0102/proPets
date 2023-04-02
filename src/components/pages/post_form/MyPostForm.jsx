@@ -5,7 +5,7 @@ import paw from '../../../assets/png/paw.png';
 import avatar from '../../../assets/png/avatar.jpg';
 import dog from '../../../assets/png/dog.png';
 import {db} from "../../../firebase/firebase-config";
-import {addDoc, collection} from "firebase/firestore";
+import {addDoc, arrayUnion, collection, doc, getDoc, query, setDoc, updateDoc} from "firebase/firestore";
 import {Link} from "react-router-dom";
 import {
     fostering,
@@ -38,16 +38,19 @@ const MyPostForm = () => {
             return vetHelp;
     }
 
+    const user = JSON.parse(localStorage.getItem('userInfo'));
+
     const addBase = () => {
         try {
             addDoc(collection(db, "post"), {
-                // Name: initial.displayName,
+                name: user.name,
+                photo: user.photo,
+                active: true,
+                uid: user.uid,
                 postType: choosePath().substring(1),
                 body: body,
                 date: Date.now(),
                 // Images: images,
-                // PhotoURL: initial.photoURL,
-                // uid: initial.uid,
             }).then(r => console.log(r));
         } catch (e) {
             console.error("Error adding document: ", e);

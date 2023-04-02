@@ -5,13 +5,10 @@ import Loader from "../../../UI/loader/Loader";
 
 const Map = () => {
 
-<<<<<<< Updated upstream
+    const REACT_APP_GOOGLE_MAPS_API_KEY='AIzaSyDW7V5xmEuiq-O32wMJEiTCRdqyVRbCFB4';
+
     const {isLoaded} = useLoadScript(
-        {googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY})
-=======
-    // const {} = useLoadScript(
-    //     {googleMapsApiKey: "AIzaSyDldgB09sGhpzX757lYVxqOCWg-aX8lXQw"})
->>>>>>> Stashed changes
+        {googleMapsApiKey:REACT_APP_GOOGLE_MAPS_API_KEY})
 
 
     if (!isLoaded)
