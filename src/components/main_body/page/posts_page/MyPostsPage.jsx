@@ -26,6 +26,7 @@ const MyPostsPage = ({title}) => {
             const getBase = async () => {
                 const data = await getDocs(baseCollectionRefTree)
                 setPosts(data.docs.map(doc => ({...doc.data(), id: doc.id})).sort(sortObject('date')));
+                console.log(data.docs.length);
             }
             getBase()
                 .then()
