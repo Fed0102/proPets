@@ -51,7 +51,7 @@ const LostCard = ({lostFoundPost}) => {
                                 </div>
                                 <div>
                                     <span
-                                        className={`${style.smallTextBlack}`}>{new Date(lostFoundPost.date).toISOString().slice(0, 10)} {new Date(lostFoundPost.date).toISOString().slice(11, 16)}</span>
+                                        className={`${style.smallTextBlack}`}>{new Date(lostFoundPost.date).toTimeString().slice(0, 8)}</span>
                                 </div>
                             </div>
                         </div>
