@@ -41,7 +41,7 @@ const MyData = () => {
         updateDoc(docInfo, dataToSend)
             .then(v => {
                 console.log('userInfo updated');
-                setFbSend(phoneInp);
+                setPhoneSend(phoneInp);
                 setFbSend(fbInp);
             }).then(v => {
                 updateStorage(dataToSend);

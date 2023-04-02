@@ -24,6 +24,8 @@ function App() {
                 }
             ));
             setUserAuth(true);
+        } else {
+            setUserAuth(false);
         }
     });
 

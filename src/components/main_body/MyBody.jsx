@@ -40,7 +40,7 @@ const MyBody = () => {
                 phone: '',
                 facebook: ''
             }
-            const test = setDoc(docInfo, newUser);
+            await setDoc(docInfo, newUser);
             localStorage.setItem('userInfo', JSON.stringify(newUser));
         } else {
             localStorage.setItem('userInfo', JSON.stringify(userInfoDB.data()));

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import st from './navigation.module.css';
 import BtnNavPg from "../../../UI/btn_nav_pg/btn_nav_pg";
 import iconLogout from "../../../../assets/png/logout.png";
@@ -11,17 +11,24 @@ import {auth} from "../../../../firebase/firebase-config";
 import {REMOVE_USER} from "../../../../store/userReducer";
 import BtnNavLogout from "../../../UI/btn_nav_pg/btn_nav_logout";
 import {pgBtnsAr} from "./pg_btns_array";
+import {useWindowPath} from "../../../../hooks/useWindowPath";
 
 const MyNavigation = () => {
-    const userName = useSelector(state => state.user.name);
     const dispatch = useDispatch();
+    let locStor = localStorage.getItem('userInfo');
+    let userInfoLoc = JSON.parse(locStor);
 
     const logout = () => {
         signOut(auth)
             .then(() => {
+                localStorage.removeItem('userInfo');
                 dispatch({type: REMOVE_USER});
             }).catch(e => console.log(e.message));
     }
+
+    useEffect(() => {
+
+    },[useWindowPath()])
 
     return (
         <div className={st.base}>
@@ -35,7 +42,7 @@ const MyNavigation = () => {
             <div className={st.log_btns}>
                 <BtnNavPrfl btnPath={[profile]}>
                     <Avatar/>
-                    {userName}
+                    {userInfoLoc.name}
                 </BtnNavPrfl>
                 <div onClick={() => logout()}>
                     <BtnNavLogout icon={iconLogout} title={'Logout'}/>
