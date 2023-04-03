@@ -54,7 +54,14 @@ nav a {
 }
 
 .mainWhiteBack {
-    background-color: transparent;
+    margin-top: 10px;
+    z-index: 3000;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
 }
 
 .navBtn {
@@ -128,9 +135,13 @@ nav a {
 }
 
 .titleBold {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
     color: #669885;
+}
+
+.a {
+    padding-left: 15px;
 }
 
 .titleBigBold {
@@ -140,7 +151,7 @@ nav a {
 }
 
 .titleSemiBold {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 600;
     color: #669885;
     margin: 0;
@@ -153,7 +164,7 @@ nav a {
 }
 
 .smallerTextBlack {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 500;
     color: black;
 }
@@ -347,7 +358,12 @@ textarea {
 }
 
 .widthImgDiv{
-    /*width: 250px;*/
+    padding-right: 15px;
+}
+
+.imgHeight{
+    width: 250px;
+    height: 250px;
 }
 
 .imgPreview {
@@ -393,6 +409,24 @@ textarea {
 }
 
 .btnEdit:hover {
+    color: #669885;
+}
+
+.btnFacebook {
+    width: 160px;
+    color: #669885;
+    height: 34px;
+    background-color: transparent;
+    border: #669885 1px solid;
+    border-radius: 17px;
+    font-size: 12px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.btnFacebook:hover {
     color: #669885;
 }
 
