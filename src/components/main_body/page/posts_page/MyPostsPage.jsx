@@ -15,7 +15,7 @@ const MyPostsPage = ({title}) => {
     const type = useWindowPath().substring(1);
     const baseCollectionRefTree = query(collection(db, "post"), where("postType", "==", type));
     const lostOrFound = type === 'lost' || type === 'found';
-
+    
     function sortObject(field) {
         return (a, b) => a[field] < b[field] ? 1 : -1;
     }

@@ -18,6 +18,7 @@ import {
     walking
 } from "../../../router/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
+import Avatar from "../../UI/avatar/avatar";
 
 const MyPostForm = () => {
 
@@ -38,15 +39,15 @@ const MyPostForm = () => {
             return vetHelp;
     }
 
-    const user = JSON.parse(localStorage.getItem('userInfo'));
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
     const addBase = () => {
         try {
             addDoc(collection(db, "post"), {
-                name: user.name,
-                photo: user.photo,
+                name: userInfo.name,
+                photo: userInfo.photo,
                 active: true,
-                uid: user.uid,
+                uid: userInfo.uid,
                 postType: choosePath().substring(1),
                 body: body,
                 date: Date.now(),
@@ -96,10 +97,10 @@ const MyPostForm = () => {
                 </div>
                 <div className={`row d-flex align-items-center mb-1 mt-1`}>
                     <div className={`col-1`}>
-                        <img className={`${style.avatarImg}`} src={dog} alt={'dog'}/>
+                        <Avatar photo={userInfo.photo}/>
                     </div>
                     <div className={`col-8 ps-4`}>
-                        <h3 className={`${style.titleSemiBoldGreen}`}>displayName</h3>
+                        <h3 className={`${style.titleSemiBoldGreen}`}>{userInfo.name}</h3>
                     </div>
                     <div className={`col-3`}>
                         <Link to={choosePath()} className={`${style.btnHeader}`} onClick={() => addBase()}>
