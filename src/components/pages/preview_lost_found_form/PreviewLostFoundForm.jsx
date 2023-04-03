@@ -10,7 +10,7 @@ import facebook from '../../../assets/png/facebook.png';
 import phone from '../../../assets/png/phone.png';
 import email from '../../../assets/png/email.png';
 import {Link} from "react-router-dom";
-import {found, foundForm, lost, lostForm, previewFound, previewLost, profile} from "../../../router/paths";
+import {found, foundForm, lost, lostForm, previewFound, previewLost} from "../../../router/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
 import deer from "../../../assets/png/lost_olenenok.jpeg";
 import map_marker from "../../../assets/png/map-marker.png";
@@ -21,7 +21,7 @@ import fbsvg from "../../../assets/svg/facebook.svg";
 const PreviewLostFoundForm = () => {
 
     const form = useSelector(state => state.form);
-    const user = JSON.parse(localStorage.getItem('userInfo'));
+    const userInfo = JSON.parse(localStorage.getItem('userInfo'));
     const path = useWindowPath();
 
     const lostOrFound = () => {
@@ -44,7 +44,7 @@ const PreviewLostFoundForm = () => {
         try {
             addDoc(collection(db, "post"), {
                 postType: lostOrFound().substring(1),
-                uid: user.uid,
+                uid: userInfo.uid,
                 typeAnimal: form.typeAnimal,
                 sex: form.sex,
                 breed: form.breed,
@@ -62,6 +62,7 @@ const PreviewLostFoundForm = () => {
             console.error("Error adding document: ", e);
         }
     }
+
 
     return (
         <div>
@@ -99,11 +100,11 @@ const PreviewLostFoundForm = () => {
                     <div className={`d-flex justify-content-between`}>
                         <div className={`d-flex`}>
                             <div className={style.divAvatar}>
-                                <Avatar/>
+                                <Avatar photo={userInfo.photo}/>
                             </div>
                             <div className={`ms-2`}>
                                 <div>
-                                    <span className={`${style.titleSemiBoldGreen}`}>Ally</span></div>
+                                    <span className={`${style.titleSemiBoldGreen}`}>{userInfo.name}</span></div>
                                 <div>
                             <span
                                 className={`${style.smallerTextBlack}`}>{new Date(form.date).toISOString().slice(0, 10)} {new Date(form.date).toISOString().slice(11, 16)}</span>
