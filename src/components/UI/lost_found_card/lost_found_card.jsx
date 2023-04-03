@@ -7,6 +7,7 @@ import email from "../../../assets/png/email.png";
 import avatar from "../../../assets/png/avatar.jpg";
 import Avatar from "../avatar/avatar";
 import deer from "../../../assets/png/lost_olenenok.jpeg";
+// import tigra from "../../../assets/png/tigra.jpg";
 
 const LostCard = ({lostFoundPost}) => {
 
@@ -15,7 +16,7 @@ const LostCard = ({lostFoundPost}) => {
             <div className={style.widthImgDiv}>
                 <img className={style.imgHeight} src={deer} alt={'avatar'}/>
             </div>
-            <div>
+            <div className={`ms-3`}>
                 <span className={`${style.titleBigBold}`}>{lostFoundPost.typeAnimal} , {lostFoundPost.breed}</span>
                 <div className={`d-flex`}>
                     <div>

@@ -71,7 +71,7 @@ const PreviewLostFoundForm = () => {
                 <div className={style.widthImgDiv}>
                     <img className={style.imgHeight} src={deer} alt={'avatar'}/>
                 </div>
-                <div>
+                <div className={`ms-3`}>
                     <span className={`${style.titleBigBold}`}>{form.typeAnimal} {form.breed}</span>
                     <div className={`d-flex`}>
                         <div>
