@@ -8,7 +8,8 @@ const SignUpForm = () => {
         const dispatch = useDispatch();
         const re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
 
-        const [email, setEmail] = useState();
+        const [name, setName] = useState('');
+        const [email, setEmail] = useState('');
         let em = email;
         const [passwordFirst, setPasswordFirst] = useState("");
         let pasF = passwordFirst;
@@ -46,7 +47,7 @@ const SignUpForm = () => {
                             <label className={'col-3 text-end'} htmlFor="name">Name:</label>
                             <input className={'col-8'} type="text" placeholder="Helen Johnson" name="name" autoComplete="on"
                                    onChange={(e) => {
-                                       dispatch({type: 'SET_USER_NAME', payload: e.target.value});
+                                       setName(e.target.value);
                                    }}
                                    required
                             />
@@ -98,7 +99,7 @@ const SignUpForm = () => {
                 </div>
                 <hr className={`m-0`}/>
                 <div className={`${style.heightFooter} row align-items-center`}>
-                    <ModalFooterUp userEmail={email} password={passwordFinal}/>
+                    <ModalFooterUp userEmail={email} password={passwordFinal} name={name}/>
                 </div>
             </>
         );

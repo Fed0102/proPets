@@ -3,20 +3,16 @@ import st from './navigation.module.css';
 import BtnNavPg from "../../../UI/btn_nav_pg/btn_nav_pg";
 import iconLogout from "../../../../assets/png/logout.png";
 import BtnNavPrfl from "../../../UI/btn_nav_profile/btn_nav_profile";
-import Avatar from "../../../UI/avatar/avatar";
 import {profile} from "../../../../router/paths";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {signOut} from "firebase/auth";
 import {auth} from "../../../../firebase/firebase-config";
 import {REMOVE_USER} from "../../../../store/userReducer";
 import BtnNavLogout from "../../../UI/btn_nav_pg/btn_nav_logout";
 import {pgBtnsAr} from "./pg_btns_array";
-import {useWindowPath} from "../../../../hooks/useWindowPath";
 
 const MyNavigation = () => {
     const dispatch = useDispatch();
-    let locStor = localStorage.getItem('userInfo');
-    let userInfoLoc = JSON.parse(locStor);
 
     const logout = () => {
         signOut(auth)
@@ -25,10 +21,6 @@ const MyNavigation = () => {
                 dispatch({type: REMOVE_USER});
             }).catch(e => console.log(e.message));
     }
-
-    useEffect(() => {
-
-    },[useWindowPath()])
 
     return (
         <div className={st.base}>
@@ -40,7 +32,7 @@ const MyNavigation = () => {
                 )}
             </div>
             <div className={st.log_btns}>
-                <BtnNavPrfl btnPath={[profile]} text={userInfoLoc.name}/>
+                <BtnNavPrfl btnPath={[profile]}/>
                 <div onClick={() => logout()}>
                     <BtnNavLogout icon={iconLogout} title={'Logout'}/>
                 </div>

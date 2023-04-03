@@ -4,11 +4,12 @@ import style from "./modal_footer.module.css";
 import {SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
 import paw from "../../../../../assets/png/paw.png";
 import {registration} from "../../../../../firebase/auth-service";
+import {SET_USER_NAME} from "../../../../../store/userReducer";
 
-const ModalFooterUp = ({userEmail, password}) => {
+const ModalFooterUp = ({userEmail, password, name}) => {
 
     const dispatch = useDispatch();
-    const name = useSelector(state => state.user.name);
+    // const name = useSelector(state => state.user.name);
 
     return (
         <div className='row'>
@@ -23,7 +24,7 @@ const ModalFooterUp = ({userEmail, password}) => {
                 <button className={style.btnSubmit}
                         onClick={ () => {
                             registration(userEmail, password);
-                            console.log(name);
+                            dispatch({type:SET_USER_NAME, payload: name})
                         }
                         }>
                     <img className={style.paw} src={paw} alt={paw}/>

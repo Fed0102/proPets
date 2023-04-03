@@ -51,10 +51,10 @@ const MyBody = () => {
     }
 
     useEffect(() => {
-        updName();
         getUserInfo().catch(e => console.log(e));
+        updName();
         setLoader(false);
-    }, [])
+    }, []);
 
     return (
         <>

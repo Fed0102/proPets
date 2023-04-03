@@ -36,7 +36,7 @@ const MyData = () => {
 
     const changePhoto = (e) => {
         e.preventDefault();
-        const file = e.target.files[0]
+        const file = e.target.files[0];
         uploadFiles(file)
     }
 
@@ -156,14 +156,14 @@ const MyData = () => {
                 <BtnHeaderWhite white={true}>
                     Cancel
                 </BtnHeaderWhite>
-                <BtnHeaderGreen green={true} onClick={saveChanges}>
-                    <GreenBtnImg imgPath={save}/>
-                    Save changes
-                </BtnHeaderGreen>
+                    <BtnHeaderGreen green={true} onClick={saveChanges}>
+                        <GreenBtnImg imgPath={save}/>
+                        Save changes
+                    </BtnHeaderGreen>
+
             </div>
         </>
-    )
-        ;
+    );
 };
 
 export default MyData;
