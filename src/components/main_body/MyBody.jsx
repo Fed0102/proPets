@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import st from './body.module.css'
 import MyNavigation from "./nav_bar/nav_body/MyNavigation";
 import MyPage from "./page/MyPage";
@@ -8,19 +8,22 @@ import {useSelector} from "react-redux";
 import {updateProfile} from "firebase/auth";
 import {auth, db} from "../../firebase/firebase-config";
 import {doc, getDoc, setDoc} from "firebase/firestore";
+import Loader from "../UI/loader/Loader";
 
 const MyBody = () => {
 
+    const [loader, setLoader] = useState(true);
+
     const userBD = auth.currentUser;
     const userName = useSelector(state => state.user.name);
-    let locStor = localStorage.getItem('userInfo');
-    let userInfoLoc = JSON.parse(locStor);
+    // let locStor = localStorage.getItem('userInfo');
+    // let userInfoLoc = JSON.parse(locStor);
 
     const updName = () => {
         if (userName !== null) {
             updateProfile(userBD, {
                 displayName: userName,
-                photoURL: ''
+                photoURL: 'https://firebasestorage.googleapis.com/v0/b/propetslvafed.appspot.com/o/avatar%2Fbase_avatar.png?alt=media&token=f44b5975-fc36-4490-b12c-89e7ef55feda'
             }).then(v => console.log("Name updated"))
                 .catch(e => {
                     console.log("Can't use name");
@@ -50,16 +53,22 @@ const MyBody = () => {
     useEffect(() => {
         updName();
         getUserInfo().catch(e => console.log(e));
-    },[])
+        setLoader(false);
+    }, [])
 
     return (
-        <div className={st.base}>
-            <MyNavigation/>
-            <MyPage>
-                <MyRouter user={true}/>
-            </MyPage>
-            <MyBlock/>
-        </div>
+        <>
+            {loader ?
+                <Loader/>
+                :
+                <div className={st.base}>
+                    <MyNavigation/>
+                    <MyPage>
+                        <MyRouter user={true}/>
+                    </MyPage>
+                    <MyBlock/>
+                </div>}
+        </>
     );
 };
 

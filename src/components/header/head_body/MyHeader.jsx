@@ -38,38 +38,56 @@ const MyHeader = ({user}) => {
     return (
         <div className={user ? `${st.header} ${st.header_main}` : st.header}>
             {/*<div className={st.body}>*/}
-                <div className={st.left}>
-                    <img src={logo} className={user ? `${st.logo} ${st.logo_main}` : st.logo} alt={logo}/>
-                </div>
+            <div className={st.left}>
+                <img src={logo} className={user ? `${st.logo} ${st.logo_main}` : st.logo} alt={logo}/>
+            </div>
 
-                <div className={st.center}></div>
-
-                <div className={st.right}>
-                    {isPosts && user &&
+            {isPosts && user &&
+                <>
+                    <div className={st.center}></div>
+                    <div className={st.right}>
                         <BtnHeaderGreen green={true} btnPath={choosePath()}>
                             <GreenBtnImg imgPath={plusImg}/>
                             Add new
                         </BtnHeaderGreen>
-                    }
-                    {isLostFound && user &&
-                        <div className={st.btns}>
-                            <BtnHeaderGreen green={false} btnPath={lostForm}>
-                                <GreenBtnImg imgPath={lostImg}/>
-                                I lost my pet
-                            </BtnHeaderGreen>
-                            <BtnHeaderGreen green={true} btnPath={foundForm}>
-                                <GreenBtnImg imgPath={foundImg} yellow={true}/>
-                                I found a pet
-                            </BtnHeaderGreen>
-                        </div>
-                    }
-                    {!user &&
+                    </div>
+                </>
+            }
+            {isLostFound && user &&
+                <>
+                    <div className={st.center}>
+                        <BtnHeaderGreen green={false} btnPath={lostForm}>
+                            <GreenBtnImg imgPath={lostImg}/>
+                            I lost my pet
+                        </BtnHeaderGreen>
+                    </div>
+                    <div className={st.right}>
+                        <BtnHeaderGreen green={true} btnPath={foundForm}>
+                            <GreenBtnImg imgPath={foundImg} yellow={true}/>
+                            I found a pet
+                        </BtnHeaderGreen>
+                    </div>
+                </>
+            }
+            {!user &&
+                <>
+                    <div className={st.center_start}></div>
+                    <div className={st.right_start}>
                         <BtnHeaderWhite>
                             Sign in
                         </BtnHeaderWhite>
-                    }
-                </div>
-            {/*</div>*/}
+                    </div>
+
+                </>
+            }
+
+            {user && !isLostFound && !isPosts &&
+                <>
+                    <div className={st.center}></div>
+                    <div className={st.right}></div>
+                </>
+            }
+
         </div>
     );
 };

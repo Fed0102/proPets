@@ -7,14 +7,17 @@ import BtnHeaderGreen from "../../../../UI/btn_header_green/btn_header_green";
 import GreenBtnImg from "../../../../UI/btn_header_green/icons/GreenBtnImg";
 import save from '../../../../../assets/png/save.png'
 import {updateProfile, updateEmail} from "firebase/auth";
-import {auth, db} from "../../../../../firebase/firebase-config";
+import {auth, db, storage} from "../../../../../firebase/firebase-config";
 import {doc, updateDoc} from "firebase/firestore";
+import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
+import {v4} from "uuid";
 
 const MyData = () => {
 
     let user = localStorage.getItem('userInfo');
     let initial = JSON.parse(user);
     const [nameInp, setNameInp] = useState(initial.name);
+    const [photoInp, setPhotoInp] = useState(initial.photo);
     const [emailInp, setEmailInp] = useState(initial.email);
     const [phoneInp, setPhoneInp] = useState(initial.phone);
     const [fbInp, setFbInp] = useState(initial.facebook);
@@ -31,6 +34,28 @@ const MyData = () => {
         facebook: fbSend
     }
 
+    const changePhoto = (e) => {
+        e.preventDefault();
+        const file = e.target.files[0]
+        uploadFiles(file)
+    }
+
+    const uploadFiles = (file) => {
+        if (!file) return;
+        const storageRef = ref(storage, `/avatar/${v4()}`);
+        const uploadTask = uploadBytesResumable(storageRef, file);
+
+        uploadTask.on('state_changed', (snapshot) => {
+            },
+            (err) => console.log(err),
+            () => {
+                getDownloadURL(uploadTask.snapshot.ref)
+                    .then(url => {
+                        setPhotoInp(url);
+                    })
+            })
+    }
+
     const updateStorage = (data) => {
         localStorage.setItem('userInfo', JSON.stringify(data));
         console.log('Storage updated');
@@ -44,8 +69,8 @@ const MyData = () => {
                 setPhoneSend(phoneInp);
                 setFbSend(fbInp);
             }).then(v => {
-                updateStorage(dataToSend);
-            }).catch(e => console.log('Error in userInfo updating'));
+            updateStorage(dataToSend);
+        }).catch(e => console.log('Error in userInfo updating'));
     }
 
     const updateLogin = () => {
@@ -56,8 +81,8 @@ const MyData = () => {
                 updateStorage(dataToSend);
                 updateUserInfo();
             }).then(v => {
-                updateStorage(dataToSend);
-            }).catch(e => {
+            updateStorage(dataToSend);
+        }).catch(e => {
             console.log('Error in email updating');
         });
     }
@@ -65,7 +90,7 @@ const MyData = () => {
     const updateNameAndPhoto = () => {
         updateProfile(auth.currentUser, {
             displayName: nameInp,
-            photoURL: initial.photo
+            photoURL: photoInp
         })
             .then(v => {
                 console.log('Name and photo updated');
@@ -89,7 +114,18 @@ const MyData = () => {
             <div className={st.form}>
                 <div className={st.user}>
                     <div className={st.avatar_block}>
-                        <Avatar/>
+                        <label htmlFor={'photoInput'}>
+                            <Avatar photo={initial.photo}/>
+                        </label>
+                        <input
+                            className={`${st.photoInput}`}
+                            onChange={changePhoto}
+                            type={'file'}
+                            id={'photoInput'}
+                            name={'photoInput'}
+                            multiple
+                            accept={'image/*, image/jpeg'}
+                        />
                         <div className={st.camera}>
                             <img className={st.camera_img} src={camera} alt={'camera'}/>
                         </div>

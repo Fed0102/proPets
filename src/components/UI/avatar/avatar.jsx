@@ -1,10 +1,9 @@
 import React from 'react';
 import st from './avatar.module.css';
-import avatar from '../../../assets/png/exmpl.png';
 
-const Avatar = () => {
+const Avatar = ({photo}) => {
     return (
-        <img className={st.body} src={avatar} alt={'avatar'}/>
+        <img className={st.body} src={photo} alt={'avatar'}/>
     );
 };
 
