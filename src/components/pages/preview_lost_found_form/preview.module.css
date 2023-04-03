@@ -347,11 +347,11 @@ textarea {
 }
 
 .widthImgDiv{
-    width: 250px;
+    /*width: 250px;*/
 }
 
 .imgPreview {
-    height: 235px;
+    width: 300px;
 }
 
 .imgPreviewPost {

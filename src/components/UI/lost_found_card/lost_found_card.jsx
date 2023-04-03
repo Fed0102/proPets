@@ -6,6 +6,7 @@ import facebook from "../../../assets/png/facebook.png";
 import email from "../../../assets/png/email.png";
 import avatar from "../../../assets/png/avatar.jpg";
 import Avatar from "../avatar/avatar";
+import tigra from "../../../assets/png/tigra.jpg";
 
 const LostCard = ({lostFoundPost}) => {
 
@@ -13,10 +14,10 @@ const LostCard = ({lostFoundPost}) => {
         <div className={style.mainDiv}>
             <div className={`${style.postCard} d-flex`}>
                 <div className={style.widthImgDiv}>
-                    <img className={style.imgHeight} src={avatar} alt={'avatar'}/>
+                    <img className={style.imgHeight} src={tigra} alt={'avatar'}/>
                 </div>
                 <div className={`col-7`}>
-                    <span className={`${style.titleBigBold}`}>{lostFoundPost.typeAnimal},{lostFoundPost.breed}</span>
+                    <span className={`${style.titleBigBold}`}>{lostFoundPost.typeAnimal} , {lostFoundPost.breed}</span>
                     <div className={`d-flex`}>
                         <div className={`col-6`}>
                             <h2 className={`${style.smallTextGreen}`}>Color: <span
@@ -47,7 +48,7 @@ const LostCard = ({lostFoundPost}) => {
                             </div>
                             <div className={`d-flex flex-column ps-2`}>
                                 <div>
-                                    <span className={`${style.titleSemiBoldGreen}`}>Name</span>
+                                    <span className={`${style.titleSemiBoldGreen}`}>Ally</span>
                                 </div>
                                 <div>
                                     <span

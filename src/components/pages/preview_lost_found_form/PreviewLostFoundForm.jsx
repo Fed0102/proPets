@@ -12,6 +12,8 @@ import email from '../../../assets/png/email.png';
 import {Link} from "react-router-dom";
 import {found, foundForm, lost, lostForm, previewFound, previewLost} from "../../../router/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
+import cat from "../../../assets/png/cats.jpeg";
+import tigra from "../../../assets/png/tigra.jpg";
 
 
 const PreviewLostFoundForm = () => {
@@ -65,10 +67,10 @@ const PreviewLostFoundForm = () => {
                 share the post to your FB to be more effective</h1>
             <div className={`${style.postCard} d-flex`}>
                 <div className={style.widthImgDiv}>
-                    <img className={`${style.imgPreview}`} src={avatar} alt={'avatar'}/>
+                    <img className={`${style.imgPreview}`} src={tigra} alt={'avatar'}/>
                 </div>
                 <div className={`col-7 ps-3 pe-3`}>
-                    <span className={`${style.titleBigBold}`}>{form.typeAnimal}, {form.breed}</span>
+                    <span className={`${style.titleBigBold}`}>{form.typeAnimal} , {form.breed}</span>
                     <div className={`d-flex`}>
                         <div className={`col-6`}>
                             <h2 className={`${style.smallerTextGreen}`}>Color: <span

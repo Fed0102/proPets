@@ -3,11 +3,13 @@
 }
 
 .widthImgDiv{
-    width: 250px;
+    /*width: 250px;*/
+    padding-right: 15px;
 }
 
 .imgHeight{
-    height: 235px;
+    width: 300px;
+
 }
 
 .searchInput {
