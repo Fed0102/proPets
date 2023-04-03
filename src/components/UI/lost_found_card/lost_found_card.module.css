@@ -1,15 +1,21 @@
 .mainDiv{
-    width: 775px;
+    margin-top: 10px;
+    z-index: 3000;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-bottom: 5px;
+    display: flex;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
 }
 
 .widthImgDiv{
-    /*width: 250px;*/
     padding-right: 15px;
 }
 
 .imgHeight{
-    width: 300px;
-
+    width: 250px;
+    height: 250px;
 }
 
 .searchInput {
@@ -82,4 +88,8 @@
     width: 18px;
     height: 18px;
     filter: invert(82%) sepia(0%) saturate(1114%) hue-rotate(162deg) brightness(92%) contrast(91%);
+}
+
+.a {
+    padding-left: 15px;
 }
