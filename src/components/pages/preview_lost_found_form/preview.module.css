@@ -207,12 +207,11 @@ nav a {
     padding: 1%;
 }
 
-.postCardTitle {
-    margin: 2%;
-    padding: 1%;
-    min-width: 90%;
-
-}
+/*.postCardTitle {*/
+/*    margin: 2%;*/
+/*    padding: 1%;*/
+/*    min-width: 90%;*/
+/*}*/
 
 .greenLink {
     color: #669885;
@@ -304,7 +303,8 @@ textarea {
     font-size: 10px;
     color: grey;
     font-weight: 500;
-    margin: 0;
+    margin-left: 20px;
+    padding-top: 20px;
 }
 
 .addFileIcon {
@@ -352,7 +352,7 @@ textarea {
 }
 
 .titleSemiBoldGreen {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: #669885;
 }
@@ -413,6 +413,7 @@ textarea {
 }
 
 .btnFacebook {
+    margin-left: 20px;
     width: 160px;
     color: #669885;
     height: 34px;

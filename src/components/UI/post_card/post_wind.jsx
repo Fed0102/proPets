@@ -13,7 +13,7 @@ const PostWind = ({post}) => {
             </div>
             <div className={st.post_text}>
                 <h5 className={st.post_name}>{post.user}</h5>
-                <div className={st.post_date}>{new Date(post.date).toTimeString().slice(0,8)}</div>
+                <div className={st.post_date}>{new Date(post.date + 10800000).toISOString().slice(0,10)} {new Date(post.date + 10800000).toISOString().slice(11,16)}</div>
                 {post.body}
                 <div>
                     <img src={cats} alt={'cats'}/>
