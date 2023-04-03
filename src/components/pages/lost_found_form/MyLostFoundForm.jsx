@@ -51,6 +51,8 @@ const LostFoundForm = () => {
             )
     }
 
+    const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+
     return (
         <div className={'d-flex'}>
             <div className={`${style.mainDiv} d-flex flex-column`}>
@@ -138,20 +140,21 @@ const LostFoundForm = () => {
                         <div className={`mb-1 row`}>
                             <label className={`${style.smallerTextBlack} col-2 text-end`}
                                    htmlFor="contacts">Contacts:</label>
-                            <input className={`${style.input} col-3`} type="tel" placeholder="Phone"
-                                   onChange={e => setPhone(e.target.value)}/>
-                            <input className={`${style.input} col-3`} type="email" placeholder="Email"
+                            <input className={`${style.input} col-3`} type="tel" placeholder={userInfo.phone}
+                                   // onChange={e => setPhone(e.target.value)}/>
+                            onChange={e => setPhone(e.target.value)}/>
+                            <input className={`${style.input} col-3`} type="email" placeholder={userInfo.email}
                                    onChange={e => setEmail(e.target.value)}/>
-                            <input className={`${style.input} col-3`} type="text" placeholder="Facebook profile"
+                            <input className={`${style.input} col-3`} type="text" placeholder={userInfo.facebook}
                                    onChange={e => setFacebook(e.target.value)}/>
                         </div>
                     </div>
                     <div className={`row d-flex align-items-center mb-1 mt-1`}>
                         <div className={`col-1`}>
-                            <Avatar/>
+                            <Avatar photo={userInfo.photo}/>
                         </div>
                         <div className={`col-8 ps-4`}>
-                            <h3 className={`${style.titleSemiBoldGreen}`}>Ally</h3>
+                            <h3 className={`${style.titleSemiBoldGreen}`}>{userInfo.name}</h3>
                         </div>
                         <div className={`col-3`}>
                             <Link to={lostOrFound()} className={`${style.btnHeader}`} onClick={() => {
