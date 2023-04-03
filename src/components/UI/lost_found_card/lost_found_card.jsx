@@ -6,15 +6,14 @@ import facebook from "../../../assets/png/facebook.png";
 import email from "../../../assets/png/email.png";
 import avatar from "../../../assets/png/avatar.jpg";
 import Avatar from "../avatar/avatar";
-import tigra from "../../../assets/png/tigra.jpg";
-import olenenok from "../../../assets/png/lost_olenenok.jpeg";
+import deer from "../../../assets/png/lost_olenenok.jpeg";
 
 const LostCard = ({lostFoundPost}) => {
 
     return (
         <div className={style.mainDiv}>
             <div className={style.widthImgDiv}>
-                <img className={style.imgHeight} src={olenenok} alt={'avatar'}/>
+                <img className={style.imgHeight} src={deer} alt={'avatar'}/>
             </div>
             <div>
                 <span className={`${style.titleBigBold}`}>{lostFoundPost.typeAnimal} , {lostFoundPost.breed}</span>
