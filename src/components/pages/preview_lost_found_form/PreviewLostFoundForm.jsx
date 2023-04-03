@@ -98,10 +98,10 @@ const PreviewLostFoundForm = () => {
                     </div>
                     <div className={`d-flex justify-content-between`}>
                         <div className={`d-flex`}>
-                            <div>
+                            <div className={style.divAvatar}>
                                 <Avatar/>
                             </div>
-                            <div>
+                            <div className={`ms-2`}>
                                 <div>
                                     <span className={`${style.titleSemiBoldGreen}`}>Ally</span></div>
                                 <div>

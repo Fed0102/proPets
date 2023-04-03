@@ -364,6 +364,11 @@ textarea {
     height: 250px;
 }
 
+.divAvatar {
+    width: 47px;
+    height: 47px;
+}
+
 .imgHeight{
     /*position: absolute;*/
     /*top: 50%;*/
