@@ -8,6 +8,7 @@ import {SET_FORM_INFO} from "../../../store/lostFoundFormReducer";
 import {Link} from "react-router-dom";
 import {foundForm, lostForm, previewFound, previewLost} from "../../../router/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
+import Avatar from "../../UI/avatar/avatar";
 
 const LostFoundForm = () => {
 
@@ -33,23 +34,32 @@ const LostFoundForm = () => {
         }
     }
 
+    const lostOrFoundText = () => {
+        if (path === lostForm)
+            return (
+                <h1 className={`${style.titleSemiBold}`}>
+                    <span className={`${style.titleBold}`}>Lost your buddy? </span>
+                    Keep calm and complete the form.
+                </h1>
+            )
+        else
+            return (
+                <h1 className={`${style.titleSemiBold}`}>
+                    <span className={`${style.titleBold}`}>Found a pet? </span>
+                    Please complete the form to help.
+                </h1>
+            )
+    }
+
     return (
         <div className={'d-flex'}>
             <div className={`${style.mainDiv} d-flex flex-column`}>
-                <h1 className={`${style.titleSemiBold}`}><span
-                    className={`${style.titleBold}`}>Lost your buddy?</span> Keep
-                    calm and complete the form.</h1>
+                {lostOrFoundText()}
                 <div className={`${style.lostFoundForm} row d-flex`}>
                     <div className={'col-6 d-flex flex-column'}>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="type">Type:</label>
-                            <select defaultValue={'Choose'} className={`${style.select} ms-2`} name={"type"}
-                                    onChange={e => setTypeAnimal(e.target.value)}>
-                                <option value={'Dog'}>Dog</option>
-                                <option value={'Cat'}>Cat</option>
-                                <option value={'Rabbit'}>Rabbit</option>
-                                <option value={'Parrot'}>Parrot</option>
-                            </select>
+                            <input className={`ms-2`} placeholder="Dog" type="text" name={"type"} onChange={e => setTypeAnimal(e.target.value)}/>
                         </div>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="sex">Sex:</label>
@@ -61,12 +71,12 @@ const LostFoundForm = () => {
                         </div>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="breed">Breed:</label>
-                            <input className={'col-7'} type="text" placeholder="Golden Retriever" name="breed"
+                            <input className={`ms-2`} type="text" placeholder="Golden Retriever" name="breed"
                                    onChange={e => setBreed(e.target.value)}/>
                         </div>
                         <div className={`mb-1`}>
                             <label className={`${style.smallerTextBlack} col-3 text-end`} htmlFor="color">Color:</label>
-                            <input type="text" placeholder="Beige" name="color"
+                            <input className={`ms-2`} type="text" placeholder="Beige" name="color"
                                    onChange={e => setColor(e.target.value)}/>
                         </div>
                         <div className={`mb-1`}>
@@ -138,10 +148,10 @@ const LostFoundForm = () => {
                     </div>
                     <div className={`row d-flex align-items-center mb-1 mt-1`}>
                         <div className={`col-1`}>
-                            <img className={`${style.avatarImg}`} src={'avatar'} alt={'dog'}/>
+                            <Avatar/>
                         </div>
                         <div className={`col-8 ps-4`}>
-                            <h3 className={`${style.titleSemiBoldGreen}`}>Name</h3>
+                            <h3 className={`${style.titleSemiBoldGreen}`}>Ally</h3>
                         </div>
                         <div className={`col-3`}>
                             <Link to={lostOrFound()} className={`${style.btnHeader}`} onClick={() => {

@@ -10,7 +10,7 @@ import facebook from '../../../assets/png/facebook.png';
 import phone from '../../../assets/png/phone.png';
 import email from '../../../assets/png/email.png';
 import {Link} from "react-router-dom";
-import {found, foundForm, lost, lostForm, previewFound, previewLost} from "../../../router/paths";
+import {found, foundForm, lost, lostForm, previewFound, previewLost, profile} from "../../../router/paths";
 import {useWindowPath} from "../../../hooks/useWindowPath";
 import deer from "../../../assets/png/lost_olenenok.jpeg";
 import map_marker from "../../../assets/png/map-marker.png";
@@ -65,7 +65,7 @@ const PreviewLostFoundForm = () => {
 
     return (
         <div>
-            <h1 className={`${style.titleSemiBold} ${style.postCardTitle}`}><span className={`${style.titleBold}`}>Preview and Publish. </span>Please
+            <h1 className={style.titleSemiBold}><span className={`${style.titleBold}`}>Preview and Publish. </span>Please
                 share the post to your FB to be more effective</h1>
             <div className={style.mainWhiteBack}>
                 <div className={style.widthImgDiv}>
@@ -106,7 +106,7 @@ const PreviewLostFoundForm = () => {
                                     <span className={`${style.titleSemiBoldGreen}`}>Ally</span></div>
                                 <div>
                             <span
-                                className={`${style.smallerTextBlack}`}>{new Date(form.date).toTimeString().slice(0, 8)}</span>
+                                className={`${style.smallerTextBlack}`}>{new Date(form.date).toISOString().slice(0, 10)} {new Date(form.date).toISOString().slice(11, 16)}</span>
                                 </div>
                             </div>
                         </div>
@@ -121,8 +121,10 @@ const PreviewLostFoundForm = () => {
                     </div>
                 </div>
             </div>
-            <span className={`${style.titleSemiBoldGreen} ${style.postCardTitle}`}>Fingers crossed. We wish your fluffy to be found as soon as possible. Your post will expire in two weeks. To make it active again follow the instructions you’ll get in email.</span>
-            <div className={`${style.postCardTitle} d-flex justify-content-between`}>
+            <div className={`ms-3 mb-3 mt-3`}>
+                <span className={style.titleSemiBoldGreen}>Fingers crossed. We wish your fluffy to be found as soon as possible.<br/> Your post will expire in two weeks. To make it active again follow the<br/> instructions you’ll get in email.</span>
+            </div>
+            <div className={`d-flex justify-content-between`}>
                 <button className={style.btnFacebook}>
                     <img src={fbsvg} alt={'facebook'}/>
                     <span className={`${style.smallerTextGreen} ps-1`}>Share to Facebook</span>
@@ -138,7 +140,9 @@ const PreviewLostFoundForm = () => {
                     </Link>
                 </div>
             </div>
-            <span className={`${style.littleGreyText} ${style.postCardTitle} text-end`}>By clicking “Publish”, you agree to us processing your information in accordance with these terms.</span>
+            <div className={style.littleGreyText}>
+                <span>By clicking “Publish”, you agree to us processing your information in accordance with these terms.</span>
+            </div>
         </div>
         // <div className={`${style.mainWhiteBack} d-flex flex-column align-items-center overflow-auto`}>
         //     <h1 className={`${style.titleSemiBold} ${style.postCardTitle}`}><span className={`${style.titleBold}`}>Preview and Publish. </span>Please

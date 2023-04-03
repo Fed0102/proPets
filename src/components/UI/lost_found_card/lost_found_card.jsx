@@ -50,7 +50,7 @@ const LostCard = ({lostFoundPost}) => {
                                 <span className={`${style.titleSemiBoldGreen}`}>Ally</span></div>
                             <div>
                             <span
-                                className={`${style.smallTextBlack}`}>{new Date(lostFoundPost.date).toTimeString().slice(0, 8)}</span>
+                                className={`${style.smallTextBlack}`}>{new Date(lostFoundPost.date).toISOString().slice(0, 10)} {new Date(lostFoundPost.date + 10800000).toISOString().slice(11, 16)}</span>
                             </div>
                         </div>
                     </div>
