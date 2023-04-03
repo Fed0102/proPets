@@ -17,7 +17,7 @@ import {useWindowPath} from "../../../hooks/useWindowPath";
 const PreviewLostFoundForm = () => {
 
     const form = useSelector(state => state.form);
-
+    const user = JSON.parse(localStorage.getItem('userInfo'));
     const path = useWindowPath();
 
     const lostOrFound = () => {
@@ -40,6 +40,7 @@ const PreviewLostFoundForm = () => {
         try {
             addDoc(collection(db, "post"), {
                 postType: lostOrFound().substring(1),
+                uid: user.uid,
                 typeAnimal: form.typeAnimal,
                 sex: form.sex,
                 breed: form.breed,
