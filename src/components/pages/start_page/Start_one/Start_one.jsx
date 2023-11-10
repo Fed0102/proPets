@@ -6,12 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {SET_CHANGE_FOUND_BTN, SET_CHANGE_LOST_BTN, SET_VISIBLE_MODAL} from "../../../../store/modalReducer";
 
 const StartOne = () => {
-
-    // const [modalActive, setModalActive] = useState(true);
-
-    // const modal = useSelector(state => state.modal)
     const {modal} = useSelector(state => state);
-    // const foundBtn = useSelector(state=> state.foundBtn);
     const dispatch = useDispatch();
 
     return (

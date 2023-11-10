@@ -1,12 +1,10 @@
 import React, {useState} from 'react';
 import style from './modal_main.module.css';
 import ModalFooterUp from "../ModalFooter/ModalFooterUp";
-import {useDispatch, useSelector} from "react-redux";
 
 const SignUpForm = () => {
 
-        const dispatch = useDispatch();
-        const re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+        const re = /^[\w-.]+@[\w-]+\.[a-z]{2,4}$/i;
 
         const [name, setName] = useState('');
         const [email, setEmail] = useState('');

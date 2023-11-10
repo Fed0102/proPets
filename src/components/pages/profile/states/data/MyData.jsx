@@ -22,13 +22,14 @@ const MyData = () => {
     const [phoneInp, setPhoneInp] = useState(initial.phone);
     const [fbInp, setFbInp] = useState(initial.facebook);
     const [nameSend, setNameSend] = useState(initial.name);
+    const [photoSend, setPhotoSend] = useState(initial.photo);
     const [emailSend, setEmailSend] = useState(initial.email);
     const [phoneSend, setPhoneSend] = useState(initial.phone);
     const [fbSend, setFbSend] = useState(initial.facebook);
     const dataToSend = {
         uid: initial.uid,
         name: nameSend,
-        photo: initial.photo,
+        photo: photoInp,
         email: emailSend,
         phone: phoneSend,
         facebook: fbSend
@@ -37,7 +38,8 @@ const MyData = () => {
     const changePhoto = (e) => {
         e.preventDefault();
         const file = e.target.files[0];
-        uploadFiles(file)
+        if (file)
+            uploadFiles(file)
     }
 
     const uploadFiles = (file) => {
@@ -58,15 +60,15 @@ const MyData = () => {
 
     const updateStorage = (data) => {
         localStorage.setItem('userInfo', JSON.stringify(data));
-        console.log('Storage updated');
+        // console.log('Storage updated');
     }
 
     const updateUserInfo = () => {
         const docInfo = doc(db, initial.uid, "userInfo");
         updateDoc(docInfo, dataToSend)
             .then(v => {
-                console.log('userInfo updated');
-                setPhoneSend(phoneInp);
+                // console.log('userInfo updated');
+                setPhotoSend(photoInp);
                 setFbSend(fbInp);
             }).then(v => {
             updateStorage(dataToSend);
@@ -76,7 +78,7 @@ const MyData = () => {
     const updateLogin = () => {
         updateEmail(auth.currentUser, emailInp)
             .then(v => {
-                console.log('Email updated');
+                // console.log('Email updated');
                 setEmailSend(emailInp);
                 updateStorage(dataToSend);
                 updateUserInfo();
@@ -93,8 +95,9 @@ const MyData = () => {
             photoURL: photoInp
         })
             .then(v => {
-                console.log('Name and photo updated');
+                // console.log('Name and photo updated');
                 setNameSend(nameInp);
+                setPhoneSend(photoInp);
                 updateStorage(dataToSend);
                 updateUserInfo();
             })
@@ -106,6 +109,7 @@ const MyData = () => {
     const saveChanges = () => {
         updateNameAndPhoto();
         updateLogin();
+        console.log(nameInp);
     }
 
 
@@ -156,10 +160,10 @@ const MyData = () => {
                 <BtnHeaderWhite white={true}>
                     Cancel
                 </BtnHeaderWhite>
-                    <BtnHeaderGreen green={true} onClick={saveChanges}>
-                        <GreenBtnImg imgPath={save}/>
-                        Save changes
-                    </BtnHeaderGreen>
+                <BtnHeaderGreen green={true} onClick={saveChanges}>
+                    <GreenBtnImg imgPath={save}/>
+                    Save changes
+                </BtnHeaderGreen>
 
             </div>
         </>

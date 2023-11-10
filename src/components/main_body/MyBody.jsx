@@ -13,6 +13,7 @@ import Loader from "../UI/loader/Loader";
 const MyBody = () => {
 
     const [loader, setLoader] = useState(true);
+    // const dispatch = useDispatch();
 
     const userBD = auth.currentUser;
     const userName = useSelector(state => state.user.name);
@@ -24,10 +25,8 @@ const MyBody = () => {
             updateProfile(userBD, {
                 displayName: userName,
                 photoURL: 'https://firebasestorage.googleapis.com/v0/b/propetslvafed.appspot.com/o/avatar%2Fbase_avatar.png?alt=media&token=f44b5975-fc36-4490-b12c-89e7ef55feda'
-            }).then(v => console.log("Name updated"))
-                .catch(e => {
-                    console.log("Can't use name");
-                })
+            }).then(() => console.log("Name updated"))
+                .catch(() => console.log("Can't use name"))
         }
     }
 
@@ -54,6 +53,7 @@ const MyBody = () => {
         getUserInfo().catch(e => console.log(e));
         updName();
         setLoader(false);
+        // dispatch({type: SET_USER_LOADED, payload: true});
     }, []);
 
     return (

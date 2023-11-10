@@ -5,8 +5,8 @@ import ModalFooterIn from "../ModalFooter/ModalFooterIn";
 
 const SignInForm = () => {
 
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     return (
         <div>
@@ -26,7 +26,7 @@ const SignInForm = () => {
             </div>
 
             <div className={`${style.forgotPwd} ${style.marginInForm} col-6 text-center`}>
-                <a href='#'>Forgot password?</a>
+                <span className={`${style.forgotPassword}`}>Forgot password?</span>
             </div>
             <hr className={`m-0`}/>
             <div className={`${style.heightFooter} row align-items-center`}>

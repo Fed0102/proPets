@@ -7,7 +7,6 @@ import email from "../../../assets/png/email.png";
 import avatar from "../../../assets/png/avatar.jpg";
 import Avatar from "../avatar/avatar";
 import deer from "../../../assets/png/lost_olenenok.jpeg";
-// import tigra from "../../../assets/png/tigra.jpg";
 
 const LostCard = ({lostFoundPost}) => {
 

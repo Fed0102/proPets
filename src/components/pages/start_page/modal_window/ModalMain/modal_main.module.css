@@ -11,6 +11,7 @@
     background-color: #669885;
     opacity: 1;
 }
+
 label {
     font-size: 12px;
 }
@@ -30,7 +31,8 @@ input {
     color: lightgrey;
     margin: 2px;
 }
-.forgotPwd > a{
+
+.forgotPwd > a {
     font-size: 12px;
     color: lightgrey;
 }
@@ -55,11 +57,21 @@ input {
     margin-bottom: 10px;
 }
 
-.textPwd{
+.textPwd {
     margin-top: 30px;
 }
 
 .errorText {
     font-size: 12px;
     color: var(--bs-red);
+}
+
+.forgotPassword{
+    text-decoration: underline;
+    font-size: 0.7rem;
+}
+
+.forgotPassword:hover {
+    color: blue;
+    cursor: pointer;
 }

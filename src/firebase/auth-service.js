@@ -15,9 +15,9 @@ export function login(email, password) {
         .catch(e => console.log(e))
 }
 
-export async function getUid() {
-    const user = auth.currentUser;
-    if (user != null) {
-        return user.uid;
-    }
-}
+// export async function getUid() {
+//     const user = auth.currentUser;
+//     if (user != null) {
+//         return user.uid;
+//     }
+// }

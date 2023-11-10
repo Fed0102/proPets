@@ -29,6 +29,10 @@ footer {
     color: #ffffff;
 }
 
+.colorWhite:hover{
+    cursor: pointer;
+}
+
 .smallerText{
     font-size: 12px;
 }

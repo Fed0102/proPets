@@ -9,7 +9,6 @@ import {SET_VISIBLE_MODAL} from "../../../../../store/modalReducer";
 
 const Modal = () => {
 
-    // const modal = useSelector(state => state.modal);
     const {modal} = useSelector(state => state)
     const dispatch = useDispatch();
 
